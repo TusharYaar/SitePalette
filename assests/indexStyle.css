@@ -1,5 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
 body {
-  background-color: orange;
+  background-color: #bee5bf;
+  overflow-y: hidden;
+}
+#site-template {
+  width: 100%;
+  height: 96%;
+  background-color: #efe2cf;
+  overflow-y: hidden;
+}
+#site-template > object {
+  width: 100vw;
+  height: 100vh;
 }
 
 .site-interaction {
@@ -7,7 +23,7 @@ body {
   width: 50px;
   border-radius: 50%;
   border: 2px solid black;
-  background-color: firebrick;
+  background-color: #00bbf9;
   transition: all 0.3s;
   position: absolute;
   overflow: hidden;
@@ -25,14 +41,14 @@ body {
   width: 60px;
 }
 .site-interaction:hover > img {
-  margin: 15px;
+  margin: 13.5px;
 }
 .site-interaction > img,
 .site-interaction.active > img,
 .site-interaction.active:hover > img {
   height: 30px;
   width: 30px;
-  margin: 10px;
+  margin: 9px;
   transition: all 0.3s;
 }
 .site-interaction > img.hide {
@@ -42,17 +58,17 @@ body {
   padding: 10px;
 }
 #site-about {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   left: 50px;
 }
 #change-color {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 50px;
 }
 #change-template {
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 150px;
 }

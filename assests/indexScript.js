@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 250);
-      //   console.log(this.parentElement.id);
     });
   });
 });
@@ -26,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function removeClass(string, clas) {
   document.querySelectorAll(string).forEach((element) => {
     element.classList.remove(clas);
-    console.log(element);
   });
+}
+function load_home() {
+  document.getElementById("site-template").innerHTML = '<object type="text/html" data="./assests/templates/html/facecopy.html" ></object>';
 }
