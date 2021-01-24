@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -6,6 +7,7 @@
 body {
   background-color: #bee5bf;
   overflow-y: hidden;
+  font-family: "Yusei Magic", sans-serif;
 }
 #site-template {
   width: 100%;
@@ -67,6 +69,9 @@ body {
   bottom: 50px;
   right: 50px;
 }
+#change-color ul {
+  list-style: none;
+}
 #change-color input {
   height: 30px;
   width: 100px;
@@ -78,7 +83,6 @@ body {
 }
 #change-color label {
   font-size: 20px;
-  font-family: sans-serif;
 }
 #change-color label span.color-preview {
   display: inline-block;
