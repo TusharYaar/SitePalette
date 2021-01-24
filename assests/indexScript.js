@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  function checkWidth() {
+    if (document.body.clientWidth < 458) document.querySelector("#site-overlay").classList.add("active");
+    else document.querySelector("#site-overlay").remove();
+  }
+  checkWidth();
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
