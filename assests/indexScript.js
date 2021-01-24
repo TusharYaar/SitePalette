@@ -30,3 +30,14 @@ function removeClass(string, clas) {
 function load_home() {
   document.getElementById("site-template").innerHTML = '<object type="text/html" data="./assests/templates/html/facecopy.html" ></object>';
 }
+
+// Function to fetch a random color palette from the array and set the details of the preview box and the input field
+function getRandomColorData() {
+  var value = Math.floor(Math.random() * colorData.length);
+  colorData[value].forEach(function (color, index) {
+    if (index < 4) {
+      document.querySelector(`#color${index + 1}`).value = `#${color}`;
+      document.querySelector(`#color${index + 1}-parent > label> span`).style.backgroundColor = `#${color}`;
+    }
+  });
+}

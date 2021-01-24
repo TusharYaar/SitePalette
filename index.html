@@ -8,6 +8,9 @@
   </head>
 
   <body>
+    <!-- ======================================== -->
+    <!-- About Site interaction menu  -->
+    <!-- ======================================== -->
     <div id="site-template"></div>
     <span class="site-interaction" id="site-about">
       <img src="./assests/icons/about.svg" alt="about" title="about" />
@@ -19,6 +22,9 @@
         </p>
       </div>
     </span>
+    <!-- ======================================== -->
+    <!-- Change template Site interaction menu     -->
+    <!-- ======================================== -->
     <span class="site-interaction" id="change-template">
       <img src="./assests/icons/template.svg" alt="Template" title="Change Template" />
       <div>
@@ -32,17 +38,31 @@
         <input type="radio" name="Home" id="Home" onclick="load_home()" />
       </div>
     </span>
+    <!-- ======================================== -->
+    <!-- Change color Site interaction menu     -->
+    <!-- ======================================== -->
     <span class="site-interaction" id="change-color">
       <img src="./assests/icons/color.svg" alt="Color" title="Change Color" />
       <div>
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, alias tempore perspiciatis reiciendis, deleniti sapiente aut quaerat unde facere earum eveniet. Ex vitae cumque voluptas aspernatur placeat, magnam nemo vel. Esse, facilis! Suscipit, impedit? Inventore excepturi tempore nam explicabo. Voluptates nesciunt sed voluptatum, libero amet esse illo neque suscipit laudantium nobis aut quae similique odit sunt repudiandae quisquam ab officiis facere sint ipsa! Alias unde
-          repellat veritatis recusandae hic tempora rerum, libero pariatur aut sit similique ab quidem illum, odio laboriosam? Aliquam quas ratione dolorem nesciunt autem possimus? Nam sapiente animi, exercitationem reprehenderit minima aliquid optio cupiditate voluptas labore earum?
-        </p>
+        <ul>
+          <li id="color1-parent">
+            <label for="color1">Color 1 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color1" />
+          </li>
+          <li id="color2-parent">
+            <label for="color2">Color 2 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color2" />
+          </li>
+          <li id="color3-parent">
+            <label for="color3">Color 3 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color3" />
+          </li>
+          <li id="color4-parent">
+            <label for="color4">Color 4 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color4" />
+          </li>
+        </ul>
+        <button onclick="getRandomColorData()">Random Colors</button>
       </div>
     </span>
-
+    <script src="assests/colorData.js"></script>
     <script src="assests/indexScript.js"></script>
   </body>
 </html>

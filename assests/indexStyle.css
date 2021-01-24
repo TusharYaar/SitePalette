@@ -67,6 +67,30 @@ body {
   bottom: 50px;
   right: 50px;
 }
+#change-color input {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid #4d5863;
+  margin: 10px 10px;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+#change-color label {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+#change-color label span.color-preview {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  border: 2px solid black;
+  margin-bottom: -5px;
+  border-radius: 5px;
+}
+#change-color .copy-icon {
+  margin-bottom: -5px;
+}
 #change-template {
   position: fixed;
   bottom: 50px;
