@@ -32,8 +32,8 @@ function removeClass(string, clas) {
     element.classList.remove(clas);
   });
 }
-function load_home() {
-  document.getElementById("site-template").innerHTML = '<object type="text/html" data="./assests/templates/html/facecopy.html" ></object>';
+function load_home(page) {
+  document.getElementById("site-template").innerHTML = `<object type="text/html" data="./assests/templates/html/${page}.html" ></object>`;
 }
 
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
