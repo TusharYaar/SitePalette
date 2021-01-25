@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
       removeClass(".site-interaction", "active");
+      setTimeout(function () {
+        removeClass(`.site-interaction > img`, "hide");
+      }, 90);
+
       this.classList.add("active");
       setTimeout(() => {
         this.children[0].classList.add("hide");
@@ -61,7 +65,7 @@ function load_template(page) {
 function getRandomColorData() {
   var value = Math.floor(Math.random() * colorData.length);
   colorData[value].forEach(function (color, index) {
-    if (index < 4) {
+    if (index < 5) {
       document.querySelector(`#color${index + 1}`).value = `#${color}`;
       document.querySelector(`#color${index + 1}-parent > label> span`).style.backgroundColor = `#${color}`;
     }
