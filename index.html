@@ -30,10 +30,13 @@
       <img src="./assests/icons/template.svg" alt="Template" title="Change Template" />
       <div>
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
-        <label for="Home">Home</label>
-        <input type="radio" name="Home" id="Home" onclick="load_home('facecopy')" />
+        <form>
+          <ul id="change-template-list"></ul>
+        </form>
+        <!-- <label for="Home">Home</label>
+        <input type="radio" id="Home" onclick="load_template('facecopy')" />
         <label for="preview">Preview</label>
-        <input type="radio" name="Home" id="preview" onclick="load_home('previewDocument')" />
+        <input type="radio" id="preview" onclick="load_template('previewDocument')" /> -->
       </div>
     </span>
     <!-- ======================================== -->
@@ -60,6 +63,7 @@
         <button onclick="getRandomColorData()">Random Colors</button>
       </div>
     </span>
+    <script src="assests/variableData.js"></script>
     <script src="assests/colorData.js"></script>
     <script src="assests/indexScript.js"></script>
   </body>

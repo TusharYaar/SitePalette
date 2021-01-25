@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     else document.querySelector("#site-overlay").remove();
   }
   checkWidth();
+  loadSiteTemplateList();
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -32,7 +33,19 @@ function removeClass(string, clas) {
     element.classList.remove(clas);
   });
 }
-function load_home(page) {
+function loadSiteTemplateList() {
+  var ul = document.getElementById("change-template-list");
+  var element;
+  ul.innerHTML = "";
+  templateData.forEach((item) => {
+    console.log(item);
+    element = `<li><label for="${item.id}">${item.name}</label><input type="radio" name="change-template-option" id="${item.id}" onclick="load_template('${item.functionCallName}')" /></li>`;
+    console.log(element);
+    ul.insertAdjacentHTML("beforeend", element);
+  });
+}
+function load_template(page) {
+  console.log(page);
   document.getElementById("site-template").innerHTML = `<object type="text/html" data="./assests/templates/html/${page}.html" ></object>`;
 }
 
