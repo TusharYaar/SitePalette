@@ -4,15 +4,17 @@
     <title>SitePalette</title>
     <meta charset="UTF-8" />
     <meta name="viewport" />
+    <link rel="stylesheet" href="" id="site-template-css" />
     <link href="assests/indexStyle.css" rel="stylesheet" />
   </head>
 
   <body>
+    <!-- OverLay And Messages -->
     <div id="site-overlay"></div>
     <!-- ======================================== -->
     <!-- About Site interaction menu  -->
     <!-- ======================================== -->
-    <div id="site-template"></div>
+    <div id="site-template">
     <span class="site-interaction" id="site-about">
       <img src="./assests/icons/about.svg" alt="about" title="about" />
       <div>
@@ -22,48 +24,45 @@
           repellat veritatis recusandae hic tempora rerum, libero pariatur aut sit similique ab quidem illum, odio laboriosam? Aliquam quas ratione dolorem nesciunt autem possimus? Nam sapiente animi, exercitationem reprehenderit minima aliquid optio cupiditate voluptas labore earum?
         </p>
       </div>
-    </span>
+    </div>
     <!-- ======================================== -->
     <!-- Change template Site interaction menu     -->
     <!-- ======================================== -->
-    <span class="site-interaction" id="change-template">
+    <div class="site-interaction" id="change-template">
       <img src="./assests/icons/template.svg" alt="Template" title="Change Template" />
       <div>
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
         <ul id="change-template-list"></ul>
-        <!-- <label for="Home">Home</label>
-        <input type="radio" id="Home" onclick="load_template('facecopy')" />
-        <label for="preview">Preview</label>
-        <input type="radio" id="preview" onclick="load_template('previewDocument')" /> -->
       </div>
-    </span>
+    </div>
     <!-- ======================================== -->
     <!-- Change color Site interaction menu     -->
     <!-- ======================================== -->
-    <span class="site-interaction" id="change-color">
+    <div class="site-interaction" id="change-color">
       <img src="./assests/icons/color.svg" alt="Color" title="Change Color" />
       <div>
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
-        <ul>
-          <li id="color1-parent">
-            <label for="color1">Color 1 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color1" />
+        <ul id="change-color-list">
+          <!-- <li id="color1-parent">
+            <label for="color1">Color 1 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color1" /><label for="color1"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
           </li>
           <li id="color2-parent">
-            <label for="color2">Color 2 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color2" />
+            <label for="color2">Color 2 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color2" /><label for="color2"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
           </li>
           <li id="color3-parent">
-            <label for="color3">Color 3 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color3" />
+            <label for="color3">Color 3 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color3" /><label for="color3"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
           </li>
           <li id="color4-parent">
-            <label for="color4">Color 4 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color4" />
+            <label for="color4">Color 4 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color4" /><label for="color4"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
           </li>
           <li id="color5-parent">
-            <label for="color5">Color 5 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color5" />
-          </li>
+            <label for="color5">Color 5 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color5" /><label for="color5"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
+          </li> -->
         </ul>
         <button onclick="getRandomColorData()">Random Colors</button>
+        <button>Advanced Options</button>
       </div>
-    </span>
+    </div>
     <script src="assests/variableData.js"></script>
     <script src="assests/colorData.js"></script>
     <script src="assests/indexScript.js"></script>

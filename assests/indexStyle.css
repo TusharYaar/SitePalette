@@ -17,7 +17,6 @@ body {
 #site-template {
   width: 100%;
   height: 96%;
-  background-color: #efe2cf;
   overflow-y: hidden;
 }
 #site-template > object {
@@ -30,10 +29,10 @@ body {
   width: 50px;
   border-radius: 50%;
   border: 2px solid black;
-  background-color: #00bbf9;
   transition: all 0.3s;
   position: absolute;
   overflow: hidden;
+  display: inline;
 }
 .site-interaction.active,
 .site-interaction.active:hover {
@@ -66,6 +65,7 @@ body {
   position: fixed;
   bottom: 50px;
   left: 50px;
+  background-color: #e5e5e5;
 }
 #site-about.active {
   height: 500px;
@@ -75,10 +75,11 @@ body {
   position: fixed;
   bottom: 50px;
   right: 50px;
+  background-color: #ffa62b;
 }
 #change-color.active {
   height: 350px;
-  width: 300px;
+  width: 350px;
 }
 #change-color ul,
 #change-template ul {
@@ -91,12 +92,12 @@ body {
   width: 100px;
   border-radius: 5px;
   border: 1px solid #4d5863;
-  margin: 10px 10px;
+  margin: 10px 7px;
   padding: 5px 10px;
   font-weight: 600;
 }
 #change-color label {
-  font-size: 20px;
+  font-size: 18px;
 }
 #change-color label span.color-preview {
   display: inline-block;
@@ -106,15 +107,29 @@ body {
   margin-bottom: -5px;
   border-radius: 5px;
 }
-#change-color .copy-icon {
+#change-color .copy-icon,
+.lock-icon {
   margin-bottom: -5px;
 }
 #change-template {
   position: fixed;
   bottom: 50px;
   right: 150px;
+  background-color: #2a9d8f;
 }
 #change-template.active {
   height: 200px;
   width: 300px;
+}
+
+.sc-h1 {
+  color: white;
+  background-color: grey;
+}
+/* ================================ */
+/* ICONS */
+/* =============================== */
+
+.lock-icon.locked {
+  stroke: violet;
 }
