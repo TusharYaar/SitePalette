@@ -74,7 +74,8 @@ body {
   bottom: 50px;
   right: 50px;
 }
-#change-color ul {
+#change-color ul,
+#change-template ul {
   list-style: none;
 }
 #change-color input {

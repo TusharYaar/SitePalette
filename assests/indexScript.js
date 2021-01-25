@@ -26,6 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 250);
     });
   });
+  document.querySelectorAll(".copy-icon").forEach(function (element) {
+    element.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var id = this.parentElement.attributes["for"].value;
+      document.getElementById(id).select();
+      document.execCommand("copy");
+    });
+  });
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
