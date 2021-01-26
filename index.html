@@ -42,27 +42,13 @@
       <img src="./assests/icons/color.svg" alt="Color" title="Change Color" />
       <div>
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
-        <ul id="change-color-list">
-          <!-- <li id="color1-parent">
-            <label for="color1">Color 1 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color1" /><label for="color1"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
-          </li>
-          <li id="color2-parent">
-            <label for="color2">Color 2 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color2" /><label for="color2"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
-          </li>
-          <li id="color3-parent">
-            <label for="color3">Color 3 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color3" /><label for="color3"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
-          </li>
-          <li id="color4-parent">
-            <label for="color4">Color 4 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color4" /><label for="color4"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
-          </li>
-          <li id="color5-parent">
-            <label for="color5">Color 5 <span class="color-preview"></span> <img src="./assests/icons/copy.svg" alt="C" title="Copy" class="copy-icon" /></label><input type="text" id="color5" /><label for="color5"><img src="./assests/icons/lock.svg" alt="L" title="Lock" class="lock-icon" /></label>
-          </li> -->
-        </ul>
-        <button onclick="getRandomColorData()">Random Colors</button>
-        <button>Advanced Options</button>
+        <ul id="change-color-list-basic" class="color-list-menu active">        </ul>
+        <ul id="change-color-list-advance" class="color-list-menu block"></ul>
+        <button onclick="getRandomColorData()" class="site-interaction-button">Random Colors</button>
+        <button class="site-interaction-button" onclick="toggleAdvanceColorEdit()">Advanced Options</button>
       </div>
     </div>
+    <script src="assests/icons.js"></script>
     <script src="assests/variableData.js"></script>
     <script src="assests/colorData.js"></script>
     <script src="assests/indexScript.js"></script>

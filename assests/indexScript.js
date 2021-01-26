@@ -94,14 +94,31 @@ function getRandomColorData() {
       }
     }
   });
+  applyBasicColor();
 }
 function loadColorSelectList() {
-  var ul = document.getElementById("change-color-list");
+  var ul = document.getElementById("change-color-list-basic");
   var element;
   ul.innerHTML = "";
   currentColorData.forEach(function (data) {
-    console.log(data);
     element = `<li id="${data.id}-parent"><label for="${data.id}">${data.name} <span class="color-preview"></span>${copyIcon}</label><input type="text" id="${data.id}" /><label for="${data.id}">${lockIcon}</label></li>`;
     ul.insertAdjacentHTML("beforeend", element);
+  });
+}
+function applyBasicColor() {
+  currentColorData.forEach(function (color, index) {
+    if (color.id === basicColorMenu[index].id) {
+      var type = basicColorMenu[index].type;
+      basicColorMenu[index].elements.forEach(function (element) {
+        console.log(element);
+        setClassColor(element, color.color, type);
+      });
+    }
+  });
+}
+function setClassColor(clas, color, type) {
+  console.log(`calling for ${clas} to set ${type} ${color}`);
+  document.querySelectorAll(`.${clas}`).forEach(function (item) {
+    item.style[type] = `#${color}`;
   });
 }
