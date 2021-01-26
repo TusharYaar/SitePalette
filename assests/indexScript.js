@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth();
   loadSiteTemplateList();
   loadColorSelectList();
-  // loadTemplateScripts();
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -71,32 +70,18 @@ function loadSiteTemplateList() {
     ul.insertAdjacentHTML("beforeend", element);
   });
 }
-// function loadTemplateScripts() {
-//   templateData.forEach(function (page) {
-//     var src = `assests/templates/html/${page.functionCallName}.js`;
-//     document.querySelector("body").insertAdjacentHTML("beforeend", `<script src="${src}"></script>`);
-//     document.querySelector("#lastElement").insertAdjacentHTML("afterend", `<link rel="stylesheet" href="assests/templates/styles/${page.functionCallName}.css" >`);
-//   });
-// }
 
 function loadTemplate(page) {
+  document.querySelector("#site-template-css").setAttribute("href", `assests/templates/styles/${page}.css`);
   var xhr = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   xhr.open("GET", url);
   xhr.send();
-  document.querySelector("#site-template-css").setAttribute("href", `assests/templates/styles/${page}.css`);
+
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
   };
 }
-// function loadTemplate(page) {
-//   var src = `assests/templates/html/${page}.js`;
-//   var css = `assests/templates/css/${page}.css`;
-//   document.getElementById("site-template-js").setAttribute("src", src);
-//   document.getElementById("site-template-css").setAttribute("link", css);
-//   renderDocument();
-// }
-
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 function getRandomColorData() {
   var value = Math.floor(Math.random() * colorData.length);
