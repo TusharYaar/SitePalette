@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+div#header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  flex-direction: row;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  border-bottom: 2px grey solid;
+  color: #646464;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#header-links {
+  display: flex;
+  direction: row;
+}
+.site-name {
+  margin: 0px;
+  padding-right: 20px;
+  display: inline;
+  border-right: 2px solid grey;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 15px;
+  letter-spacing: 4px;
+}
+div#header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin: 0px;
+  padding: 0px;
+  flex-basis: 2;
+  letter-spacing: 2px;
+}
+#header ul > li {
+  display: inline;
+  margin: 0px;
+  padding: 15px 20px;
+  border-right: 2px solid grey;
+  font-size: 14px;
+}
+
+#body {
+  margin-top: 50px;
+}
+#post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Raleway", Helvetica, sans-serif;
+  border-bottom: 1px solid grey;
+}
+#post-header .title h2 {
+  margin: 0px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+#post-header .title {
+  margin: 60px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid grey;
+  padding: 60px;
+}
+.details time {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.details span {
+  text-transform: uppercase;
+  float: left;
+  margin-top: 20px;
+}
+.details img {
+  border-radius: 50%;
+  display: inline;
+  width: 50px;
+  margin-left: 10px;
+}
+
+#post-body {
+  padding: 45px 60px;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  font-size: 16px;
+}
+#post-body img {
+  width: 100%;
+}
+ul.icons,
+ul.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+}
+ul.stats {
+  justify-content: start;
+}
+ul.stats > li,
+ul.icons > li {
+  padding: 10px;
+}
+ul.stats > li {
+  margin-right: 10px;
+  font-family: "Raleway", Helvetica;
+}
+#footer {
+  padding: 60px 0px;
+}
