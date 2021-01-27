@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -7,6 +7,7 @@ body {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  font-family: "Roboto", sans-serif;
 }
 #site-overlay.active {
   height: 100vw;
@@ -60,7 +61,7 @@ body {
 .site-interaction > div > ul {
   margin: 0px;
   padding: 0px 5px;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: black;
   font-weight: normal;
 }
