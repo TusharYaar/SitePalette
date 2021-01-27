@@ -91,6 +91,8 @@ div#header ul {
   text-transform: uppercase;
   float: left;
   margin-top: 20px;
+  font-size: 14px;
+  letter-spacing: 2px;
 }
 .details img {
   border-radius: 50%;
