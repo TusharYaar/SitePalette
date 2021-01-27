@@ -9,7 +9,7 @@ var templateData = [
     functionCallName: "previewDocument",
     id: "preview",
   },
-  { name: "BlogSite-Single Page", functionCallName: "singleBlogPage", id: "blogPost" },
+  { name: "BlogSite-Single Page", functionCallName: "singleBlogPost", id: "blogPost" },
 ];
 
 var currentColorData = [
