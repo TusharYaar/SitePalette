@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   checkWidth();
   loadSiteTemplateList();
-  loadColorSelectList();
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -46,12 +45,36 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       var id = this.parentElement.attributes["for"].value;
       this.classList.toggle("locked");
-      console.log(id);
+      // console.log(id);
       arr = currentColorData.map((e) => {
-        if (id === e.id) e.locked = !e.locked;
-        return e;
+        if (id === e.id) {
+          e.locked = !e.locked;
+          if (e.locked) {
+            id = e.id;
+            img = document.querySelector(`#${id}-parent img.lock-icon`);
+            img.setAttribute("src", lockedIcon);
+          } else img.setAttribute("src", lockIcon);
+          return e;
+        }
       });
-      console.log(arr);
+      // console.log(arr);
+    });
+  });
+  document.querySelectorAll(".about-icon").forEach(function (element) {
+    var hover = document.querySelector("#change-color-about-hover");
+    element.addEventListener("mouseenter", function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      hover.style.top = e.pageY + "px";
+      hover.style.left = e.pageX - 200 + "px";
+      var id = this.parentElement.attributes["for"].value.slice(5);
+      parseInt(id);
+      // console.log(e.pageX);
+      hover.style.display = "block";
+      hover.innerHTML = basicColorMenu[id - 1].elements;
+    });
+    element.addEventListener("mouseleave", function (e) {
+      hover.style.display = "none";
     });
   });
 });
@@ -96,28 +119,19 @@ function getRandomColorData() {
   });
   applyBasicColor();
 }
-function loadColorSelectList() {
-  var ul = document.getElementById("change-color-list-basic");
-  var element;
-  ul.innerHTML = "";
-  currentColorData.forEach(function (data) {
-    element = `<li id="${data.id}-parent"><label for="${data.id}">${data.name} <span class="color-preview"></span>${copyIcon}</label><input type="text" id="${data.id}" /><label for="${data.id}">${lockIcon}</label></li>`;
-    ul.insertAdjacentHTML("beforeend", element);
-  });
-}
 function applyBasicColor() {
   currentColorData.forEach(function (color, index) {
     if (color.id === basicColorMenu[index].id) {
       var type = basicColorMenu[index].type;
       basicColorMenu[index].elements.forEach(function (element) {
-        console.log(element);
+        // console.log(element);
         setClassColor(element, color.color, type);
       });
     }
   });
 }
 function setClassColor(clas, color, type) {
-  console.log(`calling for ${clas} to set ${type} ${color}`);
+  // console.log(`calling for ${clas} to set ${type} ${color}`);
   document.querySelectorAll(`.${clas}`).forEach(function (item) {
     item.style[type] = `#${color}`;
   });

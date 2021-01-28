@@ -11,12 +11,14 @@
   </head>
 
   <body>
-    <!-- OverLay And Messages -->
-    <div id="site-overlay"></div>
+    <!-- OverLay-->
+    <div id="site-overlay">
+      <p>The Screen seems a bit toooooo small for the site to work properly. Please switch to a bigger display to expericence the site properly.</p>
+    </div>
     <!-- ======================================== -->
     <!-- About Site interaction menu  -->
     <!-- ======================================== -->
-    <div id="site-template"></div>
+    <div id="site-template" class="sc-body"></div>
     <div class="site-interaction" id="site-about">
       <img src="./assests/icons/about.svg" alt="about" title="about" />
       <div>
@@ -40,11 +42,29 @@
     <!-- ======================================== -->
     <!-- Change color Site interaction menu     -->
     <!-- ======================================== -->
+    <div id="change-color-about-hover"></div>
     <div class="site-interaction" id="change-color">
       <img src="./assests/icons/color.svg" alt="Color" title="Change Color" />
       <div>
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
-        <ul id="change-color-list-basic" class="color-list-menu active"></ul>
+        <ul id="change-color-list-basic" class="color-list-menu active">
+          <li></li>
+          <li id="color1-parent">
+            <label for="color1"><img src="./assests/icons/help-circle.svg" class="about-icon" alt="?" /> Text <span class="color-preview"></span><img src="./assests/icons/copy.svg" class="copy-icon" alt="C" /></label><input type="text" id="color1" /><label for="color1"><img src="./assests/icons/lock.svg" class="lock-icon" alt="L" /></label>
+          </li>
+          <li id="color2-parent">
+            <label for="color2"><img src="./assests/icons/help-circle.svg" class="about-icon" alt="?" /> Background <span class="color-preview"></span><img src="./assests/icons/copy.svg" class="copy-icon" alt="C" /></label><input type="text" id="color2" /><label for="color2"><img src="./assests/icons/lock.svg" class="lock-icon" alt="L" /></label>
+          </li>
+          <li id="color3-parent">
+            <label for="color3"><img src="./assests/icons/help-circle.svg" class="about-icon" alt="?" /> Body <span class="color-preview"></span><img src="./assests/icons/copy.svg" class="copy-icon" alt="C" /></label><input type="text" id="color3" /><label for="color3"><img src="./assests/icons/lock.svg" class="lock-icon" alt="L" /></label>
+          </li>
+          <li id="color4-parent">
+            <label for="color4"><img src="./assests/icons/help-circle.svg" class="about-icon" alt="?" /> Button <span class="color-preview"></span><img src="./assests/icons/copy.svg" class="copy-icon" alt="C" /></label><input type="text" id="color4" /><label for="color4"><img src="./assests/icons/lock.svg" class="lock-icon" alt="L" /></label>
+          </li>
+          <li id="color5-parent">
+            <label for="color5"><img src="./assests/icons/help-circle.svg" class="about-icon" alt="?" /> Something <span class="color-preview"></span><img src="./assests/icons/copy.svg" class="copy-icon" alt="C" /></label><input type="text" id="color5" /><label for="color5"><img src="./assests/icons/lock.svg" class="lock-icon" alt="L" /></label>
+          </li>
+        </ul>
         <ul id="change-color-list-advance" class="color-list-menu block"></ul>
         <button onclick="getRandomColorData()" class="site-interaction-button">Random Colors</button>
         <button class="site-interaction-button" onclick="toggleAdvanceColorEdit()">Advanced Options</button>

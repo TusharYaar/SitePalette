@@ -9,10 +9,18 @@ body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
 }
+#site-overlay {
+  display: none;
+  overflow: hidden;
+}
 #site-overlay.active {
-  height: 100vw;
-  width: 100vh;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
   background-color: grey;
+  z-index: 1000;
+  display: block;
 }
 #site-template {
   width: 100%;
@@ -30,6 +38,7 @@ body {
   position: absolute;
   overflow: hidden;
   display: inline;
+  z-index: 90;
 }
 .site-interaction.active,
 .site-interaction.active:hover {
@@ -83,7 +92,18 @@ body {
 }
 #change-color.active {
   height: 350px;
-  width: 350px;
+  width: 380px;
+}
+#change-color-about-hover {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  background-color: rgba(255, 166, 0, 0.425);
+  z-index: 100;
+  display: none;
+  border-radius: 7px;
+  border: 2px solid rgb(34, 32, 32);
+  padding: 5px;
 }
 #change-color ul,
 #change-template ul {
@@ -140,7 +160,12 @@ body {
   stroke: #fbc7c3;
   margin: 0px 5px;
 }
-
+.lock-icon,
+.copy-icon,
+.about-icon,
+.close-icon {
+  cursor: pointer;
+}
 /* ======================================= */
 /* BUTTONS */
 /* ======================================= */
