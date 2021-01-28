@@ -1,8 +1,11 @@
+const hover = document.querySelector("#change-color-about-hover");
+var showClass = false;
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
     if (document.body.clientWidth < 458) document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
+
   checkWidth();
   loadSiteTemplateList();
   // function to add active class to the interaction buttons
@@ -61,21 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   document.querySelectorAll(".about-icon").forEach(function (element) {
-    var hover = document.querySelector("#change-color-about-hover");
-    element.addEventListener("mouseenter", function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      hover.style.top = e.pageY + "px";
-      hover.style.left = e.pageX - 200 + "px";
-      var id = this.parentElement.attributes["for"].value.slice(5);
-      parseInt(id);
-      // console.log(e.pageX);
-      hover.style.display = "block";
-      hover.innerHTML = basicColorMenu[id - 1].elements;
-    });
-    element.addEventListener("mouseleave", function (e) {
-      hover.style.display = "none";
-    });
+    id = element.parentElement.attributes["for"].value.slice(5);
+    parseInt(id);
+    showHoverBox(element, basicColorMenu[id - 1].elements);
   });
 });
 // Function to remove class from all the elements with same selector and the class
@@ -103,6 +94,9 @@ function loadTemplate(page) {
 
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
+    if (showClass) {
+      showClassOnHover();
+    }
   };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
@@ -124,7 +118,6 @@ function applyBasicColor() {
     if (color.id === basicColorMenu[index].id) {
       var type = basicColorMenu[index].type;
       basicColorMenu[index].elements.forEach(function (element) {
-        // console.log(element);
         setClassColor(element, color.color, type);
       });
     }
@@ -135,4 +128,47 @@ function setClassColor(clas, color, type) {
   document.querySelectorAll(`.${clas}`).forEach(function (item) {
     item.style[type] = `#${color}`;
   });
+}
+function allSCComponents(wantClass) {
+  ids = [];
+  basicColorMenu.forEach(function (item) {
+    d = item.elements.map(function (ele) {
+      if (wantClass) return `.${ele}`;
+      else return ele;
+    });
+    ids = ids.concat(d);
+  });
+  idsSet = new Set(ids);
+  ids = Array.from(idsSet);
+  return ids;
+}
+function showClassOnHover() {
+  ids = allSCComponents(true);
+  val = ids.join(", ");
+  document.querySelectorAll(val).forEach(function (ele) {
+    showHoverBox(ele, ele.classList);
+  });
+}
+
+function showHoverBox(element, content) {
+  element.addEventListener("mousemove", function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    hover.style.top = e.pageY + "px";
+    var left = e.pageX - 200;
+    if (left < 10) left += 200;
+    hover.style.left = left + "px";
+    hover.style.display = "block";
+    hover.innerHTML = content;
+  });
+  element.addEventListener("mouseleave", function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    hover.style.display = "none";
+  });
+}
+
+function changeClassHoverState() {
+  box = document.getElementById("checkBox-classHover");
+  showClass = box.checked;
 }
