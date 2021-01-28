@@ -101,15 +101,18 @@ function loadTemplate(page) {
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 function getRandomColorData() {
   var value = Math.floor(Math.random() * colorData.length);
+  var colors = [];
   colorData[value].forEach(function (color, index) {
     if (index < 5) {
       if (!currentColorData[index].locked) {
         currentColorData[index].color = color;
         document.querySelector(`#color${index + 1}`).value = `#${color}`;
         document.querySelector(`#color${index + 1}-parent > label> span`).style.backgroundColor = `#${color}`;
-      }
+        colors.push(color);
+      } else colors.push(currentColorData[index].color);
     }
   });
+  colorHistory.push(colors);
   applyBasicColor();
 }
 function applyBasicColor() {

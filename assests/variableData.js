@@ -26,3 +26,4 @@ var basicColorMenu = [
   { id: "color4", elements: ["sc-button1", "sc-button2", "sc-button3"], type: "backgroundColor" },
   { id: "color5", elements: ["sc-something", "sc-p", "icon-brand", "icon-special"], type: "color" },
 ];
+var colorHistory = [];
