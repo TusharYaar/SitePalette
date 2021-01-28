@@ -27,3 +27,4 @@ var basicColorMenu = [
   { id: "color5", elements: ["sc-something", "sc-p", "icon-brand", "icon-special"], type: "color" },
 ];
 var colorHistory = [];
+var savedColorData = localStorage.getItem("savedColorData") || [];

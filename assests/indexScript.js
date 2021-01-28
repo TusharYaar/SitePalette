@@ -177,3 +177,30 @@ function changeClassHoverState() {
   box = document.getElementById("checkBox-classHover");
   showClass = box.checked;
 }
+function saveThisColor() {
+  var arr = currentColorData.map((data) => {
+    return data.color;
+  });
+  saveColor(arr);
+}
+function saveColor(color) {
+  existingColors = [];
+  if (localStorage.length != 0) var existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
+  if (!isColorAlreadySaved(existingColors, color)) existingColors.push(color);
+  console.log(existingColors);
+  var obj = {
+    updated: Date.now(),
+    colors: existingColors,
+  };
+  localStorage.setItem("savedColorData", JSON.stringify(obj));
+}
+
+function isColorAlreadySaved(existingColors, newColors) {
+  for (let i = 0; i < existingColors.length; i++) {
+    if (JSON.stringify(existingColors[i]) === JSON.stringify(newColors)) {
+      console.log("the color is already present");
+      return true;
+    }
+  }
+  return false;
+}
