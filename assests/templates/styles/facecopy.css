@@ -2,10 +2,215 @@
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 60px;
-  background-color: black;
+  height: 65px;
+  background-color: orange;
   display: flex;
-  padding: 5px 10px;
+  padding: 0px 10px;
   justify-content: space-between;
   color: white;
+  border-bottom: 2px solid grey;
+}
+.navbar > div {
+  height: auto;
+}
+#brand-name {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.navbar > div > input {
+  width: 100%;
+  margin: 0px 10px;
+  border-radius: 50px;
+  border: 0px;
+}
+#navbar-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 10px 10px 0px 10px;
+  height: 50px;
+}
+#navbar-icons > li {
+  margin: 0px 50px;
+  font-size: 30px;
+}
+#navbar-profile-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px;
+  height: 60px;
+}
+#navbar-profile-icons > li {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  padding: 10px 0px;
+  text-align: center;
+  margin: 5px;
+}
+#navbar-profile-icons > li#profile-pic-icon {
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
+#body {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.site-section {
+  height: auto;
+  width: 800px;
+  overflow-y: auto;
+}
+#options-ul {
+  padding: 10px;
+  margin-top: 0px;
+}
+.site-section li {
+  margin: 0px 0px 30px 0px;
+}
+.site-section li > img {
+  vertical-align: middle;
+}
+#feed-section {
+  height: 100%;
+  width: 100%;
+  padding: 10px 30px;
+}
+#stories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+.stories-element {
+  background-image: url("https://picsum.photos/120/200");
+  height: 200px;
+  width: 120px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 4px solid darkblue;
+}
+#your-update,
+#create-room {
+  margin: 20px 0px;
+  background-color: rgb(171, 186, 233);
+  padding: 15px;
+  border-radius: 10px;
+}
+#your-update img,
+#create-room img {
+  vertical-align: middle;
+}
+#on-your-mind {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 2px solid grey;
+}
+#on-your-mind input {
+  width: 100%;
+  margin: 0px 10px;
+  border-radius: 50px;
+  border: 0px;
+}
+#reactions > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  padding-bottom: 0px;
+  margin: 0px;
+  height: 70px;
+}
+#create-room {
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+}
+#create-room > button {
+  height: 50px;
+  width: 250px;
+  border-radius: 50px;
+  font-size: 16px;
+  border: 0px;
+}
+#create-room > ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  margin: 0px;
+}
+#posts > .post > img {
+  width: 100%;
+  height: auto;
+}
+.post {
+  padding: 20px;
+  background-color: #abbae9;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+.post > .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+.post > .details img {
+  vertical-align: middle;
+  margin: 0px 10px;
+}
+.post > .details > div {
+  display: flex;
+}
+.post > .details > div > span {
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+}
+.post > .details .insmall {
+  font-size: 14px;
+}
+.post .likes {
+  margin: 10px 0px;
+  margin-bottom: 0px;
+}
+.post > .icons > ul,
+.post .your-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0px 15px;
+}
+.post > .icons > ul {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  padding-top: 10px;
+  height: 50px;
+  font-size: 20px;
+}
+.post img {
+  vertical-align: middle;
+}
+.post > div input {
+  width: 100%;
+  border-radius: 50px;
+  margin: 0px 20px;
+  border: 0px;
+}
+.post > .your-comment {
+  margin-top: 20px;
 }
