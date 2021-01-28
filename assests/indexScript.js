@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".about-icon").forEach(function (element) {
     id = element.parentElement.attributes["for"].value.slice(5);
     parseInt(id);
-    showHoverBox(element, basicColorMenu[id - 1].elements);
+    showHoverBox(element, basicColorMenu[id - 1].elements, false);
   });
 });
 // Function to remove class from all the elements with same selector and the class
@@ -94,9 +94,8 @@ function loadTemplate(page) {
 
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
-    if (showClass) {
-      showClassOnHover();
-    }
+
+    showClassOnHover();
   };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
@@ -146,11 +145,11 @@ function showClassOnHover() {
   ids = allSCComponents(true);
   val = ids.join(", ");
   document.querySelectorAll(val).forEach(function (ele) {
-    showHoverBox(ele, ele.classList);
+    showHoverBox(ele, ele.classList, true);
   });
 }
 
-function showHoverBox(element, content) {
+function showHoverBox(element, content, condition) {
   element.addEventListener("mousemove", function (e) {
     e.stopPropagation();
     e.preventDefault();
@@ -158,7 +157,10 @@ function showHoverBox(element, content) {
     var left = e.pageX - 200;
     if (left < 10) left += 200;
     hover.style.left = left + "px";
-    hover.style.display = "block";
+
+    if (condition) {
+      if (showClass) hover.style.display = "block";
+    } else hover.style.display = "block";
     hover.innerHTML = content;
   });
   element.addEventListener("mouseleave", function (e) {
