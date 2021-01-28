@@ -2,7 +2,7 @@ const hover = document.querySelector("#change-color-about-hover");
 var showClass = false;
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
-    if (document.body.clientWidth < 458) document.querySelector("#site-overlay").classList.add("active");
+    if (document.body.clientWidth < 558) document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
 
