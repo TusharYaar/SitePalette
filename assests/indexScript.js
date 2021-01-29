@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   checkWidth();
   loadSiteTemplateList();
+  showSiteMessage("This Site pages are NOT responsive YET", true);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 90);
-      if (elementId != "saved-color") menu.classList.remove("active");
+      if (elementId != "saved-color") savedColorMenu.classList.remove("active");
       setTimeout(() => {
         this.children[0].classList.add("hide");
       }, 90);
@@ -29,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".close-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
-      menu.classList.remove("active");
+      savedColorMenu.classList.remove("active");
       removeClass(`#${this.parentElement.parentElement.id}`, "active");
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 250);
-      menu.classList.remove();
+      savedColorMenu.classList.remove();
     });
   });
   document.querySelectorAll(".copy-icon").forEach(function (element) {
@@ -219,8 +220,8 @@ function isColorAlreadySaved(existingColors, newColors) {
 document.querySelector("#saved-colors").addEventListener("click", getSavedColors);
 function getSavedColors() {
   var obj = JSON.parse(localStorage.getItem("savedColorData"));
-  if (obj) showSavedColors(obj.colors);
-  else document.querySelector("#saved-colors-list").insertAdjacentHTML("beforeend", `<li>It Seems You dont have any saved color. Try by saving one</li>`);
+
+  if (obj && obj.colors.length > 0) showSavedColors(obj.colors);
 }
 
 function showSavedColors(AllColors) {
@@ -254,15 +255,15 @@ function addSavedMenu() {
   document.querySelectorAll(".save-color-menu-icon").forEach(function (item) {
     item.addEventListener("click", function (e) {
       e.stopPropagation();
-      menu.style.left = item.offsetLeft + this.offsetParent.offsetLeft - 171 + 25 + "px";
-      menu.style.top = item.offsetTop + this.offsetParent.offsetTop - 5 + "px";
-      menu.classList.toggle("active");
-      menu.setAttribute("data", item.parentElement.getAttribute("id"));
+      savedColorMenu.style.left = item.offsetLeft + this.offsetParent.offsetLeft - 171 + 25 + "px";
+      savedColorMenu.style.top = item.offsetTop + this.offsetParent.offsetTop - 5 + "px";
+      savedColorMenu.classList.toggle("active");
+      savedColorMenu.setAttribute("data", item.parentElement.getAttribute("id"));
     });
   });
 }
 function deleteSavedColors() {
-  var id = menu.getAttribute("data").slice(5);
+  var id = savedColorMenu.getAttribute("data").slice(5);
   id = parseInt(id);
   var existingColors = [];
   var updatedExistingColors = [];
@@ -275,19 +276,19 @@ function deleteSavedColors() {
     colors: updatedExistingColors,
   };
   localStorage.setItem("savedColorData", JSON.stringify(obj));
-  menu.classList.remove("active");
+  savedColorMenu.classList.remove("active");
   showSavedColors(updatedExistingColors);
   showSiteMessage("Your palette has been deleted", true);
 }
 
 function applySavedColors() {
-  var id = menu.getAttribute("data").slice(5);
+  var id = savedColorMenu.getAttribute("data").slice(5);
   id = parseInt(id);
   var colors;
   var existingColors = [];
   existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
   colors = existingColors[id];
-  menu.classList.remove("active");
+  savedColorMenu.classList.remove("active");
   setColorInputValue(colors);
   showSiteMessage("Saved Colors Reloaded", true);
 }

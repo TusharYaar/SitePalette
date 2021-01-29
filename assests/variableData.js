@@ -29,7 +29,7 @@ var basicColorMenu = [
 ];
 var colorHistory = [];
 const hover = document.querySelector("#change-color-about-hover");
-const menu = document.querySelector("#saved-color-menu-box");
+const savedColorMenu = document.querySelector("#saved-color-menu-box");
 var showClass = false;
 var siteInteractionButtons = ["site-about", "saved-colors", "change-template", "change-color"];
 const messageBox = document.querySelector("#site-messages");

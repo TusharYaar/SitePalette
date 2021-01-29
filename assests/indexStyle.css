@@ -178,7 +178,8 @@ body {
   right: 250px;
   background-color: #ffea00;
 }
-#saved-colors.active {
+#saved-colors.active,
+#colors-history.active {
   height: 200px;
   width: 300px;
   overflow-y: auto;
@@ -204,7 +205,8 @@ body {
   -ms-transform: translateX(0px) translateY(-30px);
   -webkit-transform: translate(0, -30px);
 }
-#saved-colors-list > li {
+#saved-colors-list > li,
+#colors-history-list > li {
   display: flex;
   flex-direction: row;
   width: auto;
@@ -216,6 +218,14 @@ body {
   width: 30px;
   border-radius: 10px;
 }
+
+#colors-history {
+  position: fixed;
+  bottom: 50px;
+  right: 350px;
+  background-color: rgb(75, 111, 230);
+}
+
 /* ================================ */
 /* ICONS */
 /* =============================== */

@@ -10,10 +10,11 @@ Check The developement here [https://tusharyaar.github.io/SitePalette/](https://
 - [x] Copy Color
 - [x] Change Color in the Html page
 - [x] Lock A Color
+- [x] Save feature
 
 # TO DO:
 
 - [ ] All of Advance features
 - [ ] template Pages (2 Done)
-- [ ] Save feature
+
 - [ ] Undo Button
