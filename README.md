@@ -8,10 +8,12 @@ Check The developement here [https://tusharyaar.github.io/SitePalette/](https://
 - [x] Get random Color data
 - [x] Close the Site Interaction Box
 - [x] Copy Color
+- [x] Change Color in the Html page
+- [x] Lock A Color
 
 # TO DO:
 
-- [ ] Change Color in the Html page
-- [ ] Lock A Color
 - [ ] All of Advance features
-- [ ] template Pages
+- [ ] template Pages (2 Done)
+- [ ] Save feature
+- [ ] Undo Button

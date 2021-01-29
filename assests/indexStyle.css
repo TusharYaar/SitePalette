@@ -158,11 +158,29 @@ body {
   width: 300px;
   overflow-y: auto;
 }
+#saved-color-menu-box {
+  height: 0px;
+  width: 171px;
+  position: absolute;
+  background-color: orange;
+  z-index: 1000;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+#saved-color-menu-box.active {
+  height: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  transform: translate(0, -30px);
+  display: block;
+  transition: all 0.3s;
+}
 #saved-colors-list > li {
   display: flex;
   flex-direction: row;
   width: auto;
   justify-content: space-between;
+  margin: 10px 0px;
 }
 .saved-color-item {
   height: 30px;

@@ -9,7 +9,7 @@ var templateData = [
     functionCallName: "previewDocument",
     id: "preview",
   },
-  { name: "BlogSite-Single Page", functionCallName: "singleBlogPost", id: "blogPost" },
+  { name: "BlogSite Single Page", functionCallName: "singleBlogPost", id: "blogPost" },
 ];
 
 var currentColorData = [
@@ -28,3 +28,7 @@ var basicColorMenu = [
   { id: "color4", elements: ["sc-background", "sc-card", "sc-navbar", "sc-card2"], type: "borderColor" },
 ];
 var colorHistory = [];
+const hover = document.querySelector("#change-color-about-hover");
+var menu = document.querySelector("#saved-color-menu-box");
+var showClass = false;
+var siteInteractionButtons = ["site-about", "saved-colors", "change-template", "change-color"];

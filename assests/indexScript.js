@@ -1,5 +1,3 @@
-const hover = document.querySelector("#change-color-about-hover");
-var showClass = false;
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
     if (document.body.clientWidth < 558) document.querySelector("#site-overlay").classList.add("active");
@@ -11,12 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
-      e.stopPropagation();
-      removeClass(".site-interaction", "active");
+      var elementId = this.getAttribute("id");
+      console.log(elementId);
+      siteInteractionButtons.forEach(function (button) {
+        if (elementId != button) {
+          removeClass(`#${button}`, "active");
+        }
+      });
       this.classList.add("active");
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 90);
+      if (elementId != "saved-color") menu.classList.remove("active");
       setTimeout(() => {
         this.children[0].classList.add("hide");
       }, 100);
@@ -26,17 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".close-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
-      e.preventDefault();
+      menu.classList.remove("active");
       removeClass(`#${this.parentElement.parentElement.id}`, "active");
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 250);
+      menu.classList.remove();
     });
   });
   document.querySelectorAll(".copy-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
-      e.preventDefault();
       var id = this.parentElement.attributes["for"].value;
       document.getElementById(id).select();
       document.execCommand("copy");
@@ -65,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   document.querySelectorAll(".about-icon").forEach(function (element) {
     id = element.parentElement.attributes["for"].value.slice(5);
-    parseInt(id);
+    id = parseInt(id);
     showHoverBox(element, basicColorMenu[id - 1].elements, false);
   });
 });
@@ -101,8 +105,12 @@ function loadTemplate(page) {
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 function getRandomColorData() {
   var value = Math.floor(Math.random() * colorData.length);
+  setColorInputValue(colorData[value]);
+}
+function setColorInputValue(colorsArray) {
   var colors = [];
-  colorData[value].forEach(function (color, index) {
+  console.log(colorsArray);
+  colorsArray.forEach(function (color, index) {
     if (index < 5) {
       if (!currentColorData[index].locked) {
         currentColorData[index].color = color;
@@ -115,13 +123,11 @@ function getRandomColorData() {
   colorHistory.push(colors);
   applyBasicColor();
 }
-
 function applyBasicColor() {
   var type;
   basicColorMenu.forEach(function (element, index) {
     for (i = 0; i < currentColorData.length; i++) {
       if (element.id === currentColorData[i].id) {
-        console.log(currentColorData[i].id);
         type = element.type;
         element.elements.forEach(function (element) {
           setClassColor(element, currentColorData[i].color, type);
@@ -189,10 +195,9 @@ function saveThisColor() {
   saveColor(arr);
 }
 function saveColor(color) {
-  existingColors = [];
+  var existingColors = [];
   if (localStorage.length != 0) var existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
   if (!isColorAlreadySaved(existingColors, color)) existingColors.push(color);
-  console.log(existingColors);
   var obj = {
     updated: Date.now(),
     colors: existingColors,
@@ -221,8 +226,10 @@ function showSavedColors(AllColors) {
   var div;
   var img = document.createElement("img");
   img.setAttribute("src", "./assests/icons/menu.svg");
-  AllColors.forEach(function (colors) {
+  document.querySelector("#saved-colors-list").innerHTML = "";
+  AllColors.forEach(function (colors, index) {
     li = document.createElement("li");
+    li.setAttribute("id", `saved${index}`);
     colors.forEach(function (color) {
       div = document.createElement("div");
       div.style.backgroundColor = `#${color}`;
@@ -230,14 +237,57 @@ function showSavedColors(AllColors) {
       li.insertAdjacentElement("beforeend", div);
     });
     li.insertAdjacentHTML("beforeend", `<img src="./assests/icons/menu.svg" alt=":" title="Menu" class="save-color-menu-icon" />`);
-    document.querySelector("#saved-colors-list").innerHTML = "";
     document.querySelector("#saved-colors-list").insertAdjacentElement("beforeend", li);
   });
   addHoverOnColorItem();
+  addSavedMenu();
 }
 
 function addHoverOnColorItem() {
   document.querySelectorAll(".saved-color-item").forEach(function (item) {
     showHoverBox(item, item.style.backgroundColor, false);
   });
+}
+function addSavedMenu() {
+  document.querySelectorAll(".save-color-menu-icon").forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      e.stopPropagation();
+      menu.style.left = item.offsetLeft + this.offsetParent.offsetLeft - 171 + 25 + "px";
+      menu.style.top = item.offsetTop + this.offsetParent.offsetTop - 5 + "px";
+      menu.classList.toggle("active");
+      menu.setAttribute("data", item.parentElement.getAttribute("id"));
+      console.log(item.parentElement.getAttribute("id"));
+    });
+  });
+}
+function deleteSavedColors() {
+  var id = menu.getAttribute("data").slice(5);
+  id = parseInt(id);
+  var existingColors = [];
+  var updatedExistingColors = [];
+  existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
+  updatedExistingColors = existingColors.filter(function (color, index) {
+    if (index != id) return color;
+  });
+  var obj = {
+    updated: Date.now(),
+    colors: updatedExistingColors,
+  };
+  localStorage.setItem("savedColorData", JSON.stringify(obj));
+  menu.classList.remove("active");
+  showSavedColors(updatedExistingColors);
+}
+
+function applySavedColors() {
+  var id = menu.getAttribute("data").slice(5);
+  id = parseInt(id);
+  var colors;
+  var existingColors = [];
+  existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
+  colors = existingColors.filter(function (color, index) {
+    if (!index == id) return color;
+  });
+  menu.classList.remove("active");
+  // menu.classList.remove("active");
+  setColorInputValue(colors[0]);
 }
