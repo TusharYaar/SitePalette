@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
       var elementId = this.getAttribute("id");
-      console.log(elementId);
       siteInteractionButtons.forEach(function (button) {
         if (elementId != button) {
           removeClass(`#${button}`, "active");
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (elementId != "saved-color") menu.classList.remove("active");
       setTimeout(() => {
         this.children[0].classList.add("hide");
-      }, 100);
+      }, 90);
     });
   });
 
