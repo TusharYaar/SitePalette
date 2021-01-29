@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       var id = this.parentElement.attributes["for"].value;
       this.classList.toggle("locked");
-      // console.log(id);
       arr = currentColorData.map((e) => {
         if (id === e.id) {
           e.locked = !e.locked;
@@ -63,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
           return e;
         }
       });
-      // console.log(arr);
     });
   });
   document.querySelectorAll(".about-icon").forEach(function (element) {
@@ -89,6 +87,7 @@ function loadSiteTemplateList() {
 }
 
 function loadTemplate(page) {
+  showSiteMessage(`Loading ${page}, please wait...`, false);
   document.querySelector("#site-template-css").setAttribute("href", `assests/templates/styles/${page}.css`);
   var xhr = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
@@ -97,7 +96,7 @@ function loadTemplate(page) {
 
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
-
+    messageBox.classList.remove("active");
     showClassOnHover();
   };
 }
@@ -108,7 +107,6 @@ function getRandomColorData() {
 }
 function setColorInputValue(colorsArray) {
   var colors = [];
-  console.log(colorsArray);
   colorsArray.forEach(function (color, index) {
     if (index < 5) {
       if (!currentColorData[index].locked) {
@@ -186,6 +184,7 @@ function showHoverBox(element, content, condition) {
 function changeClassHoverState() {
   box = document.getElementById("checkBox-classHover");
   showClass = box.checked;
+  showSiteMessage(`Display Class on hover ${showClass ? "Activated" : "Deactivated"}`, true);
 }
 function saveThisColor() {
   var arr = currentColorData.map((data) => {
@@ -208,6 +207,7 @@ function isColorAlreadySaved(existingColors, newColors) {
   for (let i = 0; i < existingColors.length; i++) {
     if (JSON.stringify(existingColors[i]) === JSON.stringify(newColors)) {
       console.log("the color is already present");
+      showSiteMessage("The Color Palette is already Saved", true);
       return true;
     }
   }
@@ -255,7 +255,6 @@ function addSavedMenu() {
       menu.style.top = item.offsetTop + this.offsetParent.offsetTop - 5 + "px";
       menu.classList.toggle("active");
       menu.setAttribute("data", item.parentElement.getAttribute("id"));
-      console.log(item.parentElement.getAttribute("id"));
     });
   });
 }
@@ -275,6 +274,7 @@ function deleteSavedColors() {
   localStorage.setItem("savedColorData", JSON.stringify(obj));
   menu.classList.remove("active");
   showSavedColors(updatedExistingColors);
+  showSiteMessage("Your palette has been deleted", true);
 }
 
 function applySavedColors() {
@@ -283,10 +283,19 @@ function applySavedColors() {
   var colors;
   var existingColors = [];
   existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
-  colors = existingColors.filter(function (color, index) {
-    if (!index == id) return color;
-  });
+  colors = existingColors[id];
   menu.classList.remove("active");
-  // menu.classList.remove("active");
-  setColorInputValue(colors[0]);
+  setColorInputValue(colors);
+  showSiteMessage("Saved Colors Reloaded", true);
+}
+
+function showSiteMessage(message, autoRemove) {
+  messageBox.textContent = message;
+  messageBox.classList.add("active");
+  if (messageBoxInterval) clearTimeout(messageBoxInterval);
+  if (autoRemove) {
+    cc = setTimeout(function () {
+      messageBox.classList.remove("active");
+    }, 1500);
+  }
 }
