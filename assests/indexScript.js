@@ -222,6 +222,9 @@ function getSavedColors() {
   var obj = JSON.parse(localStorage.getItem("savedColorData"));
 
   if (obj && obj.colors.length > 0) showSavedColors(obj.colors);
+  else {
+    document.querySelector("#saved-colors-list").innerHTML = "<li>It Seems You dont have any saved color. Try by saving one</li>";
+  }
 }
 
 function showSavedColors(AllColors) {
@@ -242,8 +245,8 @@ function showSavedColors(AllColors) {
     li.insertAdjacentHTML("beforeend", `<img src="./assests/icons/menu.svg" alt=":" title="Menu" class="save-color-menu-icon" />`);
     document.querySelector("#saved-colors-list").insertAdjacentElement("beforeend", li);
   });
-  addHoverOnColorItem();
   addSavedMenu();
+  addHoverOnColorItem();
 }
 
 function addHoverOnColorItem() {
@@ -252,6 +255,7 @@ function addHoverOnColorItem() {
   });
 }
 function addSavedMenu() {
+  console.log("called");
   document.querySelectorAll(".save-color-menu-icon").forEach(function (item) {
     item.addEventListener("click", function (e) {
       e.stopPropagation();
