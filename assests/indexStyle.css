@@ -185,12 +185,15 @@ body {
 }
 #saved-color-menu-box {
   height: 0px;
-  width: 171px;
+  width: 175px;
   position: absolute;
   background-color: orange;
   z-index: 1000;
   transition: all 0.3s;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 #saved-color-menu-box.active {
   height: 40px;

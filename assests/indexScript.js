@@ -195,12 +195,15 @@ function saveThisColor() {
 function saveColor(color) {
   var existingColors = [];
   if (localStorage.length != 0) var existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
-  if (!isColorAlreadySaved(existingColors, color)) existingColors.push(color);
-  var obj = {
-    updated: Date.now(),
-    colors: existingColors,
-  };
-  localStorage.setItem("savedColorData", JSON.stringify(obj));
+  if (!isColorAlreadySaved(existingColors, color)) {
+    existingColors.push(color);
+    var obj = {
+      updated: Date.now(),
+      colors: existingColors,
+    };
+    localStorage.setItem("savedColorData", JSON.stringify(obj));
+    showSiteMessage("Your Color Palette has been saved successfully", true);
+  }
 }
 
 function isColorAlreadySaved(existingColors, newColors) {
