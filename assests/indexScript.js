@@ -115,13 +115,28 @@ function getRandomColorData() {
   colorHistory.push(colors);
   applyBasicColor();
 }
+// function applyBasicColor() {
+//   currentColorData.forEach(function (color, index) {
+//     if (color.id === basicColorMenu[index].id) {
+//       var type = basicColorMenu[index].type;
+//       basicColorMenu[index].elements.forEach(function (element) {
+//         setClassColor(element, color.color, type);
+//       });
+//     }
+//   });
+// }
+
 function applyBasicColor() {
-  currentColorData.forEach(function (color, index) {
-    if (color.id === basicColorMenu[index].id) {
-      var type = basicColorMenu[index].type;
-      basicColorMenu[index].elements.forEach(function (element) {
-        setClassColor(element, color.color, type);
-      });
+  var type;
+  basicColorMenu.forEach(function (element, index) {
+    for (i = 0; i < currentColorData.length; i++) {
+      if (element.id === currentColorData[i].id) {
+        console.log(currentColorData[i].id);
+        type = element.type;
+        element.elements.forEach(function (element) {
+          setClassColor(element, currentColorData[i].color, type);
+        });
+      }
     }
   });
 }
