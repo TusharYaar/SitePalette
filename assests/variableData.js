@@ -28,4 +28,3 @@ var basicColorMenu = [
   { id: "color4", elements: ["sc-background", "sc-card", "sc-navbar", "sc-card2"], type: "borderColor" },
 ];
 var colorHistory = [];
-var savedColorData = localStorage.getItem("savedColorData") || [];

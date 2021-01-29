@@ -147,6 +147,28 @@ body {
   width: 300px;
 }
 
+#saved-colors {
+  position: fixed;
+  bottom: 50px;
+  right: 250px;
+  background-color: #ffea00;
+}
+#saved-colors.active {
+  height: 200px;
+  width: 300px;
+  overflow-y: auto;
+}
+#saved-colors-list > li {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-between;
+}
+.saved-color-item {
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+}
 /* ================================ */
 /* ICONS */
 /* =============================== */
