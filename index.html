@@ -34,12 +34,17 @@
     <!-- ============================= -->
     <!-- Show Color History -->
     <!-- ============================== -->
+    <div id="colors-history-menu-box">
+      <button class="site-interaction-button" onclick="event.stopPropagation(); applyHistoryColors()">Apply</button>
+    </div>
     <div class="site-interaction" id="colors-history">
       <img src="./assests/icons/undo.svg" alt="H" title="History" />
-      <div>
+      <div class="hide">
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
 
-        <ul id="colors-history-list"></ul>
+        <ul id="colors-history-list">
+          <li>Looks Like You havn't generated any Colors, what are you waiting for, an invitation !!!</li>
+        </ul>
       </div>
     </div>
 
@@ -52,7 +57,7 @@
     </div>
     <div class="site-interaction" id="saved-colors">
       <img src="./assests/icons/save.svg" alt="Save" title="View Saved Colors" />
-      <div>
+      <div class="hide">
         <img src="./assests/icons/close.svg" alt="X" title="close" class="close-icon" />
 
         <ul id="saved-colors-list">
