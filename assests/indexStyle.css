@@ -184,7 +184,8 @@ body {
   width: 300px;
   overflow-y: auto;
 }
-#saved-color-menu-box {
+#saved-color-menu-box,
+#colors-history-menu-box {
   height: 0px;
   width: 175px;
   position: absolute;
@@ -213,7 +214,8 @@ body {
   justify-content: space-between;
   margin: 10px 0px;
 }
-.saved-color-item {
+.saved-color-item,
+.colors-history-item {
   height: 30px;
   width: 30px;
   border-radius: 10px;
@@ -225,7 +227,24 @@ body {
   right: 350px;
   background-color: rgb(75, 111, 230);
 }
-
+#colors-history > div.hide,
+#saved-colors > div.hide {
+  display: none;
+}
+#colors-history-menu-box {
+  width: 90px;
+  justify-content: space-around;
+}
+#colors-history-menu-box.active {
+  height: 40px;
+  padding: 5px;
+  width: 90px;
+  border-radius: 10px;
+  transform: translate(0, -30px);
+  transition: all 0.3s;
+  -ms-transform: translateX(0px) translateY(-30px);
+  -webkit-transform: translate(0, -30px);
+}
 /* ================================ */
 /* ICONS */
 /* =============================== */
