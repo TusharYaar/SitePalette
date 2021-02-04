@@ -27,10 +27,12 @@ var basicColorMenu = [
   { id: "color5", elements: ["sc-something", "sc-p", "icon-brand", "icon-special"], type: "color" },
   { id: "color4", elements: ["sc-background", "sc-card", "sc-navbar", "sc-card2"], type: "borderColor" },
 ];
-var colorHistory = [];
+var colorsHistory = [];
 const hover = document.querySelector("#change-color-about-hover");
 const savedColorMenu = document.querySelector("#saved-color-menu-box");
+const colorsHistoryMenu = document.querySelector("#colors-history-menu-box");
 var showClass = false;
-var siteInteractionButtons = ["site-about", "saved-colors", "change-template", "change-color"];
+var siteInteractionButtons = ["site-about", "saved-colors", "change-template", "change-color", "colors-history"];
 const messageBox = document.querySelector("#site-messages");
+
 var messageBoxInterval;
