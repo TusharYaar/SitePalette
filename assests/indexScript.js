@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.body.clientWidth < 558) document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
-  getColorDataFileName();
-  checkWidth();
-  loadSiteTemplateList();
-  getSavedColors();
+  getColorDataFileName(); // Calls the function to get the random colorData file
+  checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
+  loadSiteTemplateList(); // Loads the site template list
+  getSavedColors(); // Calls the get saved color to get saved colors from localStorage
   showSiteMessage("This Site pages are NOT responsive YET", true);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
@@ -18,9 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
       this.classList.add("active");
+      // it removes the active class after a few milliseconds
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 90);
+      // checks the menu and removes class active from them if not required
       if (elementId != "saved-colors") {
         savedColorMenu.classList.remove("active");
         document.querySelector("#saved-colors > div").classList.add("hide");
@@ -38,13 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // document.querySelector("#colors-history").addEventListener("click", function () {
-  //   console.log(colorsHistory);
-  //   var ul = document.querySelector("#colors-history-list");
-  //   if (colorsHistory.length > 0) {
-  //   } else ul.innerHTML = "<li>Looks Like You havn't generated any Colors, what are you waiting for, an invitation !!!</li>";
-  // });
-
+  // Adds an event listener to every close icon on the page.
+  // Mostly the close icons in the site-interactions menu
   document.querySelectorAll(".close-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -56,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       savedColorMenu.classList.remove();
     });
   });
+
+  // Add event listener to copy icon in the random color box
   document.querySelectorAll(".copy-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -64,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.execCommand("copy");
     });
   });
+  // Add event listener to lock-icon in the random color
+  //  This toggles the image to a red color img and a white color image
+
   document.querySelectorAll(".lock-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+  // Add event Listeners to the about icons on the side of colors input to show on which classes that color is applied
   document.querySelectorAll(".about-icon").forEach(function (element) {
     id = element.parentElement.attributes["for"].value.slice(5);
     id = parseInt(id);
@@ -95,6 +98,8 @@ function removeClass(string, clas) {
     element.classList.remove(clas);
   });
 }
+// This function loads the list to change template from the data in templateData variable
+// Called only once
 function loadSiteTemplateList() {
   var ul = document.getElementById("change-template-list");
   var element;
@@ -104,7 +109,9 @@ function loadSiteTemplateList() {
     ul.insertAdjacentHTML("beforeend", element);
   });
 }
-
+// This function is called when an option is clicked in the templateBox
+// it accepts the filename of the option clicked and them loads the file into
+// It Makes a xhr
 function loadTemplate(page) {
   showSiteMessage(`Loading ${page}, please wait...`, false);
   document.querySelector("#site-template-css").setAttribute("href", `assests/templates/styles/${page}.css`);
@@ -112,7 +119,9 @@ function loadTemplate(page) {
   var url = `assests/templates/html/${page}.html`;
   xhr.open("GET", url);
   xhr.send();
-
+  // when xhr is completed, it removes the text loading
+  // Loads the recieved file and
+  //  calls the showClassOnHover fuction to add event listener to all the elements which has those classes
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
@@ -120,6 +129,8 @@ function loadTemplate(page) {
   };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
+//  It calls the setColorInputValue which apply color to the template(page)
+//  and changes the value in inputs in the random color box
 function getRandomColorData() {
   var value = Math.floor(Math.random() * colorData.length);
   setColorInputValue(colorData[value]);
@@ -127,7 +138,9 @@ function getRandomColorData() {
 function setColorInputValue(colorsArray) {
   var colors = [];
   colorsArray.forEach(function (color, index) {
+    // index is limited to 5 here
     if (index < 5) {
+      // Setting the value
       if (!currentColorData[index].locked) {
         currentColorData[index].color = color;
         document.querySelector(`#color${index + 1}`).value = `#${color}`;
@@ -136,10 +149,10 @@ function setColorInputValue(colorsArray) {
       } else colors.push(currentColorData[index].color);
     }
   });
-
+  // Checks if the color already saved in the colors history array , and if not, pushed the data to it
   if (!isColorAlreadySaved(colorsHistory, colors)) colorsHistory.push(colors);
-  getcolorsHistory();
-  applyBasicColor();
+  getcolorsHistory(); // calls the function to update the colors history box
+  applyBasicColor(); // Calls the function to apply the colors
 }
 function applyBasicColor() {
   var type;
