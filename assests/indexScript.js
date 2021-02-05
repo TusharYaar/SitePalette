@@ -196,15 +196,20 @@ function allSCComponents(wantClass) {
   ids = Array.from(idsSet);
   return ids;
 }
-
+// Function to add event listener to all sc-components
 function showClassOnHover() {
   ids = allSCComponents(true);
   val = ids.join(", ");
   document.querySelectorAll(val).forEach(function (ele) {
-    showHoverBox(ele, ele.classList, true);
+    showHoverBox(ele, ele.classList, true); // Class the function which actually add the hover box
   });
 }
 
+// function to add Hover box
+// Requires 3 parms
+//  1 the elements to add the hover box on
+// 2nd the content to display when it is hovered on that item
+// 3rd a  condition which requires the checkbox(showClass variable) to be ticked to show the class, true means it requires the checkbox to be checked
 function showHoverBox(element, content, condition) {
   element.addEventListener("mousemove", function (e) {
     e.stopPropagation();
@@ -400,6 +405,7 @@ function getcolorsHistory() {
   addHoverOnColorItem(".colors-history-item");
 }
 
+// function to get a randon colorDatafile
 function getColorDataFileName() {
   var suffix = Math.floor(Math.random() * numberOfColorDataFiles);
   var script = document.createElement("script");
