@@ -154,9 +154,11 @@ function setColorInputValue(colorsArray) {
   getcolorsHistory(); // calls the function to update the colors history box
   applyBasicColor(); // Calls the function to apply the colors
 }
+// it loops over  all the color and basic menu color arrays, to call the function to set colors
+// it takes care to provide correct class, color and type
 function applyBasicColor() {
   var type;
-  basicColorMenu.forEach(function (element, index) {
+  basicColorMenu.forEach(function (element) {
     for (i = 0; i < currentColorData.length; i++) {
       if (element.id === currentColorData[i].id) {
         type = element.type;
@@ -167,14 +169,22 @@ function applyBasicColor() {
     }
   });
 }
+// this function sets the color, accpeting 3 params
+// class to be set the color, actual color you want to set, type of property to apply color on(backgrounColor, color, border, etc)
 function setClassColor(clas, color, type) {
   // console.log(`calling for ${clas} to set ${type} ${color}`);
   document.querySelectorAll(`.${clas}`).forEach(function (item) {
     item.style[type] = `#${color}`;
   });
 }
+//  Function to give all the classes prsent in the basic color menu,
+// Accepts a parameter to give class as class
+//  default return "sc-component"
+//  if true, return .sc-component
+// return an array
 function allSCComponents(wantClass) {
-  ids = [];
+  var ids = [];
+  var d;
   basicColorMenu.forEach(function (item) {
     d = item.elements.map(function (ele) {
       if (wantClass) return `.${ele}`;
