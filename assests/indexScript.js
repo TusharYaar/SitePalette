@@ -196,6 +196,7 @@ function allSCComponents(wantClass) {
   ids = Array.from(idsSet);
   return ids;
 }
+
 function showClassOnHover() {
   ids = allSCComponents(true);
   val = ids.join(", ");
