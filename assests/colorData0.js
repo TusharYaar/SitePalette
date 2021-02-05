@@ -1,5 +1,6 @@
 // https://coolors.co/493657-ce7da5-bee5bf-dff3e3-efe2cf-ffd1ba
 // https://coolors.co/ee6352-08b2e3-efe9f4-a3c8b4-57a773-484d6d
+// Length 1329
 colorData = [
   ["644536", "b2675e", "c4a381", "bbd686", "eef1bd", "0f4c5c"],
   ["664e4c", "c1d37f", "e2d58b", "f0e2a3", "f9d4bb", "78a1bb"],
