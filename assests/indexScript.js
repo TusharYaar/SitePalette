@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.body.clientWidth < 558) document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
-
+  getColorDataFileName();
   checkWidth();
   loadSiteTemplateList();
   getSavedColors();
@@ -374,4 +374,12 @@ function getcolorsHistory() {
   });
   addColorHistoryMenu();
   addHoverOnColorItem(".colors-history-item");
+}
+
+function getColorDataFileName() {
+  var suffix = Math.floor(Math.random() * numberOfColorDataFiles);
+  var script = document.createElement("script");
+  script.setAttribute("src", `assests/colorData${suffix}.js`);
+  script.setAttribute("type", "text/javascript");
+  document.getElementsByTagName("head")[0].appendChild(script);
 }
