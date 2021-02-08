@@ -40,57 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Adds an event listener to every close icon on the page.
-  // Mostly the close icons in the site-interactions menu
-  document.querySelectorAll(".close-icon").forEach(function (element) {
-    element.addEventListener("click", function (e) {
-      e.stopPropagation();
-      savedColorMenu.classList.remove("active");
-      removeClass(`#${this.parentElement.parentElement.id}`, "active");
-      setTimeout(function () {
-        removeClass(`.site-interaction > img`, "hide");
-      }, 250);
-      savedColorMenu.classList.remove();
-    });
-  });
 
-  // Add event listener to copy icon in the random color box
-  document.querySelectorAll(".copy-icon").forEach(function (element) {
-    element.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var id = this.parentElement.attributes["for"].value;
-      document.getElementById(id).select();
-      document.execCommand("copy");
-    });
-  });
-  // Add event listener to lock-icon in the random color
-  //  This toggles the image to a red color img and a white color image
 
-  document.querySelectorAll(".lock-icon").forEach(function (element) {
-    element.addEventListener("click", function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      var id = this.parentElement.attributes["for"].value;
-      this.classList.toggle("locked");
-      arr = currentColorData.map((e) => {
-        if (id === e.id) {
-          e.locked = !e.locked;
-          if (e.locked) {
-            id = e.id;
-            img = document.querySelector(`#${id}-parent img.lock-icon`);
-            img.setAttribute("src", lockedIcon);
-          } else img.setAttribute("src", lockIcon);
-          return e;
-        }
-      });
-    });
-  });
-  // Add event Listeners to the about icons on the side of colors input to show on which classes that color is applied
-  document.querySelectorAll(".about-icon").forEach(function (element) {
-    id = element.parentElement.attributes["for"].value.slice(5);
-    id = parseInt(id);
-    showHoverBox(element, basicColorMenu[id - 1].elements, false);
-  });
+
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
