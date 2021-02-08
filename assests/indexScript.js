@@ -116,17 +116,27 @@ function loadTemplate(page) {
   showSiteMessage(`Loading ${page}, please wait...`, false);
   document.querySelector("#site-template-css").setAttribute("href", `assests/templates/styles/${page}.css`);
   var xhr = new XMLHttpRequest();
+  var xhr2 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
+  var url2 = `assests/templates/styles/${page}.css`;
   xhr.open("GET", url);
-  xhr.send();
+  xhr2.open("GET",url2);
+
+  xhr2.send();
   // when xhr is completed, it removes the text loading
   // Loads the recieved file and
   //  calls the showClassOnHover fuction to add event listener to all the elements which has those classes
+  
+  xhr2.onload = function(){
+    document.querySelector("#site-template-css").innerHTML = this.responseText;
+    xhr.send();
+
+}
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
     showClassOnHover();
-  };
+   };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 //  It calls the setColorInputValue which apply color to the template(page)
