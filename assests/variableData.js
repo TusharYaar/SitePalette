@@ -36,4 +36,4 @@ var siteInteractionButtons = ["site-about", "saved-colors", "change-template", "
 const messageBox = document.querySelector("#site-messages");
 
 var messageBoxInterval;
-const numberOfColorDataFiles = 2;
+const numberOfColorDataFiles = 3;
