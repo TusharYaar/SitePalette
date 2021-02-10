@@ -274,7 +274,6 @@ function addColorHistoryMenu() {
       // colorsHistoryMenu.style.top = item.offsetTop + this.offsetParent.offsetTop - 5 + "px";
       colorsHistoryMenu.style.left = coordinate.left - 65 + "px";
       colorsHistoryMenu.style.top = coordinate.top - 5 + "px";
-      console.log();
       colorsHistoryMenu.classList.toggle("active");
       colorsHistoryMenu.setAttribute("data", item.parentElement.getAttribute("id"));
     });
