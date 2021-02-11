@@ -249,10 +249,22 @@ body {
 /* ICONS */
 /* =============================== */
 .lock-icon {
-  stroke: #f6efe3;
+  font-size: 20px;
 }
-.lock-icon.locked {
-  stroke: darkblue;
+.lock-icon.fa-lock{
+  color:rgb(75, 111, 230);
+  /* animation: LockAnimation 0.3s linear; */
+}
+.lock-icon.fa-unlock {
+  color: green;
+  /* animation: LockAnimation 0.3s linear; */
+
+}
+@keyframes LockAnimation{
+  50%, 80% {
+  transform: translate(0, 5px);
+  }
+
 }
 .copy-icon {
   stroke: #fbc7c3;

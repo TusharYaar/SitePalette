@@ -29,19 +29,13 @@ document.querySelectorAll(".lock-icon").forEach(function (element) {
   element.addEventListener("click", function (e) {
     e.stopPropagation();
     e.preventDefault();
-    var id = this.parentElement.attributes["for"].value;
-    this.classList.toggle("locked");
-    arr = currentColorData.map((e) => {
-      if (id === e.id) {
-        e.locked = !e.locked;
-        if (e.locked) {
-          id = e.id;
-          img = document.querySelector(`#${id}-parent img.lock-icon`);
-          img.setAttribute("src", lockedIcon);
-        } else img.setAttribute("src", lockIcon);
-        return e;
-      }
-    });
+    if(this.classList.contains("fa-unlock"))
+    this.classList.replace("fa-unlock", "fa-lock");
+    else 
+    this.classList.replace("fa-lock", "fa-unlock");
+    this.classList.add("clicked");
+    var id = parseInt(this.getAttribute("parent-data"));
+    currentColorData[id-1].locked = !currentColorData[id-1].locked;
   });
 });
 
