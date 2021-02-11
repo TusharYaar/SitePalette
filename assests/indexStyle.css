@@ -248,7 +248,7 @@ body {
 /* ================================ */
 /* ICONS */
 /* =============================== */
-.lock-icon {
+.lock-icon,.copy-icon,.close-icon {
   font-size: 20px;
 }
 .lock-icon.fa-lock{
@@ -258,8 +258,8 @@ body {
 .lock-icon.fa-unlock {
   color: green;
   /* animation: LockAnimation 0.3s linear; */
-
 }
+
 @keyframes LockAnimation{
   50%, 80% {
   transform: translate(0, 5px);
