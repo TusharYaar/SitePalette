@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  showSiteMessage("This Site pages are NOT responsive YET", true);
+  showSiteMessage("This Site pages are NOT responsive YET", true,1500);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -196,7 +196,7 @@ function showHoverBox(element, content, condition) {
 function changeClassHoverState() {
   box = document.getElementById("checkBox-classHover");
   showClass = box.checked;
-  showSiteMessage(`Display Class on hover ${showClass ? "Activated" : "Deactivated"}`, true);
+  showSiteMessage(`Display Class on hover ${showClass ? "Activated" : "Deactivated"}`, true,1000);
 }
 function saveThisColor() {
   var arr = currentColorData.map((data) => {
@@ -215,10 +215,10 @@ function saveColor(color) {
       colors: existingColors,
     };
     localStorage.setItem("savedColorData", JSON.stringify(obj));
-    showSiteMessage("Your Color Palette has been saved successfully", true);
+    showSiteMessage("Your Color Palette has been saved successfully", true,1000);
     getSavedColors();
   } else {
-    showSiteMessage("The Color Palette is already Saved", true);
+    showSiteMessage("The Color Palette is already Saved", true,1000);
   }
 }
 
@@ -307,7 +307,7 @@ function deleteSavedColors() {
   localStorage.setItem("savedColorData", JSON.stringify(obj));
   savedColorMenu.classList.remove("active");
   showSavedColors(updatedExistingColors);
-  showSiteMessage("Your palette has been deleted", true);
+  showSiteMessage("Your palette has been deleted", true,1000);
   getSavedColors();
 }
 
@@ -320,7 +320,7 @@ function applySavedColors() {
   colors = existingColors[id];
   savedColorMenu.classList.remove("active");
   setColorInputValue(colors);
-  showSiteMessage("Saved Colors Reloaded", true);
+  showSiteMessage("Saved Colors Reloaded", true,700);
 }
 
 function applyHistoryColors() {
@@ -332,16 +332,16 @@ function applyHistoryColors() {
   colors = colorsHistory[id];
   savedColorMenu.classList.remove("active");
   setColorInputValue(colors);
-  showSiteMessage("History Colors Appplied", true);
+  showSiteMessage("History Colors Appplied", true,700);
 }
-function showSiteMessage(message, autoRemove) {
+function showSiteMessage(message, autoRemove,interval) {
   messageBox.textContent = message;
   messageBox.classList.add("active");
   if (messageBoxInterval) clearTimeout(messageBoxInterval);
   if (autoRemove) {
     cc = setTimeout(function () {
       messageBox.classList.remove("active");
-    }, 1500);
+    }, interval);
   }
 }
 
