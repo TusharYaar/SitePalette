@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation();
       var id = this.parentElement.attributes["for"].value;
       // console.log(id);
-      // showSiteMessage(document.getElementById(id).value, true, 800);
+      showSiteMessage(`Copied Color: ${document.getElementById(id).value}`, true, 800);
       document.getElementById(id).select();
       document.execCommand("copy");
     });
