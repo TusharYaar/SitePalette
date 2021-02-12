@@ -116,7 +116,7 @@ body {
   background-color: #52a7cc;
 }
 #change-color.active {
-  height: 410px;
+  height: 460px;
   width: 380px;
 }
 #change-color-about-hover {
@@ -248,8 +248,8 @@ body {
 /* ================================ */
 /* ICONS */
 /* =============================== */
-.lock-icon,.copy-icon,.close-icon {
-  font-size: 20px;
+.lock-icon,.copy-icon,.close-icon, .about-icon {
+  font-size: 24px;
 }
 .lock-icon.fa-lock{
   color:rgb(75, 111, 230);
@@ -270,6 +270,14 @@ body {
   stroke: #fbc7c3;
   margin: 0px 5px;
 }
+.random-icon-btn,.save-icon-btn {
+  padding: 0px 5px;
+  font-size: 14px;
+}
+.random-icon-btn.rotate {
+  animation: RRotate 0.4s linear 0s infinite ;
+  
+}
 .lock-icon,
 .copy-icon,
 .about-icon,
@@ -282,11 +290,37 @@ body {
 .btn {
   padding: 5px 20px;
   width: auto;
-  border-radius: 5px;
+
 }
 .site-interaction-button {
-  padding: 5px 20px;
+  padding: 5px 15px;
+  margin: 10px 5px;
   width: auto;
-  border-radius: 5px;
-  border: 2px solid rgb(5, 1, 20);
+  border: none;
+  border-radius: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  /* border-radius: 5px; */
+  /* border: 2px solid rgb(5, 1, 20); */
+}
+.site-interaction-button:hover {
+  cursor: pointer;
+}
+
+@keyframes RRotate {
+  25%{
+    color:rgba(255, 166, 0, 0.425);
+  }
+  50%{
+    transform: rotateX(180deg);
+    color:rgb(75, 111, 230);
+  }
+  75% {
+    color: pink;
+  }
+  100%{
+    transform: rotateX(360deg);
+    color: red;
+
+  }
 }

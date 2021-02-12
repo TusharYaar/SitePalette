@@ -86,30 +86,39 @@ function loadTemplate(page) {
   var url2 = `assests/templates/styles/${page}.css`;
   xhr.open("GET", url);
   xhr2.open("GET",url2);
-
   xhr2.send();
   // when xhr is completed, it removes the text loading
   // Loads the recieved file and
   //  calls the showClassOnHover fuction to add event listener to all the elements which has those classes
-  
   xhr2.onload = function(){
     document.querySelector("#site-template-css").innerHTML = this.responseText;
-    xhr.send();
-
-}
+    xhr.send();}
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
-    showClassOnHover();
-   };
+    showClassOnHover();   };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 //  It calls the setColorInputValue which apply color to the template(page)
 //  and changes the value in inputs in the random color box
 function getRandomColorData() {
+  document.querySelector(".random-icon-btn").classList.add("rotate");
+  setTimeout(function() {
+    document.querySelector(".random-icon-btn").classList.remove("rotate");
+  },400)
   var value = Math.floor(Math.random() * colorData.length);
-  setColorInputValue(colorData[value]);
+  var colorArray = colorData[value].map(function(color) {return `#${color}`;});
+  setColorInputValue(colorArray);
 }
+
+function setCustomColorInput() {
+  var colorsArray = [];
+  for (var i = 1; i <6;i++) {
+    colorsArray.push(document.getElementById(`color${i}`).value);
+  }
+  setColorInputValue(colorsArray);
+}
+
 function setColorInputValue(colorsArray) {
   var colors = [];
   colorsArray.forEach(function (color, index) {
@@ -118,8 +127,8 @@ function setColorInputValue(colorsArray) {
       // Setting the value
       if (!currentColorData[index].locked) {
         currentColorData[index].color = color;
-        document.querySelector(`#color${index + 1}`).value = `#${color}`;
-        document.querySelector(`#color${index + 1}-parent > label> span`).style.backgroundColor = `#${color}`;
+        document.querySelector(`#color${index + 1}`).value = `${color}`;
+        document.querySelector(`#color${index + 1}-parent > label> span`).style.backgroundColor = `${color}`;
         colors.push(color);
       } else colors.push(currentColorData[index].color);
     }
@@ -149,7 +158,7 @@ function applyBasicColor() {
 function setClassColor(clas, color, type) {
   // console.log(`calling for ${clas} to set ${type} ${color}`);
   document.querySelectorAll(`.${clas}`).forEach(function (item) {
-    item.style[type] = `#${color}`;
+    item.style[type] = `${color}`;
   });
 }
 //  Function to give all the classes prsent in the basic color menu,
@@ -262,7 +271,7 @@ function showSavedColors(AllColors) {
     li.setAttribute("id", `saved${index}`);
     colors.forEach(function (color) {
       div = document.createElement("div");
-      div.style.backgroundColor = `#${color}`;
+      div.style.backgroundColor = `${color}`;
       div.setAttribute("class", "saved-color-item");
       li.insertAdjacentElement("beforeend", div);
     });
@@ -368,7 +377,7 @@ function getcolorsHistory() {
     li.setAttribute("id", `history${index}`);
     colors.forEach(function (color) {
       div = document.createElement("div");
-      div.style.backgroundColor = `#${color}`;
+      div.style.backgroundColor = `${color}`;
       div.setAttribute("class", "colors-history-item");
       li.insertAdjacentElement("beforeend", div);
     });
