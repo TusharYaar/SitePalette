@@ -248,7 +248,7 @@ body {
 /* ================================ */
 /* ICONS */
 /* =============================== */
-.lock-icon,.copy-icon,.close-icon, .about-icon {
+.lock-icon,.copy-icon,.close-icon, .about-icon,.apply-history-color-icon {
   font-size: 24px;
 }
 .lock-icon.fa-lock{
@@ -281,7 +281,8 @@ body {
 .lock-icon,
 .copy-icon,
 .about-icon,
-.close-icon {
+.close-icon,
+.apply-history-color-icon {
   cursor: pointer;
 }
 /* ======================================= */

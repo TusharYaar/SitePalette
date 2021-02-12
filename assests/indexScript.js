@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#saved-colors > div").classList.add("hide");
       }
       if (elementId != "colors-history") {
-        colorsHistoryMenu.classList.remove("active");
         document.querySelector("#saved-colors > div").classList.add("hide");
       }
       if (elementId == "colors-history" || "saved-colors") {
