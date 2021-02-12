@@ -1,26 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
-    if (document.body.clientWidth < 558) document.querySelector("#site-overlay").classList.add("active");
+    if (document.body.clientWidth < 558)
+      document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
-  document.addEventListener("keydown",function (e) {
+  document.addEventListener("keydown", function (e) {
     // console.log(e)
-    var changeColorActive=document.querySelector("#change-color").classList.contains("active");
-   if(e.keyCode === 67 && !changeColorActive) {
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-    getRandomColorData();
-   }
-  //  if(e.keyCode === 13 && changeColorActive) {
-  //    applyBasicColor();
-  //  }
-  })
+    var changeColorActive = document
+      .querySelector("#change-color")
+      .classList.contains("active");
+    if (e.keyCode === 67 && !changeColorActive) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      getRandomColorData();
+    }
+    //  if(e.keyCode === 13 && changeColorActive) {
+    //    applyBasicColor();
+    //  }
+  });
   getColorDataFileName(); // Calls the function to get the random colorData file
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  showSiteMessage("This Site pages are NOT responsive YET", true,1500);
+  showSiteMessage("This Site pages are NOT responsive YET", true, 1500);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -52,10 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 90);
     });
   });
-
-
-
-
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
@@ -79,41 +78,47 @@ function loadSiteTemplateList() {
 // It Makes a xhr
 function loadTemplate(page) {
   showSiteMessage(`Loading ${page}, please wait...`, false);
-  document.querySelector("#site-template-css").setAttribute("href", `assests/templates/styles/${page}.css`);
+  document
+    .querySelector("#site-template-css")
+    .setAttribute("href", `assests/templates/styles/${page}.css`);
   var xhr = new XMLHttpRequest();
   var xhr2 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   var url2 = `assests/templates/styles/${page}.css`;
   xhr.open("GET", url);
-  xhr2.open("GET",url2);
+  xhr2.open("GET", url2);
   xhr2.send();
   // when xhr is completed, it removes the text loading
   // Loads the recieved file and
   //  calls the showClassOnHover fuction to add event listener to all the elements which has those classes
-  xhr2.onload = function(){
+  xhr2.onload = function () {
     document.querySelector("#site-template-css").innerHTML = this.responseText;
-    xhr.send();}
+    xhr.send();
+  };
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
-    showClassOnHover();   };
+    showClassOnHover();
+  };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 //  It calls the setColorInputValue which apply color to the template(page)
 //  and changes the value in inputs in the random color box
 function getRandomColorData() {
   document.querySelector(".random-icon-btn").classList.add("rotate");
-  setTimeout(function() {
+  setTimeout(function () {
     document.querySelector(".random-icon-btn").classList.remove("rotate");
-  },400)
+  }, 400);
   var value = Math.floor(Math.random() * colorData.length);
-  var colorArray = colorData[value].map(function(color) {return `#${color}`;});
+  var colorArray = colorData[value].map(function (color) {
+    return `#${color}`;
+  });
   setColorInputValue(colorArray);
 }
 
 function setCustomColorInput() {
   var colorsArray = [];
-  for (var i = 1; i <6;i++) {
+  for (var i = 1; i < 6; i++) {
     colorsArray.push(document.getElementById(`color${i}`).value);
   }
   setColorInputValue(colorsArray);
@@ -128,13 +133,17 @@ function setColorInputValue(colorsArray) {
       if (!currentColorData[index].locked) {
         currentColorData[index].color = color;
         document.querySelector(`#color${index + 1}`).value = `${color}`;
-        document.querySelector(`#color${index + 1}-parent > label> span`).style.backgroundColor = `${color}`;
+        document.querySelector(
+          `#color${index + 1}-parent > label> span`
+        ).style.backgroundColor = `${color}`;
         colors.push(color);
       } else colors.push(currentColorData[index].color);
     }
   });
   // Checks if the color already saved in the colors history array , and if not, pushed the data to it
-  if (!isColorAlreadySaved(colorsHistory, colors)) colorsHistory.push(colors);
+  if (!isColorAlreadySaved(colorsHistory, colors)) {
+    colorsHistory.push(colors);
+  }
   getcolorsHistory(); // calls the function to update the colors history box
   applyBasicColor(); // Calls the function to apply the colors
 }
@@ -218,7 +227,11 @@ function showHoverBox(element, content, condition) {
 function changeClassHoverState() {
   box = document.getElementById("checkBox-classHover");
   showClass = box.checked;
-  showSiteMessage(`Display Class on hover ${showClass ? "Activated" : "Deactivated"}`, true,1000);
+  showSiteMessage(
+    `Display Class on hover ${showClass ? "Activated" : "Deactivated"}`,
+    true,
+    1000
+  );
 }
 function saveThisColor() {
   var arr = currentColorData.map((data) => {
@@ -229,7 +242,9 @@ function saveThisColor() {
 
 function saveColor(color) {
   var existingColors = [];
-  if (localStorage.length != 0) var existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
+  if (localStorage.length != 0)
+    var existingColors = JSON.parse(localStorage.getItem("savedColorData"))
+      .colors;
   if (!isColorAlreadySaved(existingColors, color)) {
     existingColors.push(color);
     var obj = {
@@ -237,10 +252,14 @@ function saveColor(color) {
       colors: existingColors,
     };
     localStorage.setItem("savedColorData", JSON.stringify(obj));
-    showSiteMessage("Your Color Palette has been saved successfully", true,1000);
+    showSiteMessage(
+      "Your Color Palette has been saved successfully",
+      true,
+      1000
+    );
     getSavedColors();
   } else {
-    showSiteMessage("The Color Palette is already Saved", true,1000);
+    showSiteMessage("The Color Palette is already Saved", true, 1000);
   }
 }
 
@@ -257,12 +276,12 @@ function getSavedColors() {
   var obj = JSON.parse(localStorage.getItem("savedColorData"));
   if (obj && obj.colors.length > 0) showSavedColors(obj.colors);
   else {
-    document.querySelector("#saved-colors-list").innerHTML = "<li>It Seems You dont have any saved color. Try by saving one</li>";
+    document.querySelector("#saved-colors-list").innerHTML =
+      "<li>It Seems You dont have any saved color. Try by saving one</li>";
   }
 }
 function showSavedColors(AllColors) {
-  var li;
-  var div;
+  var li, div;
   var img = document.createElement("img");
   img.setAttribute("src", "./assests/icons/menu.svg");
   document.querySelector("#saved-colors-list").innerHTML = "";
@@ -275,8 +294,13 @@ function showSavedColors(AllColors) {
       div.setAttribute("class", "saved-color-item");
       li.insertAdjacentElement("beforeend", div);
     });
-    li.insertAdjacentHTML("beforeend", `<img src="./assests/icons/menu.svg" alt=":" title="Menu" class="save-color-menu-icon" />`);
-    document.querySelector("#saved-colors-list").insertAdjacentElement("beforeend", li);
+    li.insertAdjacentHTML(
+      "beforeend",
+      `<img src="./assests/icons/menu.svg" alt=":" title="Menu" class="save-color-menu-icon" />`
+    );
+    document
+      .querySelector("#saved-colors-list")
+      .insertAdjacentElement("beforeend", li);
   });
   addSavedMenu();
   addHoverOnColorItem(".saved-color-item");
@@ -288,18 +312,15 @@ function addHoverOnColorItem(element) {
   });
 }
 function addColorHistoryMenu() {
-  document.querySelectorAll(".colors-history-menu-icon").forEach(function (item) {
-    item.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var coordinate = item.getBoundingClientRect();
-      // colorsHistoryMenu.style.left = item.offsetLeft + this.offsetParent.offsetLeft - 100 + 25 + "px";
-      // colorsHistoryMenu.style.top = item.offsetTop + this.offsetParent.offsetTop - 5 + "px";
-      colorsHistoryMenu.style.left = coordinate.left - 65 + "px";
-      colorsHistoryMenu.style.top = coordinate.top - 5 + "px";
-      colorsHistoryMenu.classList.toggle("active");
-      colorsHistoryMenu.setAttribute("data", item.parentElement.getAttribute("id"));
+  document
+    .querySelectorAll(".apply-history-color-icon")
+    .forEach(function (item) {
+      item.addEventListener("click", (e) => {
+        id = parseInt(e.target.getAttribute("parent-data"));
+        setColorInputValue(colorsHistory[id]);
+        showSiteMessage("History Colors Appplied", true, 700);
+      });
     });
-  });
 }
 function addSavedMenu() {
   document.querySelectorAll(".save-color-menu-icon").forEach(function (item) {
@@ -309,7 +330,10 @@ function addSavedMenu() {
       savedColorMenu.style.left = coordinate.left - 171 + 25 + "px";
       savedColorMenu.style.top = coordinate.top - 5 + "px";
       savedColorMenu.classList.toggle("active");
-      savedColorMenu.setAttribute("data", item.parentElement.getAttribute("id"));
+      savedColorMenu.setAttribute(
+        "data",
+        item.parentElement.getAttribute("id")
+      );
     });
   });
 }
@@ -329,7 +353,7 @@ function deleteSavedColors() {
   localStorage.setItem("savedColorData", JSON.stringify(obj));
   savedColorMenu.classList.remove("active");
   showSavedColors(updatedExistingColors);
-  showSiteMessage("Your palette has been deleted", true,1000);
+  showSiteMessage("Your palette has been deleted", true, 1000);
   getSavedColors();
 }
 
@@ -342,21 +366,9 @@ function applySavedColors() {
   colors = existingColors[id];
   savedColorMenu.classList.remove("active");
   setColorInputValue(colors);
-  showSiteMessage("Saved Colors Reloaded", true,700);
+  showSiteMessage("Saved Colors Reloaded", true, 700);
 }
-
-function applyHistoryColors() {
-  var id = colorsHistoryMenu.getAttribute("data").slice(7);
-  console.log(id);
-  id = parseInt(id);
-  var colors;
-  // var existingColors = [];
-  colors = colorsHistory[id];
-  savedColorMenu.classList.remove("active");
-  setColorInputValue(colors);
-  showSiteMessage("History Colors Appplied", true,700);
-}
-function showSiteMessage(message, autoRemove,interval) {
+function showSiteMessage(message, autoRemove, interval) {
   messageBox.textContent = message;
   messageBox.classList.add("active");
   if (messageBoxInterval) clearTimeout(messageBoxInterval);
@@ -369,8 +381,6 @@ function showSiteMessage(message, autoRemove,interval) {
 
 function getcolorsHistory() {
   var li;
-  var img = document.createElement("img");
-  img.setAttribute("src", "./assests/icons/menu.svg");
   document.querySelector("#colors-history-list").innerHTML = "";
   colorsHistory.forEach(function (colors, index) {
     li = document.createElement("li");
@@ -381,8 +391,13 @@ function getcolorsHistory() {
       div.setAttribute("class", "colors-history-item");
       li.insertAdjacentElement("beforeend", div);
     });
-    li.insertAdjacentHTML("beforeend", `<img src="./assests/icons/menu.svg" alt=":" title="Menu" class="colors-history-menu-icon" />`);
-    document.querySelector("#colors-history-list").insertAdjacentElement("beforeend", li);
+    li.insertAdjacentHTML(
+      "beforeend",
+      `<i class="fas fa-edit apply-history-color-icon" parent-data=${index}></i>`
+    );
+    document
+      .querySelector("#colors-history-list")
+      .insertAdjacentElement("beforeend", li);
   });
   addColorHistoryMenu();
   addHoverOnColorItem(".colors-history-item");
