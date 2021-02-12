@@ -3,6 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.body.clientWidth < 558) document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
+  document.addEventListener("keydown",function (e) {
+    // console.log(e)
+    var changeColorActive=document.querySelector("#change-color").classList.contains("active");
+   if(e.keyCode === 67 && !changeColorActive) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    getRandomColorData();
+   }
+  //  if(e.keyCode === 13 && changeColorActive) {
+  //    applyBasicColor();
+  //  }
+  })
   getColorDataFileName(); // Calls the function to get the random colorData file
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
