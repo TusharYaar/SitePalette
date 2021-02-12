@@ -24,8 +24,8 @@ body {
 }
 
 #site-messages {
-  color: white;
-  background: red;
+  color: #091E05;
+  background: #FFA62B;
   padding: 10px;
   position: absolute;
   top: -10px;
@@ -248,7 +248,8 @@ body {
 /* ================================ */
 /* ICONS */
 /* =============================== */
-.lock-icon,.copy-icon,.close-icon, .about-icon,.apply-history-color-icon {
+.lock-icon,.copy-icon,.close-icon, .about-icon,.apply-history-color-icon,.delete-saved-color-icon,
+.apply-saved-color-icon {
   font-size: 24px;
 }
 .lock-icon.fa-lock{
@@ -282,7 +283,9 @@ body {
 .copy-icon,
 .about-icon,
 .close-icon,
-.apply-history-color-icon {
+.apply-history-color-icon,
+.delete-saved-color-icon ,
+.apply-saved-color-icon{
   cursor: pointer;
 }
 /* ======================================= */

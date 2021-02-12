@@ -29,8 +29,8 @@ var basicColorMenu = [
 ];
 var colorsHistory = [];
 const hover = document.querySelector("#change-color-about-hover");
-const savedColorMenu = document.querySelector("#saved-color-menu-box");
-const colorsHistoryMenu = document.querySelector("#colors-history-menu-box");
+// const savedColorMenu = document.querySelector("#saved-color-menu-box");
+// const colorsHistoryMenu = document.querySelector("#colors-history-menu-box");
 var showClass = false;
 var siteInteractionButtons = ["site-about", "saved-colors", "change-template", "change-color", "colors-history"];
 const messageBox = document.querySelector("#site-messages");

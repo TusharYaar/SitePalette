@@ -1,17 +1,13 @@
-lockIcon = `./assests/icons/lock.svg`;
-lockedIcon = `./assests/icons/locked.svg`;
 // Adds an event listener to every close icon on the page.
 // Mostly the close icons in the site-interactions menu
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".close-icon").forEach(function (element) {
     element.addEventListener("click", function (e) {
       e.stopPropagation();
-      savedColorMenu.classList.remove("active");
       removeClass(`#${this.parentElement.parentElement.id}`, "active");
       setTimeout(function () {
         removeClass(`.site-interaction > img`, "hide");
       }, 250);
-      savedColorMenu.classList.remove();
     });
   });
 

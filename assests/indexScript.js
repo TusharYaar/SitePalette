@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 90);
       // checks the menu and removes class active from them if not required
       if (elementId != "saved-colors") {
-        savedColorMenu.classList.remove("active");
         document.querySelector("#saved-colors > div").classList.add("hide");
       }
       if (elementId != "colors-history") {
@@ -68,7 +67,7 @@ function loadSiteTemplateList() {
   var element;
   ul.innerHTML = "";
   templateData.forEach((item) => {
-    element = `<li><label for="${item.id}">${item.name}</label><input type="radio" name="change-template-option" id="${item.id}" onclick="loadTemplate('${item.functionCallName}')" /></li>`;
+    element = `<li><label for="${item.id}">${item.name}</label><input type="radio" name="change-template-option" id="${item.id}" onclick="loadTemplate('${item.functionCallName},${item.name}')" /></li>`;
     ul.insertAdjacentHTML("beforeend", element);
   });
 }
@@ -76,7 +75,10 @@ function loadSiteTemplateList() {
 // it accepts the filename of the option clicked and them loads the file into
 // It Makes a xhr
 function loadTemplate(page) {
-  showSiteMessage(`Loading ${page}, please wait...`, false);
+  var pageDetails = page.split(",");
+  var page = pageDetails[0];
+  var pageName = pageDetails[1];
+  showSiteMessage(`Loading ${pageName}, please wait...`, false);
   document
     .querySelector("#site-template-css")
     .setAttribute("href", `assests/templates/styles/${page}.css`);
@@ -281,13 +283,11 @@ function getSavedColors() {
 }
 function showSavedColors(AllColors) {
   var li, div;
-  var img = document.createElement("img");
-  img.setAttribute("src", "./assests/icons/menu.svg");
   document.querySelector("#saved-colors-list").innerHTML = "";
   AllColors.forEach(function (colors, index) {
     li = document.createElement("li");
     li.setAttribute("id", `saved${index}`);
-    colors.forEach(function (color) {
+    colors.forEach(function (color,index) {
       div = document.createElement("div");
       div.style.backgroundColor = `${color}`;
       div.setAttribute("class", "saved-color-item");
@@ -295,16 +295,41 @@ function showSavedColors(AllColors) {
     });
     li.insertAdjacentHTML(
       "beforeend",
-      `<img src="./assests/icons/menu.svg" alt=":" title="Menu" class="save-color-menu-icon" />`
+      `<i class="fas fa-trash-alt delete-saved-color-icon" parent-data=${index}></i><i class="fas fa-edit apply-saved-color-icon" parent-data=${index}></i>`
     );
     document
       .querySelector("#saved-colors-list")
       .insertAdjacentElement("beforeend", li);
   });
-  addSavedMenu();
+  addApplySavedColorIcon();
+  addDeleteSavedIcon();
   addHoverOnColorItem(".saved-color-item");
 }
+function addApplySavedColorIcon(){
+  document.querySelectorAll(".apply-saved-color-icon").forEach(function (icon){
+    icon.addEventListener("click",function(e) {
+      applySavedColors(e.target.getAttribute("parent-data"));
+    })
+  })
+}
+function addHoverOnColorItem(element) {
+  document.querySelectorAll(element).forEach(function (item) {
+    showHoverBox(item, item.style.backgroundColor, false);
+  });
+}
 
+function addDeleteSavedIcon() {
+  document.querySelectorAll(".delete-saved-color-icon").forEach(function (icon){
+    icon.addEventListener("click",function(){
+      showSiteMessage("Double Click to Delete",true,800);
+    })
+
+    icon.addEventListener("dblclick",function(e) {
+      e.stopPropagation();
+      deleteSavedColors(e.target.getAttribute("parent-data"));
+    })
+  })
+}
 function addHoverOnColorItem(element) {
   document.querySelectorAll(element).forEach(function (item) {
     showHoverBox(item, item.style.backgroundColor, false);
@@ -321,23 +346,7 @@ function addColorHistoryMenu() {
       });
     });
 }
-function addSavedMenu() {
-  document.querySelectorAll(".save-color-menu-icon").forEach(function (item) {
-    item.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var coordinate = item.getBoundingClientRect();
-      savedColorMenu.style.left = coordinate.left - 171 + 25 + "px";
-      savedColorMenu.style.top = coordinate.top - 5 + "px";
-      savedColorMenu.classList.toggle("active");
-      savedColorMenu.setAttribute(
-        "data",
-        item.parentElement.getAttribute("id")
-      );
-    });
-  });
-}
-function deleteSavedColors() {
-  var id = savedColorMenu.getAttribute("data").slice(5);
+function deleteSavedColors(id) {
   id = parseInt(id);
   var existingColors = [];
   var updatedExistingColors = [];
@@ -350,20 +359,18 @@ function deleteSavedColors() {
     colors: updatedExistingColors,
   };
   localStorage.setItem("savedColorData", JSON.stringify(obj));
-  savedColorMenu.classList.remove("active");
   showSavedColors(updatedExistingColors);
   showSiteMessage("Your palette has been deleted", true, 1000);
   getSavedColors();
 }
 
-function applySavedColors() {
-  var id = savedColorMenu.getAttribute("data").slice(5);
+function applySavedColors(id) {
   id = parseInt(id);
   var colors;
   var existingColors = [];
   existingColors = JSON.parse(localStorage.getItem("savedColorData")).colors;
   colors = existingColors[id];
-  savedColorMenu.classList.remove("active");
+  // console.log(colors)
   setColorInputValue(colors);
   showSiteMessage("Saved Colors Reloaded", true, 700);
 }
