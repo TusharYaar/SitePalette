@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
-    if (document.body.clientWidth < 558)
+    if (document.body.clientWidth < 656 )
       document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
@@ -116,10 +116,15 @@ function getRandomColorData() {
   });
   setColorInputValue(colorArray);
 }
-
+// Apply custom color values
 function setCustomColorInput() {
   var colorsArray = [];
   for (var i = 1; i < 6; i++) {
+    if(document.getElementById(`color${i}`).value.length < 3)
+     {
+       showSiteMessage("One or More text Fields are empty",true,1500);
+       return;
+     }
     colorsArray.push(document.getElementById(`color${i}`).value);
   }
   setColorInputValue(colorsArray);

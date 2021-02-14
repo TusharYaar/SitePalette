@@ -10,7 +10,32 @@ body {
   font-family: "Roboto", sans-serif;
 }
 /* ================================================================== */
+#tour-box {
+  width: 150px;
+  height: 75px;
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  float: left;
+  top: 276px;
+  left: 50px;
+  /* margin: 15px; */
+}
+#tour-box:after {
+  content: " ";
+  position: absolute;
+  /* right: 30px; */
+  left: 10px;
+  bottom: -15px;
+  border-top: 15px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: none;
+}
 
+
+/* ================================================================== */
 #site-overlay {
   display: none;
   overflow: hidden;
@@ -329,4 +354,10 @@ body {
     color: red;
 
   }
+}
+
+
+
+
+@media (max-height: 568px) {
 }

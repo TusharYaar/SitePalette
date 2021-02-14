@@ -17,8 +17,13 @@
     <div id="site-overlay">
       <p>The Screen seems a bit toooooo small for the site to work properly. Please switch to a bigger display to expericence the site properly.</p>
     </div>
-
+<!-- ================Site Message Boxe =================-->
     <div id="site-messages">Message</div>
+<!-- =================================================== -->
+
+<!--=================================== Tour Box===================================== -->
+<div id="tour-box"></div>
+<!-- ============================================================================= -->
     <!-- ======================================== -->
     <!-- About Site interaction menu  -->
     <!-- ======================================== -->
@@ -100,6 +105,7 @@
         <ul id="change-color-list-advance" class="color-list-menu block"></ul>
         <button onclick="event.stopPropagation();getRandomColorData()" class="site-interaction-button"><i class="fas fa-random random-icon-btn"></i>Random Colors</button>
         <button class="site-interaction-button" onclick="event.stopPropagation();toggleAdvanceColorEdit()">Advanced Options</button>
+        <button class="site-interaction-button"  onclick="event.stopPropagation(); setCustomColorInput()">Apply Colors</button>
         <input type="checkbox" id="checkBox-classHover" onclick="event.stopPropagation();changeClassHoverState()" /><label for="checkBox-classHover">Display Classes on Hover</label>
         <button class="site-interaction-button" onclick="event.stopPropagation();saveThisColor()"><i class="fas fa-save save-icon-btn"></i></i>Save Current Colors</button>
       </div>
