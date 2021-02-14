@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  loadTemplate("dashboardT1","Dashboard Type 1");
+  // loadTemplate("dashboardT1","Dashboard Type 1");
   showSiteMessage("This Site pages are NOT responsive YET", true, 1500);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
@@ -101,6 +101,7 @@ function loadTemplate(page) {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
     showClassOnHover();
+    setCustomColorInput();
   };
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
