@@ -420,7 +420,7 @@ function getcolorsHistory() {
 function getColorDataFileName() {
   var suffix = Math.floor(Math.random() * numberOfColorDataFiles);
   var script = document.createElement("script");
-  script.setAttribute("src", `assests/colorData${suffix}.js`);
+  script.setAttribute("src", `assests/ColorData/colorData${suffix}.js`);
   script.setAttribute("type", "text/javascript");
   document.getElementsByTagName("head")[0].appendChild(script);
 }
