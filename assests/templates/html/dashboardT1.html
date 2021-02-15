@@ -1,14 +1,14 @@
 
 <div class="container">
-    <div class="sidebar sc-body2">
+    <div class="sidebar sc-body2 card-hidden-m">
         <nav class="navbar sidebar-navbar sc-navbar">
             <img src="./assests/SitePaletteIcon.png">
             <h2 class="navbar-brand sc-h2">Site Palette</h2>
         </nav>
-        <button class="sc-button2">Register Project <i class="fas fa-plus"></i></button>
+        <button class="sc-button2 sc-text2">Register Project <i class="fas fa-plus"></i></button>
         <ul>
-            <li><i class="fas fa-user-friends"></i>People</li>
-            <li><i class="fas fa-map-pin"></i> Show Location</li>
+            <li><i class="fas fa-user-friends"></i>Patients</li>
+            <li><i class="fas fa-map-pin"></i> Map</li>
             <li><i class="fas fa-chart-pie"></i>Overview</li>
             <li><i class="fas fa-history"></i></i>History</li>
             <li><i class="fas fa-briefcase-medical"></i>Doctors</li>
@@ -20,13 +20,33 @@
     </div>
     <div class="main-body sc-body">
         <nav class="navbar main-navbar sc-navbar">
-            <input type="text" class="navbar-input">
+            <input type="text" class="navbar-input sc-border">
             <h2 class="navbar-brand"><i class="fas fa-bell sc-icon-special"></i></h2>
             <img src="https://picsum.photos/36" alt="A" title="profile Image" />
             <h4 class="navbar-user sc-h4">Tushar&nbsp;Agrawal</h4>
             <h2 class="navbar-brand"><i class="fas fa-chevron-down sc-icon-special"></i></h2>
         </nav>
-        <div>
+        <div class="cards-container">
+         <div class="cards-type">
+             <div class="card-type1 sc-card2">
+             </div>
+             <div class="card-type1 sc-card2"></div>
+             <div class="card-type1 sc-card2 card-hidden-m"></div>
+             <div class="card-type1 sc-card2 card-hidden-l"></div>
+         </div>   
+         <div class="cards-type">
+             <div id="data1" class="sc-card2 card-type2">
+                <!-- <canvas id="data1" width="800px" height="250px"></canvas> -->
+             </div>
+            <div id="data2" class="sc-card2 card-type3 card-hidden-l">
+
+            </div>
+        </div>
+        <div class="cards-type">
+            <div id="data3" class="card-type4 sc-card2"></div>
+            <div class="sc-card2 card-type3 card-hidden-l"></div>
+            <div id="data4" class="sc-card card-type3 card-hidden-s"></div>
+        </div>
         </div>
     </div>
 </div>

@@ -24,9 +24,12 @@ var basicColorMenu = [
   { id: "color1", elements: ["sc-icon", "sc-h1", "sc-h2", "sc-h3", "sc-h4", "sc-h5", "sc-h6", "sc-button1", "sc-button2", "sc-button3", "sc-text", "sc-body"], type: "color" },
   { id: "color2", elements: ["sc-background","sc-button2", "sc-card", "sc-navbar"], type: "backgroundColor" },
   { id: "color3", elements: ["sc-body","sc-button3"], type: "backgroundColor" },
-  { id: "color4", elements: ["sc-button1", "sc-card2","sc-body2"], type: "backgroundColor" },
+  { id: "color4", elements: ["sc-button1", "sc-card2"], type: "backgroundColor" },
   { id: "color5", elements: ["sc-something", "sc-p", "sc-icon-brand", "sc-icon-special","sc-text2"], type: "color" },
   { id: "color4", elements: ["sc-background", "sc-card", "sc-navbar", "sc-card2"], type: "borderColor" },
+  { id: "color3", elements: ["sc-border"],type: "borderColor"},
+  { id: "color5", elements: ["sc-body2"],type:"backgroundColor"}
+
 ];
 var colorsHistory = [];
 const hover = document.querySelector("#change-color-about-hover");

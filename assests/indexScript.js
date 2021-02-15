@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  // loadTemplate("dashboardT1","Dashboard Type 1");
+  loadTemplate("dashboardT1","Dashboard Type 1");
   showSiteMessage("This Site pages are NOT responsive YET", true, 1500);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
@@ -85,11 +85,15 @@ function loadTemplate(page) {
     .setAttribute("href", `assests/templates/styles/${page}.css`);
   var xhr = new XMLHttpRequest();
   var xhr2 = new XMLHttpRequest();
+  var xhr3 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   var url2 = `assests/templates/styles/${page}.css`;
+  var url3 = `assests/templates/scripts/${page}.js`;
   xhr.open("GET", url);
   xhr2.open("GET", url2);
+  xhr3.open("GET",url3);
   xhr2.send();
+
   // when xhr is completed, it removes the text loading
   // Loads the recieved file and
   //  calls the showClassOnHover fuction to add event listener to all the elements which has those classes
@@ -100,9 +104,15 @@ function loadTemplate(page) {
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
+    xhr3.send();
     showClassOnHover();
     setCustomColorInput();
   };
+
+  xhr3.onload = function () {
+    if(this.status == 200)
+    console.log(eval(this.responseText));
+  }
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
 //  It calls the setColorInputValue which apply color to the template(page)
