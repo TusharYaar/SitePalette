@@ -1,52 +1,66 @@
-
 <div class="container">
-    <div class="sidebar sc-body2 card-hidden-m">
-        <nav class="navbar sidebar-navbar sc-navbar">
-            <img src="./assests/SitePaletteIcon.png">
-            <h2 class="navbar-brand sc-h2">Site Palette</h2>
-        </nav>
-        <button class="sc-button2 sc-text2">Register Project <i class="fas fa-plus"></i></button>
-        <ul>
-            <li><i class="fas fa-user-friends"></i>Patients</li>
-            <li><i class="fas fa-map-pin"></i> Map</li>
-            <li><i class="fas fa-chart-pie"></i>Overview</li>
-            <li><i class="fas fa-history"></i></i>History</li>
-            <li><i class="fas fa-briefcase-medical"></i>Doctors</li>
-            <li><i class="fas fa-house-user"></i>Departments</li>
-            <li>&nbsp;</li>
-            <li><i class="fas fa-sliders-h"></i>Setting</li>
-        </ul>
-        <img class="sc-card" src="./assests/templates/images/undraw_mobile_login.svg"> 
+  <div class="sidebar sc-body2 card-hidden-m">
+    <nav class="navbar sidebar-navbar sc-navbar">
+      <img src="./assests/SitePaletteIcon.png" />
+      <h2 class="navbar-brand sc-h2">Site Palette</h2>
+    </nav>
+    <button class="sc-button2 sc-text2">
+      Register Project <i class="fas fa-plus"></i>
+    </button>
+    <ul>
+      <li><i class="fas fa-user-friends"></i>Patients</li>
+      <li><i class="fas fa-map-pin"></i> Map</li>
+      <li><i class="fas fa-chart-pie"></i>Overview</li>
+      <li><i class="fas fa-history"></i>History</li>
+      <li><i class="fas fa-briefcase-medical"></i>Doctors</li>
+      <li><i class="fas fa-house-user"></i>Departments</li>
+      <li>&nbsp;</li>
+      <li><i class="fas fa-sliders-h"></i>Setting</li>
+    </ul>
+    <img
+      class="sc-card"
+      src="./assests/templates/images/undraw_mobile_login.svg"
+    />
+  </div>
+  <div class="main-body sc-body">
+    <nav class="navbar main-navbar sc-navbar">
+      <input type="text" class="navbar-input sc-border" />
+      <h2 class="navbar-brand"><i class="fas fa-bell sc-icon-special"></i></h2>
+      <img src="https://picsum.photos/36" alt="A" title="profile Image" />
+      <h4 class="navbar-user sc-h4">Tushar&nbsp;Agrawal</h4>
+      <h2 class="navbar-brand">
+        <i class="fas fa-chevron-down sc-icon-special"></i>
+      </h2>
+    </nav>
+    <div class="cards-container">
+      <div class="cards-type">
+        <div class="card-type1 sc-card2"><img src="https://img.icons8.com/emoji/48/000000/bed-emoji.png"/> <span><h3>Patients</h3>1242</span></div>
+        <div class="card-type1 sc-card2"><img src="https://img.icons8.com/color/48/000000/people-skin-type-7.png"/><span><h3>Avalible Staff</h3>142</span></div>
+        <div class="card-type1 sc-card2 card-hidden-m"><img src="https://img.icons8.com/color/48/000000/book.png"/><span><h3>Average Profit</h3>$133.3</span></div>
+        <div class="card-type1 sc-card2 card-hidden-l"><img src="https://img.icons8.com/color/48/000000/ambulance.png"/><span><h3>Avalible Cars</h3>42</span></div>
+      </div>
+      <div class="cards-type">
+        <div id="data1" class="sc-card2 card-type2">
+          <!-- <canvas id="data1" width="800px" height="250px"></canvas> -->
+        </div>
+        <div id="data2" class="sc-card2 card-type3 card-hidden-l"></div>
+      </div>
+      <div class="cards-type">
+        <div id="data3" class="card-type4 sc-card2"></div>
+        <div id="data-list" class="sc-card2 card-type3 card-hidden-l">
+          <h3>Patient By Division</h3>
+          <ul>
+            <li><i class="fas fa-home"></i>Division</li>
+            <hr>
+            <li><i class="fas fa-heartbeat"></i>Cardiology</li>
+            <hr>
+            <li><i class="fas fa-stethoscope"></i>Surgery</li>
+            <hr>
+            <li><i class="fas fa-brain"></i> Neurology</li>
+          </ul>
+        </div>
+        <div id="data4" class="sc-card card-type3 card-hidden-s"></div>
+      </div>
     </div>
-    <div class="main-body sc-body">
-        <nav class="navbar main-navbar sc-navbar">
-            <input type="text" class="navbar-input sc-border">
-            <h2 class="navbar-brand"><i class="fas fa-bell sc-icon-special"></i></h2>
-            <img src="https://picsum.photos/36" alt="A" title="profile Image" />
-            <h4 class="navbar-user sc-h4">Tushar&nbsp;Agrawal</h4>
-            <h2 class="navbar-brand"><i class="fas fa-chevron-down sc-icon-special"></i></h2>
-        </nav>
-        <div class="cards-container">
-         <div class="cards-type">
-             <div class="card-type1 sc-card2">
-             </div>
-             <div class="card-type1 sc-card2"></div>
-             <div class="card-type1 sc-card2 card-hidden-m"></div>
-             <div class="card-type1 sc-card2 card-hidden-l"></div>
-         </div>   
-         <div class="cards-type">
-             <div id="data1" class="sc-card2 card-type2">
-                <!-- <canvas id="data1" width="800px" height="250px"></canvas> -->
-             </div>
-            <div id="data2" class="sc-card2 card-type3 card-hidden-l">
-
-            </div>
-        </div>
-        <div class="cards-type">
-            <div id="data3" class="card-type4 sc-card2"></div>
-            <div class="sc-card2 card-type3 card-hidden-l"></div>
-            <div id="data4" class="sc-card card-type3 card-hidden-s"></div>
-        </div>
-        </div>
-    </div>
+  </div>
 </div>
