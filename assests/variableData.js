@@ -10,7 +10,8 @@ var templateData = [
     id: "preview",
   },
   { name: "BlogSite Single Page", functionCallName: "singleBlogPost", id: "blogPost" },
-  {name: "Dashboard Type 1",functionCallName: "dashboardT1",id: "db1"}
+  {name: "Dashboard Type 1",functionCallName: "dashboardT1",id: "db1"},
+  {name: "Pricing Info Page",functionCallName: "pricingPage",id: "pp"}
 ];
 
 var currentColorData = [
