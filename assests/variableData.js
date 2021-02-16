@@ -11,7 +11,8 @@ var templateData = [
   },
   { name: "BlogSite Single Page", functionCallName: "singleBlogPost", id: "blogPost" },
   {name: "Dashboard Type 1",functionCallName: "dashboardT1",id: "db1"},
-  {name: "Pricing Info Page",functionCallName: "pricingPage",id: "pp"}
+  {name: "Pricing Info Page",functionCallName: "pricingPage",id: "pp"},
+  {name: "Editorial Site", functionCallName: "editorialSite", id: "ed"}
 ];
 
 var currentColorData = [
