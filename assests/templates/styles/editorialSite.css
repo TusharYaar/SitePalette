@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+.container {
+    display: flex;
+    font-family: 'Antic Slab', serif;
+}
+.side-column {
+    width: 400px;
+    height: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.side-column .menu {
+    margin: 20px 0px;
+}
+.side-column .menu h3 { padding: 20px 0px;
+    margin: 0px; 
+    display: inline-block;
+border-bottom: 2px solid black;}
+.side-column .menu ul {
+    list-style: none;
+    padding: 0px;
+}
+.side-column .menu li { padding: 20px 0px;
+border-bottom: 2px solid black;}
+
+
+
+/* ============================================================================= */
+/* Main Body And Its Components */
+.main-body{
+    width: 100%;
+    height: auto;
+    padding: 50px;
+}
+.main-body > header > div.menu {
+    display: block;
+    font-size:40px;
+}
+.main-body > header > div.social-icons{
+    display: flex;
+    justify-content: flex-end;
+    padding:0px;
+}
+.main-body > header > div.social-icons > i {
+    margin: 20px;
+    font-size: 20px;
+}
+.main-edit{
+    margin: 40px 0px;
+    display: flex;
+}
+.main-edit h2{
+    padding: 0px;
+    margin: 0px;
+    font-size: 56px;
+    padding-right: 40px;
+}
+.main-edit h6 {
+    margin: 0px;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-right: 40px;
+}
+.main-edit p {
+    padding-right: 40px;
+}
+.readmore-btn {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+}
+.main-edit img{
+    width: 500px;
+    height: 500px;
+}
+.posts-collection {
+    display: flex;
+    flex-wrap: wrap;
+}
+.post{
+    width: 50%;
+     display: flex;
+     margin: 10px 0px;
+}
+.post > .post-text {
+    padding:  0px 30px;
+    margin-top: 20px;   
+}
+.post > .post-text > h5{
+    font-size: 36px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    margin: 0px;   
+}
+.post > .post-text > p {
+    display: block;
+}
+.post-img-div{
+    border-radius: 50%;
+    height: 200px;
+    min-width: 200px;
+    overflow: hidden;
+}
+.post-img:hover {
+transform: scale(1.5);
+}
