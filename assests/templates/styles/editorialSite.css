@@ -50,7 +50,7 @@ border-bottom: 2px solid rgba(0, 0, 0, 0.4);}
     border-radius: 10px;
 }
 .side-post-img:hover > img{
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition: all 0.1s linear;
 }
 .side-post-img > img {
@@ -155,7 +155,7 @@ border-bottom: 2px solid rgba(0, 0, 0, 0.4);}
     transition: all 0.1s linear;
 }
 .post-img:hover {
-transform: scale(1.5);
+transform: scale(1.2);
 transition: all 0.1s linear;
 }
 
@@ -181,7 +181,7 @@ transition: all 0.1s linear;
     transition: all 0.1s linear;
 }
 .article:hover > .article-img-div>  img {
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition: all 0.1s linear;
 }
 .article > h5{
