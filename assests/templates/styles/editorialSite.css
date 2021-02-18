@@ -150,3 +150,38 @@ transition: all 0.2s linear;
 font-size: 20px;
 padding: 20px;
 }
+
+
+
+
+/* ============================================= */
+/* Media quiries */
+@media (max-width:1092px)
+{.side-column {display:none;}}
+
+@media (max-width:852px)
+{.main-edit{flex-direction: column;
+align-items: center;
+}
+.main-edit > div {
+    order: 2;
+}
+
+    .posts-collection{
+    flex-direction: column;
+    align-items: center;
+}
+
+.articles-collection{
+    flex-direction: column;
+    align-items: center;
+}
+.article:nth-child(2n-1),.article:nth-child(2n){
+    width: 100%;
+    border-right: none;
+    border-bottom: none;
+}
+.post{
+    width: 100%;
+}
+}
