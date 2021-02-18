@@ -27,7 +27,7 @@ var basicColorMenu = [
   { id: "color2", elements: ["sc-background","sc-button2", "sc-card", "sc-navbar"], type: "backgroundColor" },
   { id: "color3", elements: ["sc-body","sc-button3"], type: "backgroundColor" },
   { id: "color4", elements: ["sc-button1", "sc-card2"], type: "backgroundColor" },
-  { id: "color5", elements: ["sc-something", "sc-p", "sc-icon-brand", "sc-icon-special","sc-text2"], type: "color" },
+  { id: "color5", elements: ["sc-something", "sc-p", "sc-icon-brand", "sc-icon-special","sc-text2","sc-button2"], type: "color" },
   { id: "color4", elements: ["sc-background", "sc-card", "sc-navbar", "sc-card2"], type: "borderColor" },
   { id: "color3", elements: ["sc-border"],type: "borderColor"},
   { id: "color5", elements: ["sc-body2"],type:"backgroundColor"}
