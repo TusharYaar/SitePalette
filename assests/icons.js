@@ -13,9 +13,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add event Listeners to the about icons on the side of colors input to show on which classes that color is applied
   document.querySelectorAll(".about-icon").forEach(function (element) {
-    id = element.parentElement.attributes["for"].value.slice(5);
-    id = parseInt(id);
-    showHoverBox(element, basicColorMenu[id - 1].elements, false);
+    id = element.parentElement.attributes["for"].value;
+    var elements = [];
+    basicColorMenu.forEach(function (obj) {
+      if(obj.id == id) {
+        obj.elements.forEach((sc) => {
+          elements.push(sc);
+        })
+      }
+    });
+    showHoverBox(element,elements, false);
   });
 
   // Add event listener to lock-icon in the random color
