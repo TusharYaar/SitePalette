@@ -332,7 +332,8 @@ function addApplySavedColorIcon() {
 }
 function addHoverOnColorItem(element) {
   document.querySelectorAll(element).forEach(function (item) {
-    showHoverBox(item, item.style.backgroundColor, false);
+    console.log(item.style.backgroundColor);
+    showHoverBox(item, rgbToHex(item.style.backgroundColor), false);
   });
 }
 
@@ -349,11 +350,6 @@ function addDeleteSavedIcon() {
         deleteSavedColors(e.target.getAttribute("parent-data"));
       });
     });
-}
-function addHoverOnColorItem(element) {
-  document.querySelectorAll(element).forEach(function (item) {
-    showHoverBox(item, item.style.backgroundColor, false);
-  });
 }
 function addColorHistoryMenu() {
   document
@@ -436,4 +432,19 @@ function getColorDataFileName() {
   script.setAttribute("src", `assests/ColorData/colorData${suffix}.js`);
   script.setAttribute("type", "text/javascript");
   document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+function rgbToHex(color) {
+  var arr = getValuesFromRGBString(color);
+  return "#" + componentToHex(arr[0]) + componentToHex(arr[1]) + componentToHex(arr[2]);
+}
+function getValuesFromRGBString (colorStr) {
+  colorStr = colorStr.slice(4,-1);
+  return colorStr.split(", ").map((val)=> {
+    return parseInt(val)
+  });
 }
