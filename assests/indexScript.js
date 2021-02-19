@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
-    if (document.body.clientWidth < 656 )
+    if (document.body.clientWidth < 656)
       document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }
@@ -68,7 +68,7 @@ function loadSiteTemplateList() {
   var element;
   ul.innerHTML = "";
   templateData.forEach((item) => {
-    element = `<li><label for="${item.id}">${item.name}</label><input type="radio" name="change-template-option" id="${item.id}" onclick="loadTemplate('${item.functionCallName},${item.name}')" /></li>`;
+    element = `<li><label for="${item.id}">${item.name}</label><input type="radio" name="change-template-option" id="${item.id}" onclick="loadTemplate('${item.functionCallName},${item.name},${item.javascript}')" /></li>`;
     ul.insertAdjacentHTML("beforeend", element);
   });
 }
@@ -79,6 +79,7 @@ function loadTemplate(page) {
   var pageDetails = page.split(",");
   var page = pageDetails[0];
   var pageName = pageDetails[1];
+  var javascriptReq = pageDetails[2];
   showSiteMessage(`Loading ${pageName}, please wait...`, false);
   document
     .querySelector("#site-template-css")
@@ -88,10 +89,10 @@ function loadTemplate(page) {
   var xhr3 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   var url2 = `assests/templates/styles/${page}.css`;
-  var url3 = `assests/templates/scripts/${page}.js`;
+  if (javascriptReq != "false") var url3 = `assests/templates/scripts/${page}.js`;
   xhr.open("GET", url);
   xhr2.open("GET", url2);
-  xhr3.open("GET",url3);
+  if (javascriptReq != "false") xhr3.open("GET", url3);
   xhr2.send();
 
   // when xhr is completed, it removes the text loading
@@ -104,14 +105,15 @@ function loadTemplate(page) {
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
+    if(javascriptReq != "false")
     xhr3.send();
     showClassOnHover();
     setCustomColorInput();
   };
-
-  xhr3.onload = function () {
-    if(this.status == 200)
-    console.log(eval(this.responseText));
+  if (javascriptReq != "false") {
+    xhr3.onload = function () {
+      if (this.status == 200) console.log(eval(this.responseText));
+    };
   }
 }
 // Function to fetch a random color palette from the array and set the details of the preview box and the input field
@@ -132,11 +134,10 @@ function getRandomColorData() {
 function setCustomColorInput() {
   var colorsArray = [];
   for (var i = 1; i < 6; i++) {
-    if(document.getElementById(`color${i}`).value.length < 3)
-     {
-       showSiteMessage("One or More text Fields are empty",true,1500);
-       return;
-     }
+    if (document.getElementById(`color${i}`).value.length < 3) {
+      showSiteMessage("One or More text Fields are empty", true, 1500);
+      return;
+    }
     colorsArray.push(document.getElementById(`color${i}`).value);
   }
   setColorInputValue(colorsArray);
@@ -304,7 +305,7 @@ function showSavedColors(AllColors) {
   AllColors.forEach(function (colors, index) {
     li = document.createElement("li");
     li.setAttribute("id", `saved${index}`);
-    colors.forEach(function (color,index) {
+    colors.forEach(function (color, index) {
       div = document.createElement("div");
       div.style.backgroundColor = `${color}`;
       div.setAttribute("class", "saved-color-item");
@@ -322,12 +323,12 @@ function showSavedColors(AllColors) {
   addDeleteSavedIcon();
   addHoverOnColorItem(".saved-color-item");
 }
-function addApplySavedColorIcon(){
-  document.querySelectorAll(".apply-saved-color-icon").forEach(function (icon){
-    icon.addEventListener("click",function(e) {
+function addApplySavedColorIcon() {
+  document.querySelectorAll(".apply-saved-color-icon").forEach(function (icon) {
+    icon.addEventListener("click", function (e) {
       applySavedColors(e.target.getAttribute("parent-data"));
-    })
-  })
+    });
+  });
 }
 function addHoverOnColorItem(element) {
   document.querySelectorAll(element).forEach(function (item) {
@@ -336,16 +337,18 @@ function addHoverOnColorItem(element) {
 }
 
 function addDeleteSavedIcon() {
-  document.querySelectorAll(".delete-saved-color-icon").forEach(function (icon){
-    icon.addEventListener("click",function(){
-      showSiteMessage("Double Click to Delete",true,800);
-    })
+  document
+    .querySelectorAll(".delete-saved-color-icon")
+    .forEach(function (icon) {
+      icon.addEventListener("click", function () {
+        showSiteMessage("Double Click to Delete", true, 800);
+      });
 
-    icon.addEventListener("dblclick",function(e) {
-      e.stopPropagation();
-      deleteSavedColors(e.target.getAttribute("parent-data"));
-    })
-  })
+      icon.addEventListener("dblclick", function (e) {
+        e.stopPropagation();
+        deleteSavedColors(e.target.getAttribute("parent-data"));
+      });
+    });
 }
 function addHoverOnColorItem(element) {
   document.querySelectorAll(element).forEach(function (item) {
