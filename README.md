@@ -14,11 +14,10 @@ Check The developement here [https://tusharyaar.github.io/SitePalette/](https://
 - [x] List of previously used colors and apply them to the
 - [x] Apply Custom color
 - [x] Made Pricing, Dashboard, Editorial
-
+- [x] More Details Shown on Hover
 # TO DO:
 
 - [ ] All of Advance features
-- [ ] More Details Shown on Hover
 - [ ] Add A Tour
 - [ ] Complete preview Page template
 - [ ] Make Facecopy, and blog template responsive

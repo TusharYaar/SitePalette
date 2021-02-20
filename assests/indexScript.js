@@ -180,6 +180,7 @@ function applyBasicColor() {
       }
     }
   });
+  showClassOnHover();
 }
 // this function sets the color, accpeting 3 params
 // class to be set the color, actual color you want to set, type of property to apply color on(backgrounColor, color, border, etc)
@@ -214,7 +215,14 @@ function showClassOnHover() {
   val = ids.join(", ");
   document.querySelectorAll(val).forEach(function (ele) {
     // console.log(ele.style);
-    showHoverBox(ele, `${ele.classList}`, true); // Calls the function which actually add the hover box
+    var color = "", backgroundColor = "";
+  if (ele.style["background-color"] != ""){
+    backgroundColor = `<br>Background-color: ${rgbToHex(ele.style["background-color"])}`
+  }
+  if (ele.style["color"] != "" ) {
+    color = `<br>Color :${rgbToHex(ele.style["color"])}`;
+  }
+    showHoverBox(ele, `${ele.classList}${backgroundColor}${color}`, true); // Calls the function which actually add the hover box
   });
 }
 
@@ -227,15 +235,18 @@ function showHoverBox(element, content, condition) {
   element.addEventListener("mousemove", function (e) {
     e.stopPropagation();
     e.preventDefault();
-    hover.style.top = e.pageY + "px";
-    var left = e.pageX - 200;
-    if (left < 10) left += 200;
+    hover.innerHTML = content;
+   if (window.innerHeight <=  e.pageY + 80)
+      hover.style.top = e.pageY -  hover.getBoundingClientRect().height + "px";
+    else hover.style.top = e.pageY + "px";
+    var left = e.pageX - 230;
+    if (left < 10) left += 230;
     hover.style.left = left + "px";
 
     if (condition) {
       if (showClass) hover.style.display = "block";
     } else hover.style.display = "block";
-    hover.innerHTML = content;
+  
   });
   element.addEventListener("mouseleave", function (e) {
     e.stopPropagation();
