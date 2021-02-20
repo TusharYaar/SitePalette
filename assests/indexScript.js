@@ -112,7 +112,7 @@ function loadTemplate(page) {
   };
   if (javascriptReq != "false") {
     xhr3.onload = function () {
-      if (this.status == 200) console.log(eval(this.responseText));
+      if (this.status == 200) eval(this.responseText);
     };
   }
 }
@@ -213,7 +213,8 @@ function showClassOnHover() {
   ids = allSCComponents(true);
   val = ids.join(", ");
   document.querySelectorAll(val).forEach(function (ele) {
-    showHoverBox(ele, ele.classList, true); // Class the function which actually add the hover box
+    // console.log(ele.style);
+    showHoverBox(ele, `${ele.classList}`, true); // Calls the function which actually add the hover box
   });
 }
 
@@ -332,7 +333,7 @@ function addApplySavedColorIcon() {
 }
 function addHoverOnColorItem(element) {
   document.querySelectorAll(element).forEach(function (item) {
-    console.log(item.style.backgroundColor);
+    // console.log(item.style.backgroundColor);
     showHoverBox(item, rgbToHex(item.style.backgroundColor), false);
   });
 }
