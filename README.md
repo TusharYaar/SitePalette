@@ -15,11 +15,12 @@ Check The developement here [https://tusharyaar.github.io/SitePalette/](https://
 - [x] Apply Custom color
 - [x] Made Pricing, Dashboard, Editorial
 - [x] More Details Shown on Hover
+- [x] Make Error Template
 # TO DO:
 
 - [ ] All of Advance features
 - [ ] Add A Tour
 - [ ] Complete preview Page template
 - [ ] Make Facecopy, and blog template responsive
-- [ ] Make Error Template
+
   
