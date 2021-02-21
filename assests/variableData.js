@@ -35,6 +35,12 @@ var templateData = [
     id: "ed",
     javascript: false,
   },
+  {
+    name: "404 Error Page",
+    functionCallName: "error404",
+    id: "error1",
+    javascript: false,
+  }
 ];
 
 var currentColorData = [

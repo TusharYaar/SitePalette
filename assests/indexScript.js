@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  // loadTemplate("editorialSite","Editorial Site");
+  loadTemplate("error404","Editorial Site");
   showSiteMessage("This Site pages are NOT responsive YET", true, 1500);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
