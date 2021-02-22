@@ -460,3 +460,20 @@ function getValuesFromRGBString (colorStr) {
     return parseInt(val)
   });
 }
+
+function startTour() {
+  console.log("called");
+  var e = document.querySelector('#colors-history').getClientRects()[0];
+  tourBox.style.top = `${e.top-95}px`;
+  tourBox.classList.add("active");
+  // document.body.clientWidth;  
+  if(e.left > 1300) {
+    // tourBox.classList =+ "right";
+    a = tourBox.getClientRects()[0];
+    tourBox.style.left = `${e.left-a.width + 50}px`;
+  }
+  else{ 
+    // tourBox.classList = "left";
+  tourBox.style.left = `${e.left}px`;}
+
+}

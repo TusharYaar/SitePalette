@@ -117,6 +117,6 @@ var siteInteractionButtons = [
   "colors-history",
 ];
 const messageBox = document.querySelector("#site-messages");
-
+const tourBox = document.querySelector("#tour-box");
 var messageBoxInterval;
 const numberOfColorDataFiles = 5;

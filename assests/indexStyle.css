@@ -11,22 +11,35 @@ body {
 }
 /* ================================================================== */
 #tour-box {
-  width: 150px;
+  width: auto;
   height: 75px;
   background-color: black;
   color: #fff;
-  padding: 20px;
+  /* padding: 20px; */
   position: absolute;
   float: left;
-  top: 276px;
-  left: 50px;
   /* margin: 15px; */
+  display:none;
 }
-#tour-box:after {
+#tour-box.active{
+  display: block;
+}
+#tour-box.left:after {
   content: " ";
   position: absolute;
   /* right: 30px; */
   left: 10px;
+  bottom: -15px;
+  border-top: 15px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: none;
+}
+#tour-box.right:after{
+  content: " ";
+  position: absolute;
+  /* right: 30px; */
+  right: 10px;
   bottom: -15px;
   border-top: 15px solid black;
   border-right: 15px solid transparent;
