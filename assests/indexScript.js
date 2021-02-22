@@ -463,7 +463,8 @@ function getValuesFromRGBString (colorStr) {
 
 function startTour() {
   console.log("called");
-  var e = document.querySelector('#colors-history').getClientRects()[0];
+  var e = document.querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`).getClientRects()[0];
+  console.log(e);
   tourBox.style.top = `${e.top-95}px`;
   tourBox.classList.add("active");
   // document.body.clientWidth;  
@@ -476,4 +477,10 @@ function startTour() {
     // tourBox.classList = "left";
   tourBox.style.left = `${e.left}px`;}
 
+}
+
+function showNextTourItem() {
+  tourBoxAtItemIndex++;
+  console.log(tourBoxAtItemIndex);
+  startTour();
 }

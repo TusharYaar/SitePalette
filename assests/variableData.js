@@ -40,7 +40,7 @@ var templateData = [
     functionCallName: "error404",
     id: "error1",
     javascript: false,
-  }
+  },
 ];
 
 var currentColorData = [
@@ -120,3 +120,24 @@ const messageBox = document.querySelector("#site-messages");
 const tourBox = document.querySelector("#tour-box");
 var messageBoxInterval;
 const numberOfColorDataFiles = 5;
+var tourBoxItems = [
+  {
+    name: "Load template",
+    Description:
+      "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
+    id: "change-color",
+  },
+  {
+    name: "Color History",
+    Description:
+      "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
+    id: "colors-history",
+  },
+  {
+    name: "Color History",
+    Description:
+      "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
+    id: "saved-colors",
+  },
+];
+var tourBoxAtItemIndex = 0;
