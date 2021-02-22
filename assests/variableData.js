@@ -123,20 +123,20 @@ const numberOfColorDataFiles = 5;
 var tourBoxItems = [
   {
     name: "Load template",
-    Description:
+    description:
       "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
     id: "change-color",
   },
   {
     name: "Color History",
-    Description:
-      "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
+    description:
+      "o jat yamla pagla deewana",
     id: "colors-history",
   },
   {
     name: "Color History",
-    Description:
-      "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
+    description:
+      "go tushar GOoo",
     id: "saved-colors",
   },
 ];

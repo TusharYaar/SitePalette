@@ -12,13 +12,14 @@ body {
 /* ================================================================== */
 #tour-box {
   width: auto;
-  height: 75px;
+  height: auto;
   background-color: black;
   color: #fff;
-  /* padding: 20px; */
+  padding: 20px;
   position: absolute;
   float: left;
   /* margin: 15px; */
+  z-index: 200;
   display:none;
 }
 #tour-box.active{
