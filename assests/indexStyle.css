@@ -13,15 +13,15 @@ body {
 #tour-box {
   width: 400px;
   height: 250px;
-  background-color: black;
-  color: #fff;
-  padding: 20px;
+  background-color: #35A1B3;
+  padding: 15px;
   position: absolute;
   margin: 0px 15px;
   max-width: 700px;
   max-height: 300px;
   z-index: 200;
   display:none;
+  border-radius: 10px;
 }
 #tour-box.active{
   display:flex;
@@ -34,7 +34,7 @@ body {
   position: absolute;
   right: 10px;
   bottom: -15px;
-  border-top: 15px solid black;
+  border-top: 15px solid #35A1B3;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: none;

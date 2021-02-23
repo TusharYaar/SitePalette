@@ -473,9 +473,8 @@ function displayTourBox(start) {
 
 function showNextTourItem() {
   tourBoxAtItemIndex++;
-  if(tourBoxAtItemIndex >= tourBoxItems.length)
-      tourBoxAtItemIndex=0;
-  displayTourBox();
+  if(tourBoxAtItemIndex >= tourBoxItems.length)   stopTourBox();
+  else  displayTourBox();
 }
 function stopTourBox () {
   tourBoxAtItemIndex = 0;

@@ -130,7 +130,7 @@ var tourBoxItems = [
   {
     name: "Color History",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum necessitatibus quaerat quo impedit odio ex, omnis, totam quis dolore veritatis odit, possimus porro pariatur unde! Itaque dolores ex et eius non distinctio culpa neque nostrum eligendi rem obcaecati doloremque ratione hic provident autem, saepe deserunt. Dolore animi perspiciatis vitae magnam!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum necessitatibus quaerat quo impedit odio ex, omnis, totam quis dolore veritatis odit, possimus porro pariatur unde!",
     id: "colors-history",
   },
   {
