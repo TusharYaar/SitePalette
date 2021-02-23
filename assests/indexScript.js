@@ -469,13 +469,13 @@ function displayTourBox(start) {
   var e = document.querySelector(`#${tourBoxItems[index].id}`).getClientRects()[0];
   if(document.body.clientWidth -30 <= tourBox.offsetWidth + e.left) {
     if(tourBox.classList.contains("left"))tourBox.classList.replace("left","right");
-    tourBox.style.left = `${e.left-tourBox.offsetWidth}px`;
+    tourBox.style.left = `${e.left-tourBox.offsetWidth + 35}px`;
     console.log(tourBox.offsetWidth);
   }
   else{ 
     if(tourBox.classList.contains("right"))tourBox.classList.replace("right","left");
   tourBox.style.left = `${e.left}px`};
-  tourBox.style.top = `${e.top- tourBox.offsetHeight - 30}px`;
+  tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;
 }
 
 function showNextTourItem() {
