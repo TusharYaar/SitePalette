@@ -17,8 +17,9 @@ body {
   color: #fff;
   padding: 20px;
   position: absolute;
-  float: left;
-  /* margin: 15px; */
+  margin: 0px 15px;
+  max-width: 700px;
+  max-height: 300px;
   z-index: 200;
   display:none;
 }

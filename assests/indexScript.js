@@ -461,32 +461,25 @@ function getValuesFromRGBString (colorStr) {
   });
 }
 
-function displayTourBox(index) {
-  index = index||tourBoxAtItemIndex;
-  document.querySelector("#text-description").innerHTML = tourBoxItems[index].description;
+function displayTourBox(start) {
+  index = start||tourBoxAtItemIndex;
   tourBox.classList.add("active");
-  tourBoxDimention = tourBox.getClientRects()[0];
-  var e = document.querySelector(`#${tourBoxItems[index].id}`).getClientRects()[0];
-  console.log(e);
-  tourBox.style.top = `${e.top- tourBoxDimention.height - 20}px`;
+  document.querySelector("#text-description").innerHTML = tourBoxItems[index].description;
   
-
-
-  // document.body.clientWidth;  
-  if(e.left > tourBoxDimention.left) {
-    // tourBox.classList =+ "right";
-
-    tourBox.style.left = `${e.left-tourBoxDimention.width + 50}px`;
+  var e = document.querySelector(`#${tourBoxItems[index].id}`).getClientRects()[0];
+  if(document.body.clientWidth -30 <= tourBox.offsetWidth + e.left) {
+    if(tourBox.classList.contains("left"))tourBox.classList.replace("left","right");
+    tourBox.style.left = `${e.left-tourBox.offsetWidth}px`;
+    console.log(tourBox.offsetWidth);
   }
   else{ 
-    // tourBox.classList = "left";
-  tourBox.style.left = `${e.left}px`;}
-
+    if(tourBox.classList.contains("right"))tourBox.classList.replace("right","left");
+  tourBox.style.left = `${e.left}px`};
+  tourBox.style.top = `${e.top- tourBox.offsetHeight - 30}px`;
 }
 
 function showNextTourItem() {
   tourBoxAtItemIndex++;
-  console.log(tourBoxAtItemIndex);
   if(tourBoxAtItemIndex >= tourBoxItems.length)
       tourBoxAtItemIndex=0;
   displayTourBox();

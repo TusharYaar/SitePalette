@@ -130,14 +130,18 @@ var tourBoxItems = [
   {
     name: "Color History",
     description:
-      "o jat yamla pagla deewana",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum necessitatibus quaerat quo impedit odio ex, omnis, totam quis dolore veritatis odit, possimus porro pariatur unde! Itaque dolores ex et eius non distinctio culpa neque nostrum eligendi rem obcaecati doloremque ratione hic provident autem, saepe deserunt. Dolore animi perspiciatis vitae magnam!",
     id: "colors-history",
   },
   {
     name: "Color History",
-    description:
-      "go tushar GOoo",
+    description: "go tushar GOoo",
     id: "saved-colors",
+  },
+  {
+    name: "Color History",
+    description: "dwjhbd wieu wefuh wouh woeufhw oeuh woeuhw oecihw oluehc owubcwoeub woueb wuodn wdun wldun wldunwoeucnqicnnq puwicn ucn woeucn wduocn n",
+    id: "change-template",
   },
 ];
 var tourBoxAtItemIndex = 0;
