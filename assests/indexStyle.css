@@ -24,7 +24,9 @@ body {
   display:none;
 }
 #tour-box.active{
-  display: block;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #tour-box:after{
@@ -37,7 +39,17 @@ body {
   border-left: 15px solid transparent;
   border-bottom: none;
 }
-
+.tour-btn {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+#tour-box-btns {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* ================================================================== */
 #site-overlay {
