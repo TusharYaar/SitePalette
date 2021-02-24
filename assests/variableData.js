@@ -124,24 +124,24 @@ var tourBoxItems = [
   {
     name: "Load template",
     description:
-      "vkjhbvekhkvblug egbvw lhiv ldh li ihv lhw cugq ciwyec wiec  pweuc wgdc oc",
-    id: "change-color",
+      "Start by selecting a template, choose the one one which matches your project or feel free to explore",
+    id: "change-template",
   },
   {
     name: "Color History",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum necessitatibus quaerat quo impedit odio ex, omnis, totam quis dolore veritatis odit, possimus porro pariatur unde!",
-    id: "colors-history",
+      "Then generate a random color palette, Or choose your own.",
+    id: "change-color",
   },
   {
     name: "Color History",
-    description: "go tushar GOoo",
+    description: "Here you can see the colors you saved and liked, you can apply them from here",
     id: "saved-colors",
   },
   {
     name: "Color History",
-    description: "dwjhbd wieu wefuh wouh woeufhw oeuh woeuhw oecihw oluehc owubcwoeub woueb wuodn wdun wldun wldunwoeucnqicnnq puwicn ucn woeucn wduocn n",
-    id: "change-template",
+    description: "Here you can see your previouly applied colors, in that session",
+    id: "colors-history",
   },
 ];
 var tourBoxAtItemIndex = 0;
