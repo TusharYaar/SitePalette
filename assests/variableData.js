@@ -121,27 +121,38 @@ const tourBox = document.querySelector("#tour-box");
 var messageBoxInterval;
 const numberOfColorDataFiles = 5;
 var tourBoxItems = [
-  {
+  // {
+  //   name: "Site Template",
+  //   description: " Here your site template will be visible",
+  //   id: "site-template",
+  //   javascript: function () {return}
+  // },
+  { 
     name: "Load A Template",
     description:
       "Start by selecting a template, choose the one one which matches your project or feel free to explore",
     id: "change-template",
+    javascript: function () { console.log("hello")
+      console.log(document.querySelector(`#${this.id}`).classList.add("active"));}
   },
   {
     name: "Change The Colors",
     description:
       "Then generate a random color palette, Or choose your own.",
     id: "change-color",
+    javascript: function () {document.querySelector(`#${this.id}`).click() }
   },
   {
     name: "View Saved Colors",
     description: "Here you can see the colors you saved and liked, you can apply them from here",
     id: "saved-colors",
+    javascript: function () {document.querySelector(`#${this.id}`).click(); }
   },
   {
     name: "Applied Color History",
     description: "Here you can see your previouly applied colors, in that session",
     id: "colors-history",
+    javascript: function () {return }
   },
 ];
 var tourBoxAtItemIndex = 0;

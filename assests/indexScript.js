@@ -461,14 +461,15 @@ function getValuesFromRGBString (colorStr) {
   });
 }
 
-function displayTourBox(start) {
-  if(start&&start==0) 
-    tourBoxAtItemIndex = 0;
-  tourBox.classList.add("active");
+function displayTourBox() {
+  tourBoxItems[tourBoxAtItemIndex].javascript();
   document.querySelector("#text-description").innerHTML = `<h3>${tourBoxItems[tourBoxAtItemIndex].name}</h3>${tourBoxItems[tourBoxAtItemIndex].description}`;
-  var e = document.querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`).getClientRects()[0];
+  tourBox.classList.remove("active");
+setTimeout(function(){ 
+  tourBox.classList.add("active");
+  e = document.querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`).getClientRects()[0];
   tourBox.style.left = `${e.left-tourBox.offsetWidth + 35}px`;
-  tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;
+  tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;},300)
 }
 
 function showNextTourItem() {
