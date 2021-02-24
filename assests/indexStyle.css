@@ -50,7 +50,11 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
+#text-description {margin:0px; font-size: 16px;}
+#text-description > h3{
+  font-size: 20px;
+  margin:5px 0px ;
+}
 /* ================================================================== */
 #site-overlay {
   display: none;
