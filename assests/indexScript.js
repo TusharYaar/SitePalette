@@ -465,7 +465,7 @@ function displayTourBox(start) {
   if(start&&start==0) 
     tourBoxAtItemIndex = 0;
   tourBox.classList.add("active");
-  document.querySelector("#text-description").innerHTML = tourBoxItems[tourBoxAtItemIndex].description;
+  document.querySelector("#text-description").innerHTML = `<h3>${tourBoxItems[tourBoxAtItemIndex].name}</h3>${tourBoxItems[tourBoxAtItemIndex].description}`;
   var e = document.querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`).getClientRects()[0];
   tourBox.style.left = `${e.left-tourBox.offsetWidth + 35}px`;
   tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;

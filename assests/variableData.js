@@ -122,24 +122,24 @@ var messageBoxInterval;
 const numberOfColorDataFiles = 5;
 var tourBoxItems = [
   {
-    name: "Load template",
+    name: "Load A Template",
     description:
       "Start by selecting a template, choose the one one which matches your project or feel free to explore",
     id: "change-template",
   },
   {
-    name: "Color History",
+    name: "Change The Colors",
     description:
       "Then generate a random color palette, Or choose your own.",
     id: "change-color",
   },
   {
-    name: "Color History",
+    name: "View Saved Colors",
     description: "Here you can see the colors you saved and liked, you can apply them from here",
     id: "saved-colors",
   },
   {
-    name: "Color History",
+    name: "Applied Color History",
     description: "Here you can see your previouly applied colors, in that session",
     id: "colors-history",
   },
