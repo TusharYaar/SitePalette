@@ -72,7 +72,7 @@ body {
 
 #site-messages {
   color: #091E05;
-  background: #FFA62B;
+  background: #D7F3E3;
   padding: 10px;
   position: absolute;
   top: -10px;
@@ -348,7 +348,8 @@ body {
   margin: 10px 5px;
   width: auto;
   border: none;
-  border-radius: 1px;
+  border-radius: 5px;
+  box-shadow: 5px 5px rgba(136, 136, 136, 0.377);
   font-size: 14px;
   font-weight: 600;
   /* border-radius: 5px; */
@@ -356,6 +357,12 @@ body {
 }
 .site-interaction-button:hover {
   cursor: pointer;
+  box-shadow: 4px 3px rgba(136, 136, 136, 0.377);
+  transform: translateY(2px);
+}
+.site-interaction-button:active{
+  box-shadow: 0px 0px rgba(136, 136, 136, 0.377);
+  transform: translateY(5px);
 }
 
 @keyframes RRotate {

@@ -448,8 +448,11 @@ function getColorDataFileName() {
 }
 
 function componentToHex(c) {
+  if(c)
+  {
   var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
+  return hex.length == 1 ? "0" + hex : hex;}
+  else return "00";
 }
 function rgbToHex(color) {
   var arr = getValuesFromRGBString(color);
