@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
   // loadTemplate("error404","Editorial Site");
-  showSiteMessage("This Site pages are NOT responsive YET", true, 1500);
+  // showSiteMessage("New to the site!!! Start by taking a basic tour", true, 1500);
+  showSiteMessage(`New to the site!!! Start by taking a basic tour` + tourPopup,true,5000);
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -403,7 +404,7 @@ function applySavedColors(id) {
   showSiteMessage("Saved Colors Reloaded", true, 700);
 }
 function showSiteMessage(message, autoRemove, interval) {
-  messageBox.textContent = message;
+  messageBox.innerHTML = message;
   messageBox.classList.add("active");
   if (messageBoxInterval) clearTimeout(messageBoxInterval);
   if (autoRemove) {
@@ -462,37 +463,23 @@ function getValuesFromRGBString (colorStr) {
 }
 
 function displayTourBox() {
-tourBoxItems[tourBoxAtItemIndex].callFunction();
-  document.querySelector("#text-description").innerHTML = `<h3>${tourBoxItems[tourBoxAtItemIndex].name}</h3>${tourBoxItems[tourBoxAtItemIndex].description}`;
-setTimeout(function(){ 
-  tourBox.classList.add("active");
+  document.querySelector("#text-description").innerHTML = `<h3>${tourBoxItems[tourBoxAtItemIndex].name}</h3>${tourBoxItems[tourBoxAtItemIndex].description}`;  tourBox.classList.add("active");
   e = document.querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`).getClientRects()[0];
   tourBox.style.left = `${e.left-tourBox.offsetWidth + 35}px`;
-  tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;},300)
+  tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;
 }
 
-function showNextTourItem() {
+function showNextTourItem(start) {
+  if (start){
+    tourBoxAtItemIndex = -1;
+  }
   tourBoxAtItemIndex++;
-  if(tourBoxAtItemIndex >= tourBoxItems.length)  { stopTourBox()}
+  if(tourBoxAtItemIndex >= tourBoxItems.length)  { stopTourBox();}
   else { 
-    displayTourBox()};
+    displayTourBox()
+  };
 }
 function stopTourBox () {
   tourBoxAtItemIndex = -1;
   tourBox.classList.remove("active");
 }
-// document.querySelector("#start-tour-btn").addEventListener("click",function () { 
-//   showNextTourItem();
-// });
-function testFunction() {
-  // tourBoxAtItemIndex = 0
-// cc = setInterval(function() {
-//   if(tourBoxAtItemIndex >= tourBoxItems.length) {
-//     tourBoxAtItemIndex = 0;
-//   }
-//   tourBoxItems[tourBoxAtItemIndex].callFunction();
-//   tourBoxAtItemIndex++;
-// },1000);
-return 400;
-}
-// testFunction();

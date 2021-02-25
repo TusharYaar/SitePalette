@@ -121,45 +121,29 @@ const tourBox = document.querySelector("#tour-box");
 var messageBoxInterval;
 const numberOfColorDataFiles = 5;
 var tourBoxItems = [
-
-  { 
+  {
     name: "Load A Template",
     description:
       "Start by selecting a template, choose the one one which matches your project or feel free to explore",
     id: "change-template",
-    callFunction: function () {document.querySelector(`#change-template`).click();}
   },
   {
     name: "Change The Colors",
-    description:
-      "Then generate a random color palette, Or choose your own.",
+    description: "Then generate a random color palette, Or choose your own.",
     id: "change-color",
-    callFunction: function () {
-     document.querySelector(`#${this.id}`).click();
-     }
   },
   {
     name: "View Saved Colors",
-    description: "Here you can see the colors you saved and liked, you can apply them from here",
+    description:
+      "Here you can see the colors you saved and liked, you can apply them from here",
     id: "saved-colors",
-    callFunction: function () {document.querySelector(`#${this.id}`).click(); }
   },
   {
     name: "Applied Color History",
-    description: "Here you can see your previouly applied colors, in that session",
+    description:
+      "Here you can see your previouly applied colors, in that session",
     id: "colors-history",
-    callFunction: function () {document.querySelector(`#${this.id}`).click();}
   },
 ];
 var tourBoxAtItemIndex = -1;
-  // {
-  //   name: "Site Template",
-  //   description: " Here your site template will be visible",
-  //   id: "site-template",
-  //   javascript: function () {return}
-  // },
-  // {
-  //   callFunction: function() {
-  //     document.querySelector(`body`).click();
-  //     showNextTourItem();
-  //   }  // },
+const tourPopup = `<button class="site-interaction-button" onclick="showNextTourItem(true);" id="start-tour-btn" >Start Tour</button>`
