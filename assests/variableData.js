@@ -41,6 +41,12 @@ var templateData = [
     id: "error1",
     javascript: false,
   },
+  {
+    name: "Landing Page",
+    functionCallName: "landingPage",
+    id: "landing",
+    javascript: false,
+  }
 ];
 
 var currentColorData = [
