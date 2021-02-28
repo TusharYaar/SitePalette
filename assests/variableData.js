@@ -46,6 +46,12 @@ var templateData = [
     functionCallName: "landingPage",
     id: "landing",
     javascript: false,
+  },
+  {
+    name: "Portfolio Template",
+    functionCallName: "portfolio",
+    id: "portfolio",
+    javascript: false,
   }
 ];
 
