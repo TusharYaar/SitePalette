@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  loadTemplate("landingPage","Editorial Site");
+  // loadTemplate("landingPage","Editorial Site");
   // showSiteMessage("New to the site!!! Start by taking a basic tour", true, 1500);
   showSiteMessage(`New to the site!!! Start by taking a basic tour` + tourPopup,true,5000);
   // function to add active class to the interaction buttons
