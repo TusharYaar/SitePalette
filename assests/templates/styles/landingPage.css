@@ -1,0 +1,26 @@
+div.container {
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+
+}
+.child{
+    color: red;
+    padding: 7em;
+    font-size: 48px;
+    text-align: center;
+    height: 100vh;
+    scroll-snap-align: center;
+}
+.child:first-child {
+    background-color: orange;
+}
+.child:last-child {
+    background-color: green;
+}
+body,html {
+    height: 100vh;
+    overflow: hidden;
+
+}
