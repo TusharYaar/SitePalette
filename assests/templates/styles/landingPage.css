@@ -7,11 +7,34 @@ div.container {
 }
 .child{
     color: red;
-    padding: 7em;
-    font-size: 48px;
-    text-align: center;
+    padding: 50px;
     height: 100vh;
     scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.child h4 {
+    font-size: 48px;
+}
+.child p {
+    font-size: 20px;
+}
+#scroll-for-more {
+    text-align: center;
+    font-size: 20px;
+    margin-top: -20px;
+}
+#scroll-for-more-icon {
+     animation: JumpArrow 2s linear 0s infinite;
+}
+.inner-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+img.svg {
+    width: 100%;
 }
 .child:first-child {
     background-color: orange;
@@ -23,4 +46,21 @@ body,html {
     height: 100vh;
     overflow: hidden;
 
+}
+
+
+
+@keyframes JumpArrow {
+    0%,10%,80%,100%{
+       transform: translateY( 0px);
+    }
+    20%{
+       transform: translateY( -10px);
+    }
+    30%,50%,70%{
+       transform: translateY( 5px);
+    }
+    40%,60%{
+       transform: translateY( 15px);
+    }
 }
