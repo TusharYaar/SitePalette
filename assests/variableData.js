@@ -52,7 +52,7 @@ var templateData = [
     functionCallName: "portfolio",
     id: "portfolio",
     javascript: false,
-  }
+  },
 ];
 
 var currentColorData = [
@@ -131,7 +131,7 @@ var siteInteractionButtons = [
 const messageBox = document.querySelector("#site-messages");
 const tourBox = document.querySelector("#tour-box");
 var messageBoxInterval;
-const numberOfColorDataFiles = 5;
+const numberOfColorDataFiles = 6;
 var tourBoxItems = [
   {
     name: "Load A Template",
@@ -158,4 +158,4 @@ var tourBoxItems = [
   },
 ];
 var tourBoxAtItemIndex = -1;
-const tourPopup = `<button class="site-interaction-button" onclick="showNextTourItem(true);" id="start-tour-btn" >Start Tour</button>`
+const tourPopup = `<button class="site-interaction-button" onclick="showNextTourItem(true);" id="start-tour-btn" >Start Tour</button>`;
