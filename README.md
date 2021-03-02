@@ -22,5 +22,4 @@ Check The developement here [https://tusharyaar.github.io/SitePalette/](https://
 - [ ] All of Advance features
 - [ ] Complete preview Page template
 - [ ] Make Facecopy, and blog template responsive
-- [ ] Make landingPage responsive
    

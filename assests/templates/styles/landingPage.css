@@ -5,12 +5,32 @@ div.container {
   scroll-snap-type: y mandatory;
 }
 .child {
-  padding: 50px;
+  padding: 70px 50px 50px 40px;
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.navbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 60px;
+  width: 100%;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar h1 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 40px;
+}
+.navbar h5 {
+  display: inline-block;
+  margin: 20px 20px;
 }
 .child h4 {
   font-size: 48px;
@@ -35,7 +55,7 @@ div.container {
 .inner-section {
   display: flex;
   flex-direction: row;
-
+  align-items: center;
   justify-content: space-between;
 }
 .text-section {
@@ -45,6 +65,7 @@ div.container {
 img.svg {
   width: 100%;
   flex-shrink: 1;
+  align-self: center;
 }
 img.guide-icons {
   transform: translateY(30%);
@@ -78,13 +99,19 @@ html {
 
 @media (max-width: 942px) {
   .child {
-    padding: 0px 10px;
+    padding: 3rem 10px;
   }
   .child p {
     line-height: 1.5;
   }
 }
-@media (max-width: 588px) {
+@media (max-width: 610px) {
+  .navbar {
+    display: none;
+  }
+  .child {
+    padding: 10px 5px;
+  }
   .inner-section {
     flex-direction: column;
     justify-content: center;
