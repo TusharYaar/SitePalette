@@ -14,12 +14,17 @@ div.container {
 }
 .child h4 {
   font-size: 48px;
+  margin: 20px auto;
 }
 .child p {
   font-size: 20px;
   line-height: 2;
 }
 #scroll-for-more {
+  position: relative;
+  bottom: 10px;
+  transform: translateX(-50%);
+  left: 50%;
   text-align: center;
   font-size: 20px;
   margin-top: -20px;
@@ -68,5 +73,35 @@ html {
   40%,
   60% {
     transform: translateY(15px);
+  }
+}
+
+@media (max-width: 942px) {
+  .child {
+    padding: 0px 10px;
+  }
+  .child p {
+    line-height: 1.5;
+  }
+}
+@media (max-width: 588px) {
+  .inner-section {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .text-section {
+    max-width: 100%;
+  }
+  .text-section > h4 {
+    margin: 0px;
+    text-align: center;
+    font-size: 30px;
+  }
+  .child p {
+    display: none;
+  }
+  #scroll-for-more {
+    font-size: 10px;
+    bottom: 20px;
   }
 }
