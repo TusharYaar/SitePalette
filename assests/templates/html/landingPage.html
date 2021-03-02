@@ -1,9 +1,10 @@
 <div class="sc-body">
   <div class="navbar sc-navbar"></div>
   <div class="container">
-    <section class="child">
+    <!-- Section 1 ===================== -->
+    <section class="child sc-card">
       <div class="inner-section">
-        <div>
+        <div class="text-section">
           <h4>Get A color For Your Site</h4>
           <p>
             Quickly test a colour palette on the site, without the hassle of
@@ -21,9 +22,61 @@
         <div id="scroll-for-more-icon"><i class="fas fa-arrow-down"></i></div>
       </div>
     </section>
-
-    <section class="child"><div class="inner-section"><img src="./assests/templates/images/undraw_static_website_0107.svg" alt=""><div><h4>Load Template</h4>
-      <p>Load from a bunch of templates and apply colors on them to get a sick color palette. You can load a template form here. Not needed not, this homepage is itself a template</p></div></div></section>
-    <section class="child">Cause I am making this alone, it takes time</section>
+    <!-- Section 2 ============================= -->
+    <section class="child">
+      <div class="inner-section">
+        <img
+          class="svg"
+          src="./assests/templates/images/undraw_static_website_0107.svg"
+          alt=""
+        />
+        <div class="text-section">
+          <h4>Load Template</h4>
+          <p>
+            Load from a bunch of templates and apply colors on them to get a
+            sick color palette. You can load a template form here
+            <img
+              class="guide-icons"
+              src="./assests/icons/template.svg"
+              alt="Template icon"
+              title="Template Icon"
+            />
+            <br />
+            Not needed now, this homepage is itself a template.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Section 3 ==============================  -->
+    <section class="child sc-card2">
+      <div class="inner-section">
+        <div class="text-section">
+          <h4>Load Template</h4>
+          <p>
+            Now that you have a template, press C, to generate a random color
+            palette and see the template change colors. Try it now, for a more
+            detailed look, check here
+            <img
+              src="./assests/icons/color.svg"
+              alt="Color"
+              title="Change Color"
+            />
+            <br />
+            <button
+              class="site-interaction-button sc-button2"
+              onclick="showNextTourItem(true);"
+              id="start-tour-btn"
+            >
+              Start Tour
+            </button>
+          </p>
+        </div>
+        <img
+          class="svg"
+          src="./assests/templates/images/undraw_add_color_19gv.svg"
+          alt=""
+        />
+      </div>
+    </section>
   </div>
 </div>

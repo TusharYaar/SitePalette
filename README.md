@@ -16,11 +16,11 @@ Check The developement here [https://tusharyaar.github.io/SitePalette/](https://
 - [x] Made Pricing, Dashboard, Editorial
 - [x] More Details Shown on Hover
 - [x] Make Error Template
+- [x] Add A Tour
 # TO DO:
 
 - [ ] All of Advance features
-- [ ] Add A Tour
 - [ ] Complete preview Page template
 - [ ] Make Facecopy, and blog template responsive
-
-  
+- [ ] Make landingPage responsive
+   

@@ -23,9 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  // loadTemplate("landingPage","Editorial Site");
+  loadTemplate("landingPage", "Editorial Site");
   // showSiteMessage("New to the site!!! Start by taking a basic tour", true, 1500);
-  showSiteMessage(`New to the site!!! Start by taking a basic tour` + tourPopup,true,5000);
+  showSiteMessage(
+    `New to the site!!! Start by taking a basic tour` + tourPopup,
+    true,
+    5000
+  );
   // function to add active class to the interaction buttons
   document.querySelectorAll(".site-interaction").forEach(function (element) {
     element.addEventListener("click", function (e) {
@@ -90,7 +94,8 @@ function loadTemplate(page) {
   var xhr3 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   var url2 = `assests/templates/styles/${page}.css`;
-  if (javascriptReq != "false") var url3 = `assests/templates/scripts/${page}.js`;
+  if (javascriptReq != "false")
+    var url3 = `assests/templates/scripts/${page}.js`;
   xhr.open("GET", url);
   xhr2.open("GET", url2);
   if (javascriptReq != "false") xhr3.open("GET", url3);
@@ -106,8 +111,7 @@ function loadTemplate(page) {
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
-    if(javascriptReq != "false")
-    xhr3.send();
+    if (javascriptReq != "false") xhr3.send();
     showClassOnHover();
     setCustomColorInput();
   };
@@ -216,13 +220,16 @@ function showClassOnHover() {
   val = ids.join(", ");
   document.querySelectorAll(val).forEach(function (ele) {
     // console.log(ele.style);
-    var color = "", backgroundColor = "";
-  if (ele.style["background-color"] != ""){
-    backgroundColor = `<br>Background-color: ${rgbToHex(ele.style["background-color"])}`
-  }
-  if (ele.style["color"] != "" ) {
-    color = `<br>Color :${rgbToHex(ele.style["color"])}`;
-  }
+    var color = "",
+      backgroundColor = "";
+    if (ele.style["background-color"] != "") {
+      backgroundColor = `<br>Background-color: ${rgbToHex(
+        ele.style["background-color"]
+      )}`;
+    }
+    if (ele.style["color"] != "") {
+      color = `<br>Color :${rgbToHex(ele.style["color"])}`;
+    }
     showHoverBox(ele, `${ele.classList}${backgroundColor}${color}`, true); // Calls the function which actually add the hover box
   });
 }
@@ -237,8 +244,8 @@ function showHoverBox(element, content, condition) {
     e.stopPropagation();
     e.preventDefault();
     hover.innerHTML = content;
-   if (window.innerHeight <=  e.pageY + 80)
-      hover.style.top = e.pageY -  hover.getBoundingClientRect().height + "px";
+    if (window.innerHeight <= e.pageY + 80)
+      hover.style.top = e.pageY - hover.getBoundingClientRect().height + "px";
     else hover.style.top = e.pageY + "px";
     var left = e.pageX - 230;
     if (left < 10) left += 230;
@@ -247,7 +254,6 @@ function showHoverBox(element, content, condition) {
     if (condition) {
       if (showClass) hover.style.display = "block";
     } else hover.style.display = "block";
-  
   });
   element.addEventListener("mouseleave", function (e) {
     e.stopPropagation();
@@ -448,41 +454,51 @@ function getColorDataFileName() {
 }
 
 function componentToHex(c) {
-  if(c)
-  {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;}
-  else return "00";
+  if (c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  } else return "00";
 }
 function rgbToHex(color) {
   var arr = getValuesFromRGBString(color);
-  return "#" + componentToHex(arr[0]) + componentToHex(arr[1]) + componentToHex(arr[2]);
+  return (
+    "#" +
+    componentToHex(arr[0]) +
+    componentToHex(arr[1]) +
+    componentToHex(arr[2])
+  );
 }
-function getValuesFromRGBString (colorStr) {
-  colorStr = colorStr.slice(4,-1);
-  return colorStr.split(", ").map((val)=> {
-    return parseInt(val)
+function getValuesFromRGBString(colorStr) {
+  colorStr = colorStr.slice(4, -1);
+  return colorStr.split(", ").map((val) => {
+    return parseInt(val);
   });
 }
 
 function displayTourBox() {
-  document.querySelector("#text-description").innerHTML = `<h3>${tourBoxItems[tourBoxAtItemIndex].name}</h3>${tourBoxItems[tourBoxAtItemIndex].description}`;  tourBox.classList.add("active");
-  e = document.querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`).getClientRects()[0];
-  tourBox.style.left = `${e.left-tourBox.offsetWidth + 35}px`;
-  tourBox.style.top = `${e.top- tourBox.offsetHeight - 20}px`;
+  document.querySelector(
+    "#text-description"
+  ).innerHTML = `<h3>${tourBoxItems[tourBoxAtItemIndex].name}</h3>${tourBoxItems[tourBoxAtItemIndex].description}`;
+  tourBox.classList.add("active");
+  e = document
+    .querySelector(`#${tourBoxItems[tourBoxAtItemIndex].id}`)
+    .getClientRects()[0];
+  tourBox.style.left = `${e.left - tourBox.offsetWidth + 35}px`;
+  tourBox.style.top = `${e.top - tourBox.offsetHeight - 20}px`;
 }
 
 function showNextTourItem(start) {
-  if (start){
+  if (start) {
     tourBoxAtItemIndex = -1;
   }
   tourBoxAtItemIndex++;
-  if(tourBoxAtItemIndex >= tourBoxItems.length)  { stopTourBox();}
-  else { 
-    displayTourBox()
-  };
+  if (tourBoxAtItemIndex >= tourBoxItems.length) {
+    stopTourBox();
+  } else {
+    displayTourBox();
+  }
 }
-function stopTourBox () {
+function stopTourBox() {
   tourBoxAtItemIndex = -1;
   tourBox.classList.remove("active");
 }

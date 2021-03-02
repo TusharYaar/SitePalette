@@ -3,33 +3,63 @@
   <head>
     <style></style>
     <title>SitePalette</title>
-    <meta charset="UTF-8" /><meta name='viewport'content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' >
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <style id="site-template-css"></style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
     <link href="assests/indexStyle.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="favicon.ico">
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"
+      integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA=="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <!-- OverLay-->
     <div id="site-overlay">
-      <p>The Screen seems a bit toooooo small for the site to work properly. Please switch to a bigger display to expericence the site properly.</p>
+      <p>
+        The Screen seems a bit toooooo small for the site to work properly.
+        Please switch to a bigger display to expericence the site properly.
+      </p>
     </div>
-<!-- ================Site Message Boxe =================-->
+    <!-- ================Site Message Boxe =================-->
     <div id="site-messages">Message</div>
-<!-- =================================================== -->
+    <!-- =================================================== -->
 
-<!--=================================== Tour Box===================================== -->
-<div id="tour-box" class="left">
-  <p id="text-description"></p>
-  <div id="tour-box-btns"><button onclick="showNextTourItem()" id="next-tour-btn" class="site-interaction-button">Next Item</button>
-  <button onclick="stopTourBox()" id="stop-tour-btn" class="site-interaction-button">Stop</button>
-</div>
-</div>
-<!-- ============================================================================= -->
+    <!--=================================== Tour Box===================================== -->
+    <div id="tour-box" class="left">
+      <p id="text-description"></p>
+      <div id="tour-box-btns">
+        <button
+          onclick="showNextTourItem()"
+          id="next-tour-btn"
+          class="site-interaction-button"
+        >
+          Next Item
+        </button>
+        <button
+          onclick="stopTourBox()"
+          id="stop-tour-btn"
+          class="site-interaction-button"
+        >
+          Stop
+        </button>
+      </div>
+    </div>
+    <!-- ============================================================================= -->
     <!-- ======================================== -->
     <!-- About Site interaction menu  -->
     <!-- ======================================== -->
@@ -39,11 +69,26 @@
       <div>
         <i class="far fa-times-circle close-icon"></i>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, alias tempore perspiciatis reiciendis, deleniti sapiente aut quaerat unde facere earum eveniet. Ex vitae cumque voluptas aspernatur placeat, magnam nemo vel. Esse, facilis! Suscipit, impedit? Inventore excepturi tempore nam explicabo. Voluptates nesciunt sed voluptatum, libero amet esse illo neque suscipit laudantium nobis aut quae similique odit sunt repudiandae quisquam ab officiis facere sint ipsa! Alias unde
-          repellat veritatis recusandae hic tempora rerum, libero pariatur aut sit similique ab quidem illum, odio laboriosam? Aliquam quas ratione dolorem nesciunt autem possimus? Nam sapiente animi, exercitationem reprehenderit minima aliquid optio cupiditate voluptas labore earum?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+          alias tempore perspiciatis reiciendis, deleniti sapiente aut quaerat
+          unde facere earum eveniet. Ex vitae cumque voluptas aspernatur
+          placeat, magnam nemo vel. Esse, facilis! Suscipit, impedit? Inventore
+          excepturi tempore nam explicabo. Voluptates nesciunt sed voluptatum,
+          libero amet esse illo neque suscipit laudantium nobis aut quae
+          similique odit sunt repudiandae quisquam ab officiis facere sint ipsa!
+          Alias unde repellat veritatis recusandae hic tempora rerum, libero
+          pariatur aut sit similique ab quidem illum, odio laboriosam? Aliquam
+          quas ratione dolorem nesciunt autem possimus? Nam sapiente animi,
+          exercitationem reprehenderit minima aliquid optio cupiditate voluptas
+          labore earum?
         </p>
-        <button class="site-interaction-button" onclick="showNextTourItem(true);" id="start-tour-btn" >Start Tour</button>
-
+        <button
+          class="site-interaction-button"
+          onclick="showNextTourItem(true);"
+          id="start-tour-btn"
+        >
+          Start Tour
+        </button>
       </div>
     </div>
     <!-- ============================= -->
@@ -55,7 +100,10 @@
         <i class="far fa-times-circle close-icon"></i>
 
         <ul id="colors-history-list">
-          <li>Looks Like You havn't generated any Colors, what are you waiting for, an invitation !!!</li>
+          <li>
+            Looks Like You havn't generated any Colors, what are you waiting
+            for, an invitation !!!
+          </li>
         </ul>
       </div>
     </div>
@@ -64,7 +112,11 @@
     <!-- Saved Colors Menu -->
     <!-- ======================================= -->
     <div class="site-interaction" id="saved-colors">
-      <img src="./assests/icons/save.svg" alt="Save" title="View Saved Colors" />
+      <img
+        src="./assests/icons/save.svg"
+        alt="Save"
+        title="View Saved Colors"
+      />
       <div class="hide">
         <i class="far fa-times-circle close-icon"></i>
 
@@ -78,7 +130,11 @@
     <!-- Change template Site interaction menu     -->
     <!-- ======================================== -->
     <div class="site-interaction" id="change-template">
-      <img src="./assests/icons/template.svg" alt="Template" title="Change Template" />
+      <img
+        src="./assests/icons/template.svg"
+        alt="Template"
+        title="Change Template"
+      />
       <div>
         <i class="far fa-times-circle close-icon"></i>
         <ul id="change-template-list"></ul>
@@ -95,27 +151,81 @@
         <ul id="change-color-list-basic" class="color-list-menu active">
           <li></li>
           <li id="color1-parent">
-            <label for="color1"><i class="far fa-question-circle about-icon"></i> Text <span class="color-preview"></span><i class="far fa-copy copy-icon"></i></label><input type="text" id="color1" /><label for="color1"><i parent-data=1 class="fas fa-unlock lock-icon"></i></label>
+            <label for="color1"
+              ><i class="far fa-question-circle about-icon"></i> Text
+              <span class="color-preview"></span
+              ><i class="far fa-copy copy-icon"></i></label
+            ><input type="text" id="color1" /><label for="color1"
+              ><i parent-data="1" class="fas fa-unlock lock-icon"></i
+            ></label>
           </li>
           <li id="color2-parent">
-            <label for="color2"><i class="far fa-question-circle about-icon"></i> Background <span class="color-preview"></span><i class="far fa-copy copy-icon"></i></label><input type="text" id="color2" /><label for="color2"><i parent-data=2 class="fas fa-unlock lock-icon"></i></label>
+            <label for="color2"
+              ><i class="far fa-question-circle about-icon"></i> Background
+              <span class="color-preview"></span
+              ><i class="far fa-copy copy-icon"></i></label
+            ><input type="text" id="color2" /><label for="color2"
+              ><i parent-data="2" class="fas fa-unlock lock-icon"></i
+            ></label>
           </li>
           <li id="color3-parent">
-            <label for="color3"><i class="far fa-question-circle about-icon"></i> Body <span class="color-preview"></span><i class="far fa-copy copy-icon"></i></label><input type="text" id="color3" /><label for="color3"><i parent-data=3 class="fas fa-unlock lock-icon"></i></label>
+            <label for="color3"
+              ><i class="far fa-question-circle about-icon"></i> Body
+              <span class="color-preview"></span
+              ><i class="far fa-copy copy-icon"></i></label
+            ><input type="text" id="color3" /><label for="color3"
+              ><i parent-data="3" class="fas fa-unlock lock-icon"></i
+            ></label>
           </li>
           <li id="color4-parent">
-            <label for="color4"><i class="far fa-question-circle about-icon"></i> Button <span class="color-preview"></span><i class="far fa-copy copy-icon"></i></label><input type="text" id="color4" /><label for="color4"><i parent-data=4 class="fas fa-unlock lock-icon"></i></label>
+            <label for="color4"
+              ><i class="far fa-question-circle about-icon"></i> Button
+              <span class="color-preview"></span
+              ><i class="far fa-copy copy-icon"></i></label
+            ><input type="text" id="color4" /><label for="color4"
+              ><i parent-data="4" class="fas fa-unlock lock-icon"></i
+            ></label>
           </li>
           <li id="color5-parent">
-            <label for="color5"><i class="far fa-question-circle about-icon"></i> Something <span class="color-preview"></span><i class="far fa-copy copy-icon"></i></label><input type="text" id="color5" /><label for="color5"><i parent-data=5 class="fas fa-unlock lock-icon"></i></label>
+            <label for="color5"
+              ><i class="far fa-question-circle about-icon"></i> Something
+              <span class="color-preview"></span
+              ><i class="far fa-copy copy-icon"></i></label
+            ><input type="text" id="color5" /><label for="color5"
+              ><i parent-data="5" class="fas fa-unlock lock-icon"></i
+            ></label>
           </li>
         </ul>
         <ul id="change-color-list-advance" class="color-list-menu block"></ul>
-        <button onclick="event.stopPropagation();getRandomColorData()" class="site-interaction-button"><i class="fas fa-random random-icon-btn"></i>Random Colors</button>
-        <button class="site-interaction-button" onclick="event.stopPropagation();toggleAdvanceColorEdit()">Advanced Options</button>
-        <button class="site-interaction-button"  onclick="event.stopPropagation(); setCustomColorInput()">Apply Colors</button>
-        <input type="checkbox" id="checkBox-classHover" onclick="event.stopPropagation();changeClassHoverState()" /><label for="checkBox-classHover">Display Classes on Hover</label>
-        <button class="site-interaction-button" onclick="event.stopPropagation();saveThisColor()"><i class="fas fa-save save-icon-btn"></i></i>Save Current Colors</button>
+        <button
+          onclick="event.stopPropagation();getRandomColorData()"
+          class="site-interaction-button"
+        >
+          <i class="fas fa-random random-icon-btn"></i>Random Colors
+        </button>
+        <button
+          class="site-interaction-button"
+          onclick="event.stopPropagation();toggleAdvanceColorEdit()"
+        >
+          Advanced Options
+        </button>
+        <button
+          class="site-interaction-button"
+          onclick="event.stopPropagation(); setCustomColorInput()"
+        >
+          Apply Colors
+        </button>
+        <input
+          type="checkbox"
+          id="checkBox-classHover"
+          onclick="event.stopPropagation();changeClassHoverState()"
+        /><label for="checkBox-classHover">Display Classes on Hover</label>
+        <button
+          class="site-interaction-button"
+          onclick="event.stopPropagation();saveThisColor()"
+        >
+          <i class="fas fa-save save-icon-btn"></i>Save Current Colors
+        </button>
       </div>
     </div>
     <script src="assests/variableData.js"></script>
