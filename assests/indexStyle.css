@@ -166,7 +166,7 @@ body {
   background-color: #52a7cc;
 }
 #change-color.active {
-  height: 460px;
+  height: 480px;
   width: 380px;
 }
 #change-color-about-hover {
@@ -389,7 +389,7 @@ body {
   }
 }
 
-@media (max-height: 656px) {
+@media (max-width: 656px) {
   #change-color.active,
   #saved-colors.active,
   #colors-history.active,
