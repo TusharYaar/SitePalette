@@ -13,28 +13,28 @@ body {
 #tour-box {
   width: 400px;
   height: 250px;
-  background-color: #35A1B3;
+  background-color: #35a1b3;
   padding: 15px;
   position: absolute;
   margin: 0px 15px;
   max-width: 700px;
   max-height: 300px;
   z-index: 200;
-  display:none;
+  display: none;
   border-radius: 10px;
 }
-#tour-box.active{
-  display:flex;
+#tour-box.active {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-#tour-box:after{
+#tour-box:after {
   content: " ";
   position: absolute;
   right: 10px;
   bottom: -15px;
-  border-top: 15px solid #35A1B3;
+  border-top: 15px solid #35a1b3;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: none;
@@ -50,10 +50,13 @@ body {
   display: flex;
   justify-content: space-between;
 }
-#text-description {margin:0px; font-size: 16px;}
-#text-description > h3{
+#text-description {
+  margin: 0px;
+  font-size: 16px;
+}
+#text-description > h3 {
   font-size: 20px;
-  margin:5px 0px ;
+  margin: 5px 0px;
 }
 /* ================================================================== */
 #site-overlay {
@@ -71,8 +74,8 @@ body {
 }
 
 #site-messages {
-  color: #091E05;
-  background: #D7F3E3;
+  color: #091e05;
+  background: #d7f3e3;
   padding: 10px;
   position: absolute;
   top: -10px;
@@ -295,12 +298,17 @@ body {
 /* ================================ */
 /* ICONS */
 /* =============================== */
-.lock-icon,.copy-icon,.close-icon, .about-icon,.apply-history-color-icon,.delete-saved-color-icon,
+.lock-icon,
+.copy-icon,
+.close-icon,
+.about-icon,
+.apply-history-color-icon,
+.delete-saved-color-icon,
 .apply-saved-color-icon {
   font-size: 24px;
 }
-.lock-icon.fa-lock{
-  color:rgb(75, 111, 230);
+.lock-icon.fa-lock {
+  color: rgb(75, 111, 230);
   /* animation: LockAnimation 0.3s linear; */
 }
 .lock-icon.fa-unlock {
@@ -308,31 +316,31 @@ body {
   /* animation: LockAnimation 0.3s linear; */
 }
 
-@keyframes LockAnimation{
-  50%, 80% {
-  transform: translate(0, 5px);
+@keyframes LockAnimation {
+  50%,
+  80% {
+    transform: translate(0, 5px);
   }
-
 }
 .copy-icon {
   stroke: #fbc7c3;
   margin: 0px 5px;
 }
-.random-icon-btn,.save-icon-btn {
+.random-icon-btn,
+.save-icon-btn {
   padding: 0px 5px;
   font-size: 14px;
 }
 .random-icon-btn.rotate {
-  animation: RRotate 0.4s linear 0s infinite ;
-  
+  animation: RRotate 0.4s linear 0s infinite;
 }
 .lock-icon,
 .copy-icon,
 .about-icon,
 .close-icon,
 .apply-history-color-icon,
-.delete-saved-color-icon ,
-.apply-saved-color-icon{
+.delete-saved-color-icon,
+.apply-saved-color-icon {
   cursor: pointer;
 }
 /* ======================================= */
@@ -341,7 +349,6 @@ body {
 .btn {
   padding: 5px 20px;
   width: auto;
-
 }
 .site-interaction-button {
   padding: 5px 15px;
@@ -360,31 +367,68 @@ body {
   box-shadow: 4px 3px rgba(136, 136, 136, 0.377);
   transform: translateY(2px);
 }
-.site-interaction-button:active{
+.site-interaction-button:active {
   box-shadow: 0px 0px rgba(136, 136, 136, 0.377);
   transform: translateY(5px);
 }
 
 @keyframes RRotate {
-  25%{
-    color:rgba(255, 166, 0, 0.425);
+  25% {
+    color: rgba(255, 166, 0, 0.425);
   }
-  50%{
+  50% {
     transform: rotateX(180deg);
-    color:rgb(75, 111, 230);
+    color: rgb(75, 111, 230);
   }
   75% {
     color: pink;
   }
-  100%{
+  100% {
     transform: rotateX(360deg);
     color: red;
-
   }
 }
 
-
-
-
-@media (max-height: 568px) {
+@media (max-height: 656px) {
+  #change-color.active,
+  #saved-colors.active,
+  #colors-history.active,
+  #change-template.active {
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+  }
+  #site-about.active {
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+@media (max-width: 546px) {
+  #colors-history {
+    bottom: 125px;
+    right: 50px;
+  }
+  #checkBox-classHover-div,
+  .about-icon {
+    display: none;
+  }
+}
+@media (max-width: 448px) {
+}
+@media (max-width: 448px) {
+  #colors-history {
+    bottom: 275px;
+    right: 50px;
+  }
+  #saved-colors {
+    bottom: 200px;
+    right: 50px;
+  }
+  #change-template {
+    right: 50px;
+    bottom: 125px;
+  }
 }

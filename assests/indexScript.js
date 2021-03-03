@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   function checkWidth() {
-    if (document.body.clientWidth < 656)
+    if (document.body.clientWidth < 330)
       document.querySelector("#site-overlay").classList.add("active");
     else document.querySelector("#site-overlay").remove();
   }

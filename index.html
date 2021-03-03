@@ -215,11 +215,13 @@
         >
           Apply Colors
         </button>
-        <input
-          type="checkbox"
-          id="checkBox-classHover"
-          onclick="event.stopPropagation();changeClassHoverState()"
-        /><label for="checkBox-classHover">Display Classes on Hover</label>
+        <div id="checkBox-classHover-div">
+          <input
+            type="checkbox"
+            id="checkBox-classHover"
+            onclick="event.stopPropagation();changeClassHoverState()"
+          /><label for="checkBox-classHover">Display Classes on Hover</label>
+        </div>
         <button
           class="site-interaction-button"
           onclick="event.stopPropagation();saveThisColor()"
