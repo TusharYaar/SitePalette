@@ -389,7 +389,7 @@ body {
   }
 }
 
-@media (max-width: 656px) {
+@media (max-width: 656px), (max-height: 768px) {
   #change-color.active,
   #saved-colors.active,
   #colors-history.active,
