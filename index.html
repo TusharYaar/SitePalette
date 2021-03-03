@@ -94,7 +94,10 @@
     <!-- ========================================== -->
     <!-- Generate Random color button for small screen devices -->
     <!-- ========================================== -->
-    <button id="random-color-sm">
+    <button
+      id="random-color-sm"
+      onclick="event.stopPropagation();getRandomColorData()"
+    >
       <i class="fas fa-random random-icon-btn"></i>
     </button>
 
