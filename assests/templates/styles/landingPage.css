@@ -132,3 +132,8 @@ html {
     bottom: 20px;
   }
 }
+@media (max-height: 471px) {
+  #scroll-for-more {
+    display: none;
+  }
+}

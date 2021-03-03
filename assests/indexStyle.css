@@ -159,6 +159,15 @@ body {
   height: 500px;
   width: 400px;
 }
+#random-color-sm {
+  position: fixed;
+  background-color: rgb(75, 111, 230);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: none;
+}
 #change-color {
   position: fixed;
   bottom: 50px;
@@ -389,7 +398,7 @@ body {
   }
 }
 
-@media (max-width: 656px), (max-height: 768px) {
+@media (max-width: 656px), (max-height: 556px) {
   #change-color.active,
   #saved-colors.active,
   #colors-history.active,
@@ -405,6 +414,11 @@ body {
     bottom: 0px;
     left: 0px;
   }
+  #random-color-sm {
+    left: 50px;
+    bottom: 125px;
+    display: block;
+  }
 }
 @media (max-width: 546px) {
   #colors-history {
@@ -415,8 +429,6 @@ body {
   .about-icon {
     display: none;
   }
-}
-@media (max-width: 448px) {
 }
 @media (max-width: 448px) {
   #colors-history {
