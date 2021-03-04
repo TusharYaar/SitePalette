@@ -113,7 +113,7 @@ function loadTemplate(page) {
     messageBox.classList.remove("active");
     if (javascriptReq != "false") xhr3.send();
     showClassOnHover();
-    setCustomColorInput();
+    applyBasicColor();
   };
   if (javascriptReq != "false") {
     xhr3.onload = function () {

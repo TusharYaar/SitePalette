@@ -56,11 +56,11 @@ var templateData = [
 ];
 
 var currentColorData = [
-  { name: "Text", id: "color1", color: "black", locked: false },
-  { name: "background", id: "color2", color: "black", locked: false },
-  { name: "body", id: "color3", color: "black", locked: false },
-  { name: "button", id: "color4", color: "black", locked: false },
-  { name: "Something", id: "color5", color: "black", locked: false },
+  { name: "Text", id: "color1", color: "#5cc8ff", locked: false },
+  { name: "background", id: "color2", color: "#93867f", locked: false },
+  { name: "body", id: "color3", color: "#343633", locked: false },
+  { name: "button", id: "color4", color: "#7d70ba", locked: false },
+  { name: "Something", id: "color5", color: "#dec1ff", locked: false },
 ];
 var basicColorMenu = [
   {

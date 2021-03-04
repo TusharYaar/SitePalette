@@ -220,6 +220,13 @@ body {
 .lock-icon {
   margin-bottom: -5px;
 }
+#checkBox-classHover-div {
+  display: flex;
+  align-items: center;
+}
+input#checkBox-classHover {
+  width: 30px;
+}
 #change-template {
   position: fixed;
   bottom: 50px;
