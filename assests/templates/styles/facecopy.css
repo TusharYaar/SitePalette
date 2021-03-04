@@ -132,7 +132,8 @@ ul {
 }
 #create-room > button {
   height: 50px;
-  width: 250px;
+  width: 175px;
+  flex-shrink: 0;
   border-radius: 50px;
   font-size: 16px;
   border: 0px;
@@ -206,4 +207,25 @@ ul {
 }
 .post > .your-comment {
   margin-top: 20px;
+}
+
+@media (max-width: 1446px) {
+  .hide-m {
+    display: none;
+  }
+}
+@media (max-width: 1238px) {
+  .hide-sm {
+    display: none;
+  }
+}
+@media (max-width: 1034px) {
+  .hide-xsm {
+    display: none;
+  }
+}
+@media (max-width: 830px) {
+  #friends-section {
+    display: none;
+  }
 }
