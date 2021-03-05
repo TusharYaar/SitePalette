@@ -223,9 +223,64 @@ ul {
   .hide-xsm {
     display: none;
   }
+  .show-xsm {
+    display: inline-block;
+  }
 }
 @media (max-width: 830px) {
   #friends-section {
+    width: 70%;
+  }
+  #navbar-icons {
     display: none;
+  }
+  .hide-xxsm {
+    display: none;
+  }
+  .show-xxsm {
+    display: inline-block;
+  }
+}
+@media (max-width: 720px) {
+  #friends-section {
+    display: none;
+  }
+}
+@media (max-width: 444px) {
+  #navbar-profile-icons {
+    display: none;
+  }
+  .navbar > div > input {
+    width: 300px;
+  }
+  .post,
+  #create-room,
+  #your-update {
+    padding: 5px;
+  }
+  .post > .your-comment {
+    margin: 5px;
+  }
+  #feed-section {
+    padding: 10px;
+  }
+  .post > .icons > ul {
+    font-size: 16px;
+  }
+}
+@media (max-width: 424px) {
+  .hide-vs {
+    display: none;
+  }
+  .post > .icons > ul {
+    font-size: 14px;
+  }
+}
+@media (max-width: 392px) {
+  .hide-xvs {
+    display: none;
+  }
+  .navbar > div > input {
+    width: 200px;
   }
 }
