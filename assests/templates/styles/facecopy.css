@@ -11,8 +11,12 @@
 .navbar > div {
   height: auto;
 }
+.navbar > div:nth-child(2) {
+  flex-shrink: 2;
+}
 #brand-name {
   display: flex;
+  width: 300px;
   justify-content: space-between;
   padding: 15px;
 }
@@ -246,7 +250,7 @@ ul {
     display: none;
   }
 }
-@media (max-width: 444px) {
+@media (max-width: 508px) {
   #navbar-profile-icons {
     display: none;
   }
