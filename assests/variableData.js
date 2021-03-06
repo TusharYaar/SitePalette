@@ -53,6 +53,12 @@ var templateData = [
     id: "portfolio",
     javascript: false,
   },
+  {
+    name: "Shopping Site",
+    functionCallName: "shoppingSite",
+    id: "shopping",
+    javascript: false,
+  },
 ];
 
 var currentColorData = [
