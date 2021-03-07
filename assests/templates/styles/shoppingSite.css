@@ -9,8 +9,28 @@
   height: 40px;
   width: 40px;
 }
+.nav-search {
+  flex-grow: 2;
+  display: flex;
+}
+#select {
+  width: auto;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+}
 #search-input {
   flex-grow: 2;
+  margin: 0px;
+  padding: 0px;
+}
+#search-btn {
+  margin: 0px;
+  padding: 0px 20px;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .nav-text {
   display: flex;
@@ -29,5 +49,5 @@
 .nav-text > h4 {
   padding: 0px;
   margin: 0px;
-  font-size: 20px;
+  font-size: 18px;
 }
