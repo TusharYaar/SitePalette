@@ -165,3 +165,4 @@ var tourBoxItems = [
 ];
 var tourBoxAtItemIndex = -1;
 const tourPopup = `<button class="site-interaction-button" onclick="showNextTourItem(true);" id="start-tour-btn" >Start Tour</button>`;
+var advanceMode = false;

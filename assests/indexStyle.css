@@ -174,10 +174,27 @@ body {
   right: 50px;
   background-color: #52a7cc;
 }
-#change-color.active {
+#change-color.active.basic {
   height: 480px;
   width: 380px;
 }
+#change-color.active.advance {
+  height: 300px;
+  width: 300px;
+}
+#basic-change-color {
+  display: none;
+}
+#basic-change-color.basic {
+  display: block;
+}
+#advance-change-color {
+  display: none;
+}
+#advance-change-color.advance {
+  display: block;
+}
+
 #change-color-about-hover {
   width: 230px;
   height: auto;

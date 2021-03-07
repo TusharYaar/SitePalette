@@ -214,6 +214,23 @@ function allSCComponents(wantClass) {
   ids = Array.from(idsSet);
   return ids;
 }
+
+// ===============================================================
+//              Adavnce color change function
+// =============================================================
+function toggleAdvanceColorEdit() {
+  advanceMode = !advanceMode;
+  if (advanceMode) {
+    document.querySelector("#change-color").classList.add("advance");
+    document.querySelector("#change-color").classList.remove("basic");
+    document.querySelector("#basic-change-color").classList.remove("basic");
+  } else {
+    document.querySelector("#change-color").classList.remove("advance");
+    document.querySelector("#change-color").classList.add("basic");
+    document.querySelector("#basic-change-color").classList.add("basic");
+  }
+}
+
 // Function to add event listener to all sc-components
 function showClassOnHover() {
   ids = allSCComponents(true);

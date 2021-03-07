@@ -154,12 +154,11 @@
     <!-- Change color Site interaction menu     -->
     <!-- ======================================== -->
     <div id="change-color-about-hover"></div>
-    <div class="site-interaction" id="change-color">
+    <div class="site-interaction basic" id="change-color">
       <img src="./assests/icons/color.svg" alt="Color" title="Change Color" />
-      <div>
+      <div id="basic-change-color" class="basic">
         <i class="far fa-times-circle close-icon"></i>
         <ul id="change-color-list-basic" class="color-list-menu active">
-          <li></li>
           <li id="color1-parent">
             <label for="color1"
               ><i class="far fa-question-circle about-icon"></i> Text
@@ -237,6 +236,15 @@
           onclick="event.stopPropagation();saveThisColor()"
         >
           <i class="fas fa-save save-icon-btn"></i>Save Current Colors
+        </button>
+      </div>
+      <div id="advance-change-color" class="advance">
+        <i class="far fa-times-circle close-icon"></i>
+        <button
+          class="site-interaction-button"
+          onclick="event.stopPropagation();toggleAdvanceColorEdit()"
+        >
+          Advanced Options
         </button>
       </div>
     </div>
