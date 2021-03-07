@@ -1,0 +1,33 @@
+.navbar {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+#site-logo {
+  height: 40px;
+  width: 40px;
+}
+#search-input {
+  flex-grow: 2;
+}
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 10px;
+  margin: 0px 10px;
+}
+.nav-text > h6 {
+  padding: 0px;
+  margin: 0px;
+  font-weight: 100;
+  font-size: 14px;
+}
+.nav-text > h4 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 20px;
+}
