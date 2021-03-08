@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
   loadTemplate("landingPage", "Editorial Site");
+  fillAdvanceSelect();
+
   // showSiteMessage("New to the site!!! Start by taking a basic tour", true, 1500);
   showSiteMessage(
     `New to the site!!! Start by taking a basic tour` + tourPopup,
@@ -518,4 +520,15 @@ function showNextTourItem(start) {
 function stopTourBox() {
   tourBoxAtItemIndex = -1;
   tourBox.classList.remove("active");
+}
+
+function fillAdvanceSelect() {
+  var elements = [];
+  elements = allSCComponents();
+  elements.forEach((element) => {
+    op = document.createElement("option");
+    op.value = element;
+    op.textContent = element.split("-")[1];
+    document.getElementById("advance-color-select").appendChild(op);
+  });
 }
