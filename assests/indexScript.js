@@ -61,6 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 90);
     });
   });
+
+  document
+    .querySelector("#advance-color-select")
+    .addEventListener("change", changeAdvanceComponent);
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
@@ -531,4 +535,7 @@ function fillAdvanceSelect() {
     op.textContent = element.split("-")[1];
     document.getElementById("advance-color-select").appendChild(op);
   });
+}
+function changeAdvanceComponent() {
+  console.log(document.getElementById("advance-color-select").value);
 }
