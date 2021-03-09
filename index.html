@@ -248,11 +248,26 @@
           Nummber of Items on screen with that class:
           <span id="advance-color-select-number"></span>
         </h4>
+        <input type="text" placeholder="Input color" id="advance-color-input" />
+        <label for="advance-color-input">Input A Color Value</label>
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="20"
+          id="advance-color-opacity-slider"
+          value="80"
+          onchange="changeAdvanceOpacity(this.value)"
+        />
+        <label for="advance-color-opacity-slider"
+          >Opacity Slider: <span id="advance-color-opacity-slider-value"></span
+        ></label>
         <button
           class="site-interaction-button"
           onclick="event.stopPropagation();toggleAdvanceColorEdit()"
         >
-          Advanced Options
+          Back to Basics
         </button>
       </div>
     </div>

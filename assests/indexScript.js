@@ -542,3 +542,7 @@ function changeAdvanceComponent() {
   document.querySelector("#advance-color-select-number").innerText =
     elements.length;
 }
+function changeAdvanceOpacity(value) {
+  document.querySelector("#advance-color-opacity-slider-value").innerText =
+    value + "%";
+}
