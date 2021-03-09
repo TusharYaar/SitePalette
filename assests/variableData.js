@@ -137,7 +137,7 @@ var siteInteractionButtons = [
 const messageBox = document.querySelector("#site-messages");
 const tourBox = document.querySelector("#tour-box");
 var messageBoxInterval;
-const numberOfColorDataFiles = 6;
+const numberOfColorDataFiles = 7;
 var tourBoxItems = [
   {
     name: "Load A Template",
