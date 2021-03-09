@@ -180,7 +180,7 @@ body {
 }
 #change-color.active.advance {
   height: 300px;
-  width: 300px;
+  width: 350px;
 }
 #basic-change-color {
   display: none;
@@ -193,6 +193,9 @@ body {
 }
 #advance-change-color.advance {
   display: block;
+}
+div#advance-change-color > label {
+  font-size: 14px;
 }
 
 #change-color-about-hover {
