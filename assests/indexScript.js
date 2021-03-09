@@ -537,5 +537,8 @@ function fillAdvanceSelect() {
   });
 }
 function changeAdvanceComponent() {
-  console.log(document.getElementById("advance-color-select").value);
+  var element = document.getElementById("advance-color-select").value;
+  var elements = document.querySelectorAll(`.${element}`);
+  document.querySelector("#advance-color-select-number").innerText =
+    elements.length;
 }
