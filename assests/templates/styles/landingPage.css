@@ -110,7 +110,7 @@ html {
     display: none;
   }
   .child {
-    padding: 10px 5px;
+    padding: 50px 5px 10px 5px;
   }
   .inner-section {
     flex-direction: column;
