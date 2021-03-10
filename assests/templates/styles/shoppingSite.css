@@ -23,7 +23,8 @@
 #search-input {
   flex-grow: 2;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
+  border: 2px;
 }
 #search-btn {
   margin: 0px;
@@ -50,4 +51,39 @@
   padding: 0px;
   margin: 0px;
   font-size: 18px;
+}
+.carousol {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 300px;
+}
+.carousol > div {
+  padding: 145px 20px;
+  align-items: center;
+}
+.carousol > div:hover {
+  background-color: orange;
+}
+.row {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.products-view {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.row > .card {
+  width: 300px;
+  padding: 20px 15px;
+  height: auto;
+}
+.products-view img {
+  width: 110px;
+  margin: 10px;
 }
