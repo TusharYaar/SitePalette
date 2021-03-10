@@ -100,11 +100,10 @@ function loadTemplate(page) {
   var xhr3 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   var url2 = `assests/templates/styles/${page}.css`;
-  if (javascriptReq != "false")
-    var url3 = `assests/templates/scripts/${page}.js`;
+  if (javascriptReq) var url3 = `assests/templates/scripts/${page}.js`;
   xhr.open("GET", url);
   xhr2.open("GET", url2);
-  if (javascriptReq != "false") xhr3.open("GET", url3);
+  if (javascriptReq) xhr3.open("GET", url3);
   xhr2.send();
 
   // when xhr is completed, it removes the text loading
@@ -117,12 +116,13 @@ function loadTemplate(page) {
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
-    if (javascriptReq != "false") xhr3.send();
+    if (javascriptReq) xhr3.send();
     showClassOnHover();
     applyBasicColor();
   };
-  if (javascriptReq != "false") {
+  if (javascriptReq) {
     xhr3.onload = function () {
+      console.log("called");
       if (this.status == 200) eval(this.responseText);
     };
   }
