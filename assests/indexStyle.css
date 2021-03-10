@@ -155,9 +155,23 @@ body {
   left: 50px;
   background-color: #e5e5e5;
 }
+
 #site-about.active {
   height: 500px;
   width: 400px;
+}
+#site-uses-list {
+  padding: 0px 20px 20px 10px;
+  list-style: none;
+}
+#site-uses-list a,
+#site-uses-list a:active,
+#site-uses-list a:visited {
+  color: black;
+  text-decoration: none;
+}
+#site-uses-list > li {
+  margin: 20px 0px;
 }
 #random-color-sm {
   position: fixed;
