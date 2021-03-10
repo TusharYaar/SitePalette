@@ -131,6 +131,26 @@ function loadTemplate(page) {
 //  It calls the setColorInputValue which apply color to the template(page)
 //  and changes the value in inputs in the random color box
 function getRandomColorData() {
+  viewedColorPalettes++;
+  if (viewedColorPalettes >= colorData.length - 10) {
+    if (loadedColorData.length == numberOfColorDataFiles) {
+      if (!allPalettesLoaded) {
+        allPalettesLoaded = true;
+        showSiteMessage(
+          "OOO man!! Looks like you loaded all palettes no new will be loaded",
+          true,
+          3000
+        );
+      }
+    } else {
+      getColorDataFileName();
+      showSiteMessage(
+        "OO boy!! you user alot of palettes, let me load more!!",
+        true,
+        3000
+      );
+    }
+  }
   document.querySelector(".random-icon-btn").classList.add("rotate");
   setTimeout(function () {
     document.querySelector(".random-icon-btn").classList.remove("rotate");
