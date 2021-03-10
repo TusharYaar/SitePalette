@@ -469,11 +469,22 @@ function getcolorsHistory() {
 
 // function to get a randon colorDatafile
 function getColorDataFileName() {
-  var suffix = Math.floor(Math.random() * numberOfColorDataFiles);
-  var script = document.createElement("script");
-  script.setAttribute("src", `assests/ColorData/colorData${suffix}.js`);
-  script.setAttribute("type", "text/javascript");
-  document.getElementsByTagName("head")[0].appendChild(script);
+  do {
+    var suffix = Math.floor(Math.random() * numberOfColorDataFiles);
+    console.log(suffix);
+  } while (loadedColorData.includes(suffix));
+  loadedColorData.push(suffix);
+  var tempColorData = [...colorData];
+  var xhr = new XMLHttpRequest();
+  var url = `assests/ColorData/colorData${suffix}.js`;
+  xhr.open("GET", url);
+  xhr.send();
+  xhr.onload = function () {
+    if (this.status == 200) {
+      eval(this.responseText);
+      colorData = tempColorData.concat(colorData);
+    }
+  };
 }
 
 function componentToHex(c) {
