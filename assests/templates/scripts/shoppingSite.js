@@ -1,6 +1,5 @@
 currentCarouselImage = 0;
 var imagesArr = document.querySelectorAll(".carousel > img");
-console.log(imagesArr[1]);
 document.querySelectorAll(".carousel-control").forEach((control) => {
   control.addEventListener("click", function (e) {
     e.stopPropagation();

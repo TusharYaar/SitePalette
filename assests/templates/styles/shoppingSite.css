@@ -79,7 +79,7 @@
   transition: width 0.1s linear;
 }
 .carousel > div:hover {
-  background-color: orange;
+  background-color: rgba(26, 25, 25, 0.274);
 }
 .row {
   padding: 20px 0px;
