@@ -34,7 +34,7 @@ function showCarouselImage(direction) {
   var carousel = document.querySelector(".carousel");
   var img = document.querySelector(".carousel > img.show");
   var insertImage = document.createElement("img");
-  insertImage.src = `/SitePalette/assests/templates/images/${imagesArr[currentCarouselImage]}.jpg`;
+  insertImage.src = `https://raw.githubusercontent.com/TusharYaar/SitePalette/master/assests/templates/images/${imagesArr[currentCarouselImage]}.jpg`;
   if (direction == "left") carousel.insertBefore(insertImage, img);
   else carousel.insertBefore(insertImage, img.nextSibling);
   insertImage.classList = "show";

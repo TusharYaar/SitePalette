@@ -92,6 +92,7 @@ function loadTemplate(page) {
   var page = pageDetails[0];
   var pageName = pageDetails[1];
   var javascriptReq = pageDetails[2];
+  console.log(javascriptReq);
   showSiteMessage(`Loading ${pageName}, please wait...`, false);
   document
     .querySelector("#site-template-css")
@@ -101,7 +102,8 @@ function loadTemplate(page) {
   var xhr3 = new XMLHttpRequest();
   var url = `assests/templates/html/${page}.html`;
   var url2 = `assests/templates/styles/${page}.css`;
-  if (javascriptReq) var url3 = `assests/templates/scripts/${page}.js`;
+  if (javascriptReq === "true")
+    var url3 = `assests/templates/scripts/${page}.js`;
   xhr.open("GET", url);
   xhr2.open("GET", url2);
   if (javascriptReq) xhr3.open("GET", url3);
@@ -117,11 +119,11 @@ function loadTemplate(page) {
   xhr.onload = function () {
     document.querySelector("#site-template").innerHTML = this.responseText;
     messageBox.classList.remove("active");
-    if (javascriptReq) xhr3.send();
+    if (javascriptReq === "true") xhr3.send();
     showClassOnHover();
     applyBasicColor();
   };
-  if (javascriptReq) {
+  if (javascriptReq === "true") {
     xhr3.onload = function () {
       console.log("called");
       if (this.status == 200) eval(this.responseText);
