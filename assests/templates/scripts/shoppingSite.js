@@ -23,7 +23,6 @@ function carouselImage(id) {
     if (currentCarouselImage >= imagesArr.length) currentCarouselImage = 0;
     showCarouselImage("right");
   }
-  console.log(currentCarouselImage);
 }
 
 function showCarouselImage(direction) {
@@ -36,4 +35,7 @@ function showCarouselImage(direction) {
   else carousel.insertBefore(insertImage, img.nextSibling);
   insertImage.classList = "show";
   img.classList = "";
+  setTimeout(() => {
+    img.remove();
+  }, 1110);
 }
