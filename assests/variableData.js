@@ -57,7 +57,7 @@ var templateData = [
     name: "Shopping Site",
     functionCallName: "shoppingSite",
     id: "shopping",
-    javascript: false,
+    javascript: true,
   },
 ];
 

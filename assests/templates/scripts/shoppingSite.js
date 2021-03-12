@@ -1,9 +1,6 @@
 currentCarouselImage = 0;
-var imagesArr = [
-  "pexels-alex-andrews-821651",
-  "pexels-gabriel-freytez-341523",
-  "pexels-pixabay-279906",
-];
+var imagesArr = document.querySelectorAll(".carousel > img");
+console.log(imagesArr[1]);
 document.querySelectorAll(".carousel-control").forEach((control) => {
   control.addEventListener("click", function (e) {
     e.stopPropagation();
@@ -33,8 +30,7 @@ function showCarouselImage(direction) {
   setCarouselInterval();
   var carousel = document.querySelector(".carousel");
   var img = document.querySelector(".carousel > img.show");
-  var insertImage = document.createElement("img");
-  insertImage.src = `https://raw.githubusercontent.com/TusharYaar/SitePalette/master/assests/templates/images/${imagesArr[currentCarouselImage]}.jpg`;
+  var insertImage = imagesArr[currentCarouselImage];
   if (direction == "left") carousel.insertBefore(insertImage, img);
   else carousel.insertBefore(insertImage, img.nextSibling);
   insertImage.classList = "show";
