@@ -8,6 +8,7 @@
 #site-logo {
   height: 40px;
   width: 40px;
+  margin-right: 10px;
 }
 .nav-search {
   flex-grow: 2;
@@ -52,17 +53,32 @@
   margin: 0px;
   font-size: 18px;
 }
-.carousol {
+.carousel {
   display: flex;
   width: 100%;
   justify-content: space-between;
   height: 300px;
 }
-.carousol > div {
+.carousel > div {
   padding: 145px 20px;
   align-items: center;
+  z-index: 2;
+  position: absolute;
 }
-.carousol > div:hover {
+#carousel-right {
+  right: 0px;
+}
+.carousel > img {
+  width: 0px;
+  transition: width 0.1s linear;
+  height: auto;
+}
+.carousel > img.show {
+  width: 100%;
+  object-fit: cover;
+  transition: width 0.1s linear;
+}
+.carousel > div:hover {
   background-color: orange;
 }
 .row {
@@ -86,4 +102,18 @@
 .products-view img {
   width: 110px;
   margin: 10px;
+}
+
+@media (max-width: 1026px) {
+  .hide-m {
+    display: none;
+  }
+  .nav-text > h6 {
+    font-weight: 100;
+    font-size: 12px;
+  }
+  .nav-text > h4 {
+    font-size: 16px;
+    font-weight: 200;
+  }
 }
