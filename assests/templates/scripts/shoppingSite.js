@@ -10,8 +10,7 @@ document.querySelectorAll(".carousel-control").forEach((control) => {
     carouselImage(control.id);
   });
 });
-console.log("hello");
-
+setCarouselInterval();
 function carouselImage(id) {
   id = id.split("-")[1];
   if (id === "left") {
@@ -24,9 +23,14 @@ function carouselImage(id) {
     showCarouselImage("right");
   }
 }
-
+function setCarouselInterval() {
+  interval = setInterval(function () {
+    carouselImage("carousel-right");
+  }, 3000);
+}
 function showCarouselImage(direction) {
-  console.log(direction);
+  clearInterval(interval);
+  setCarouselInterval();
   var carousel = document.querySelector(".carousel");
   var img = document.querySelector(".carousel > img.show");
   var insertImage = document.createElement("img");
