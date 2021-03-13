@@ -1,4 +1,5 @@
-currentCarouselImage = 0;
+var currentCarouselImage = 0;
+var carousel, img, insertImage;
 var imagesArr = document.querySelectorAll(".carousel > img");
 document.querySelectorAll(".carousel-control").forEach((control) => {
   control.addEventListener("click", function (e) {
@@ -27,9 +28,9 @@ function setCarouselInterval() {
 function showCarouselImage(direction) {
   clearInterval(interval);
   setCarouselInterval();
-  var carousel = document.querySelector(".carousel");
-  var img = document.querySelector(".carousel > img.show");
-  var insertImage = imagesArr[currentCarouselImage];
+  carousel = document.querySelector(".carousel");
+  img = document.querySelector(".carousel > img.show");
+  insertImage = imagesArr[currentCarouselImage];
   if (direction == "left") carousel.insertBefore(insertImage, img);
   else carousel.insertBefore(insertImage, img.nextSibling);
   insertImage.classList = "show";
@@ -37,4 +38,18 @@ function showCarouselImage(direction) {
   setTimeout(() => {
     img.remove();
   }, 1110);
+}
+
+document.querySelectorAll(".product-view-slider-control").forEach((control) => {
+  control.addEventListener("click", function (e) {
+    e.stopPropagation();
+    scrollView(control.id.split("-")[3]);
+  });
+});
+
+function scrollView(id) {
+  var allItem = document.querySelectorAll(".item-card");
+  if (id === "right") {
+    allItem[allItem.length - 1].scrollIntoView();
+  } else allItem[0].scrollIntoView();
 }
