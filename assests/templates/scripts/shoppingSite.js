@@ -40,16 +40,34 @@ function showCarouselImage(direction) {
   }, 1110);
 }
 
-document.querySelectorAll(".product-view-slider-control").forEach((control) => {
-  control.addEventListener("click", function (e) {
-    e.stopPropagation();
-    scrollView(control.id.split("-")[3]);
+document
+  .querySelectorAll(".product-view-slider1-control")
+  .forEach((control) => {
+    control.addEventListener("click", function (e) {
+      e.stopPropagation();
+      scrollView("product-view-slider1", control.id.split("-")[3]);
+    });
   });
-});
 
-function scrollView(id) {
-  var allItem = document.querySelectorAll(".item-card");
+document
+  .querySelectorAll(".product-view-slider2-control")
+  .forEach((control) => {
+    control.addEventListener("click", function (e) {
+      e.stopPropagation();
+      scrollView("product-view-slider2", control.id.split("-")[3]);
+    });
+  });
+
+function scrollView(parentid, id) {
+  var parent = document.querySelector(`#${parentid}`);
   if (id === "right") {
-    allItem[allItem.length - 1].scrollIntoView();
-  } else allItem[0].scrollIntoView();
+    parent.scroll({
+      left: 2050,
+      behavior: "smooth",
+    });
+  } else
+    parent.scroll({
+      left: 0,
+      behavior: "smooth",
+    });
 }
