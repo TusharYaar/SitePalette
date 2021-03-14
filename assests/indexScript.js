@@ -256,10 +256,12 @@ function toggleAdvanceColorEdit() {
     document.querySelector("#change-color").classList.add("advance");
     document.querySelector("#change-color").classList.remove("basic");
     document.querySelector("#basic-change-color").classList.remove("basic");
+    document.querySelector("#advance-change-color").classList.add("advance");
   } else {
     document.querySelector("#change-color").classList.remove("advance");
     document.querySelector("#change-color").classList.add("basic");
     document.querySelector("#basic-change-color").classList.add("basic");
+    document.querySelector("#advance-change-color").classList.remove("advance");
   }
 }
 

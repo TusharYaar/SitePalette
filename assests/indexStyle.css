@@ -440,7 +440,12 @@ input#checkBox-classHover {
 }
 
 @media (max-width: 656px), (max-height: 556px) {
-  #change-color.active,
+  .close-icon {
+    font-size: 30px;
+  }
+
+  #change-color.active.basic,
+  #change-color.active.advance,
   #saved-colors.active,
   #colors-history.active,
   #change-template.active {
