@@ -1,6 +1,6 @@
 # This is under Making
 
-Check The developement here [https://tusharyaar.github.io/SitePalette/](https://tusharyaar.github.io/SitePalette/)
+Check The developement here [https://sitepalette.netlify.app/](https://sitepalette.netlify.app/)
 
 # CheckList
 
