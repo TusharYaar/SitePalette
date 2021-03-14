@@ -5,6 +5,9 @@
   justify-content: space-between;
   padding: 5px 10px;
 }
+#menu {
+  display: none;
+}
 #site-logo {
   height: 40px;
   width: 40px;
@@ -167,6 +170,34 @@ h6,
 p {
   margin: 5px;
 }
+#back-to-top {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: 0px;
+}
+#back-to-top:hover {
+  opacity: 0.6;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+.footer > div {
+  width: 22%;
+  margin: 20px 0px;
+}
+.footer > div > h5 {
+  font-size: 28px;
+  margin: 0px;
+}
+.footer > div > ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
 @media (max-width: 1060px) {
   .hide-m {
     display: none;
@@ -187,5 +218,22 @@ p {
   #search-input {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+  }
+  .footer > div {
+    width: 45%;
+  }
+}
+@media (max-width: 632px) {
+  .hide-s {
+    display: none;
+  }
+  #menu {
+    display: inline;
+    font-size: 30px;
+  }
+  .row > .card,
+  .row > .card-big,
+  .product-view-slider {
+    margin: 20px 10px;
   }
 }

@@ -58,6 +58,12 @@ document
     });
   });
 
+document.getElementById("back-to-top").addEventListener("click", function () {
+  console.log("called");
+  var parent = document.querySelector("html");
+  parent.scroll({ top: 0, behavior: "smooth" });
+});
+
 function scrollView(parentid, id) {
   var parent = document.querySelector(`#${parentid}`);
   if (id === "right") {
