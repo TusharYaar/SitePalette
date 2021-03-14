@@ -88,6 +88,9 @@ function loadSiteTemplateList() {
 // it accepts the filename of the option clicked and them loads the file into
 // It Makes a xhr
 function loadTemplate(page) {
+  if (interval) {
+    clearInterval(interval);
+  }
   var pageDetails = page.split(",");
   var page = pageDetails[0];
   var pageName = pageDetails[1];
