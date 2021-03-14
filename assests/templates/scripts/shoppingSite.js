@@ -58,6 +58,14 @@ document
     });
   });
 
+document
+  .querySelectorAll(".product-view-slider3-control")
+  .forEach((control) => {
+    control.addEventListener("click", function (e) {
+      e.stopPropagation();
+      scrollView("product-view-slider3", control.id.split("-")[3]);
+    });
+  });
 document.getElementById("back-to-top").addEventListener("click", function () {
   console.log("called");
   var parent = document.querySelector("html");
