@@ -208,6 +208,9 @@ hr {
     flex-direction: column;
     align-items: center;
   }
+  .other-posts > h3 {
+    margin : 0px;
+  }
   .main-edit h2 {
     font-size: 48px;
   }
@@ -223,6 +226,9 @@ hr {
   .articles-collection {
     flex-direction: column;
     align-items: center;
+  }
+  .article-img-div > img {
+    object-fit: contain;
   }
   .article:nth-child(2n-1),
   .article:nth-child(2n) {
@@ -244,5 +250,15 @@ hr {
   .main-edit img {
     width: 100%;
     height: auto;
+  }
+  .post-img-div {
+    height: 150px;
+    min-width: 150px;
+  }
+  .post > .post-text > h5,.article > h5 {
+    font-size: 28px;
+  }
+  .post-text > p > span {
+    display: none;
   }
 }
