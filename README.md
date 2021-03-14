@@ -13,7 +13,7 @@ Check The developement here [https://sitepalette.netlify.app/](https://sitepalet
 - [x] Save feature
 - [x] List of previously used colors and apply them to the
 - [x] Apply Custom color
-- [x] Made Pricing, Dashboard, Editorial
+- [x] Made Pricing, Dashboard, Editorial, Shopping Site
 - [x] More Details Shown on Hover
 - [x] Make Error Template
 - [x] Add A Tour
@@ -22,7 +22,4 @@ Check The developement here [https://sitepalette.netlify.app/](https://sitepalet
 - [ ] All of Advance features
 - [ ] Complete preview Page template
 - [ ] Make Facecopy, and blog template responsive
-- [ ] Contact Form
-- [ ] Load more colorData files
-- [ ] Shopping Site template
 - [ ] Portfolio template 
