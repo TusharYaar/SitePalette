@@ -1,12 +1,19 @@
-<h1>This Page is in devlopement</h1>
 <div class="body sc-body">
   <div class="header sc-navbar">
-    <div><h2>Tushar's Portfolio</h2></div>
+    <div class="heading">
+      <h2>Tushar's Portfolio (dummy)</h2>
+      <h6>
+        <a href="http://tusharyaar.netlify.app" class="sc-text">
+          for real site Go HERE</a
+        >
+      </h6>
+    </div>
+
     <div>
-      <a href="#about"><h4>About</h4></a>
-      <a><h4>Projects</h4></a>
-      <a><h4>Tech Stack</h4></a>
-      <a><h4>Contact</h4></a>
+      <a href="#about" class="sc-text"><h4>About</h4></a>
+      <a href="#projects" class="sc-text"><h4>Projects</h4></a>
+      <a href="#skills" class="sc-text"><h4>Tech Stack</h4></a>
+      <a href="#contact" class="sc-text"><h4>Contact</h4></a>
     </div>
   </div>
   <div class="jumbotron">
@@ -15,23 +22,27 @@
       <p>A web developer</p>
     </div>
   </div>
-  <div class="about" id="about">
-    <img
-      src="./assests/templates/images/profilepic.jpg"
-      alt="Profile Picture"
-    />
+  <div class="about sc-body2" id="about">
+    <h3>About Me</h3>
     <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non veritatis
-      iusto obcaecati quibusdam nobis? Minima necessitatibus sapiente animi
-      recusandae voluptatem neque eligendi praesentium fugit magnam hic
-      laudantium enim obcaecati, ducimus atque, optio, nulla repellendus vero
-      delectus. Sint fugiat dolorem quas iusto animi facilis, quidem velit.
-      Soluta laboriosam dolore nesciunt? Sequi?
+      <img
+        src="./assests/templates/images/profilepic.jpg"
+        alt="Profile Picture"
+      />
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non veritatis
+        iusto obcaecati quibusdam nobis? Minima necessitatibus sapiente animi
+        recusandae voluptatem neque eligendi praesentium fugit magnam hic
+        laudantium enim obcaecati, ducimus atque, optio, nulla repellendus vero
+        delectus. Sint fugiat dolorem quas iusto animi facilis, quidem velit.
+        Soluta laboriosam dolore nesciunt? Sequi?
+      </div>
     </div>
   </div>
   <div id="projects" class="projects">
+    <h3>My Projects</h3>
     <div class="all-projects">
-      <div class="sc-card project">
+      <div class="sc-card2 project">
         <img src="https://picsum.photos/300" alt="project screenshot" />
         <div class="description">
           <h5>Project 1</h5>
@@ -45,7 +56,7 @@
           </div>
         </div>
       </div>
-      <div class="sc-card project">
+      <div class="sc-card2 project">
         <img src="https://picsum.photos/299" alt="project screenshot" />
         <div class="description">
           <h5>Project 2</h5>
@@ -59,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div class="sc-card project">
+      <div class="sc-card2 project">
         <img src="https://picsum.photos/301" alt="project screenshot" />
         <div class="description">
           <h5>Project 3</h5>
@@ -72,6 +83,49 @@
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="skills" id="skills">
+    <h3>My Tech Stack</h3>
+    <div>
+      <span class="sc-card">Javascript</span>
+      <span class="sc-card">HTML & CSS</span>
+      <span class="sc-card">NodeJs</span>
+      <span class="sc-card">MongoDb</span>
+      <span class="sc-card">React</span>
+      <span class="sc-card">Python</span>
+      <span class="sc-card">C++</span>
+    </div>
+    <h4>CSS Libraries I use</h4>
+    <div>
+      <span class="sc-card">Bootstrap</span>
+      <span class="sc-card">Tailwind</span>
+      <span class="sc-card">PrismCSS</span>
+      <span class="sc-card">React Strap</span>
+    </div>
+    <h4>Javascript Libraries I use</h4>
+    <div>
+      <span class="sc-card">jQuery</span>
+      <span class="sc-card">AceJS</span>
+      <span class="sc-card">HowlerJS</span>
+      <span class="sc-card">TensorFlowJS</span>
+    </div>
+  </div>
+  <div class="contact" id="contact">
+    <h3>Contact me</h3>
+    <div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" disabled />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" disabled />
+      </div>
+      <div>
+        <label for="name">Message</label>
+        <textarea id="message" name="message" disabled rows="6"></textarea>
       </div>
     </div>
   </div>
