@@ -26,6 +26,7 @@
   padding: 40px;
   font-size: 40px;
   border-radius: 5px;
+  text-align: center;
 }
 .hello > p {
   font-size: 20px;
@@ -43,4 +44,29 @@
 .about > img {
   border-radius: 5px;
   margin: 10px;
+}
+.projects,
+.project,
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.project {
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.all-projects {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media (max-width: 740px) {
+  .description {
+    display: none;
+  }
 }
