@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkWidth(); // Calls the function to check width of the screen and if smaller than 558 pixels, show the overlay
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
-  loadTemplate("landingPage, Landing Page, false");
+  loadTemplate("portfolio, Landing Page, false");
   // loadTemplate("shoppingSite,Shopping Site,true");
   fillAdvanceSelect();
 
