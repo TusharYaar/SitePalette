@@ -20,6 +20,3 @@ Check The developement here [https://sitepalette.netlify.app/](https://sitepalet
 # TO DO:
 
 - [ ] All of Advance features
-- [ ] Complete preview Page template
-- [ ] Make Facecopy, and blog template responsive
-- [ ] Portfolio template 

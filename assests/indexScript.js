@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadSiteTemplateList(); // Loads the site template list
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
   loadTemplate("landingPage, Landing Page, false");
-  // loadTemplate("portfolio,Shopping Site,true");
+  // loadTemplate("previewDocument,Shopping Site,true");
   fillAdvanceSelect();
 
   // showSiteMessage("New to the site!!! Start by taking a basic tour", true, 1500);

@@ -270,6 +270,7 @@ input#checkBox-classHover {
 #change-template.active {
   height: 430px;
   width: 300px;
+  overflow-y: scroll;
 }
 
 #saved-colors {
