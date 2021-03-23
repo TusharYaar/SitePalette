@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
   getSavedColors(); // Calls the get saved color to get saved colors from localStorage
   loadTemplate("landingPage, Landing Page, false");
   // loadTemplate("previewDocument,Shopping Site,true");
-  fillAdvanceSelect();
 
   // showSiteMessage("New to the site!!! Start by taking a basic tour", true, 1500);
   showSiteMessage(
@@ -64,8 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document
-    .querySelector("#advance-color-select")
+    .querySelector("#advance-color-select-input")
     .addEventListener("change", changeAdvanceComponent);
+
+  document
+    .querySelector("#advance-color-input")
+    .addEventListener("change", changeAdvanceComponentColor);
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
@@ -565,21 +568,24 @@ function stopTourBox() {
   tourBox.classList.remove("active");
 }
 
-function fillAdvanceSelect() {
-  var elements = [];
-  elements = allSCComponents();
-  elements.forEach((element) => {
-    op = document.createElement("option");
-    op.value = element;
-    op.textContent = element.split("-")[1];
-    document.getElementById("advance-color-select").appendChild(op);
-  });
-}
 function changeAdvanceComponent() {
-  var element = document.getElementById("advance-color-select").value;
+  var element = document.getElementById("advance-color-select-input").value;
   var elements = document.querySelectorAll(`.${element}`);
   document.querySelector("#advance-color-select-number").innerText =
     elements.length;
+  if (elements.length > 0)
+    document.getElementById("advance-color-input").value = rgbToHex(
+      elements[0].style.backgroundColor
+    );
+}
+function changeAdvanceComponentColor() {
+  var element = document.getElementById("advance-color-select-input").value;
+  document.querySelectorAll(`.${element}`).forEach(function (element) {
+    element.style.backgroundColor = document.getElementById(
+      "advance-color-input"
+    ).value;
+  });
+  showSiteMessage("Color Applied", true, 2000);
 }
 function changeAdvanceOpacity(value) {
   document.querySelector("#advance-color-opacity-slider-value").innerText =

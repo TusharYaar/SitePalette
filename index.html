@@ -261,35 +261,77 @@
       </div>
       <!-- ========================================== -->
       <!-- Advance Color Apply -->
+
       <div id="advance-change-color" class="">
         <i class="far fa-times-circle close-icon"></i>
-        <br />
-        <select id="advance-color-select"></select>
-        <h4>
-          Nummber of Items on screen with that class:
-          <span id="advance-color-select-number"></span>
-        </h4>
-        <input type="text" placeholder="Input color" id="advance-color-input" />
-        <label for="advance-color-input">Input A Color Value</label>
-
-        <input
-          type="range"
-          min="0"
-          max="100"
-          step="20"
-          id="advance-color-opacity-slider"
-          value="80"
-          onchange="changeAdvanceOpacity(this.value)"
-        />
-        <label for="advance-color-opacity-slider"
-          >Opacity Slider: <span id="advance-color-opacity-slider-value"></span
-        ></label>
-        <button
-          class="site-interaction-button"
-          onclick="event.stopPropagation();toggleAdvanceColorEdit()"
-        >
-          Back to Basics
-        </button>
+        <div id="advance-color-options">
+          <div>
+            <label for=" advance-change-color">Element Class</label>
+            <input
+              type="text"
+              list="advance-color-select"
+              id="advance-color-select-input"
+            />
+            <datalist id="advance-color-select">
+              <option value="sc-icon"></option>
+              <option value="sc-h1"></option>
+              <option value="sc-h2"></option>
+              <option value="sc-h3"></option>
+              <option value="sc-h4"></option>
+              <option value="sc-h5"></option>
+              <option value="sc-h6"></option>
+              <option value="sc-button1"></option>
+              <option value="sc-button2"></option>
+              <option value="sc-button3"></option>
+              <option value="sc-text"></option>
+              <option value="sc-body"></option>
+              <option value="sc-background"></option>
+              <option value="sc-card"></option>
+              <option value="sc-navbar"></option>
+              <option value="sc-card2"></option>
+              <option value="sc-something"></option>
+              <option value="sc-p"></option>
+              <option value="sc-icon-brand"></option>
+              <option value="sc-icon-special"></option>
+              <option value="sc-text2"></option>
+              <option value="sc-border"></option>
+              <option value="sc-body2"></option>
+            </datalist>
+          </div>
+          <h4>
+            Number of Items on screen with that class:
+            <span id="advance-color-select-number"></span>
+          </h4>
+          <div>
+            <label for="advance-color-input">Background Color</label>
+            <input
+              type="text"
+              placeholder="Input color"
+              id="advance-color-input"
+            />
+          </div>
+          <div>
+            <label for="advance-color-opacity-slider"
+              >Opacity Slider:
+              <span id="advance-color-opacity-slider-value"></span
+            ></label>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="20"
+              id="advance-color-opacity-slider"
+              value="80"
+              onchange="changeAdvanceOpacity(this.value)"
+            />
+          </div>
+          <button
+            class="site-interaction-button"
+            onclick="event.stopPropagation();toggleAdvanceColorEdit()"
+          >
+            Back to Basics
+          </button>
+        </div>
       </div>
     </div>
     <script src="assests/variableData.js"></script>

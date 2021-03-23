@@ -208,10 +208,20 @@ body {
 #advance-change-color.advance {
   display: block;
 }
-div#advance-change-color > label {
-  font-size: 14px;
+div#advance-color-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
+div#advance-color-options label {
+  font-size: 16px;
+}
+div#advance-color-options > h4 {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 100;
+}
 #change-color-about-hover {
   width: 230px;
   height: auto;
