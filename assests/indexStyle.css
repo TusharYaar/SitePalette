@@ -222,11 +222,14 @@ div#advance-color-options > h4 {
   font-size: 16px;
   font-weight: 100;
 }
-#change-color input#advance-color-input-picker {
+#change-color input#advance-color-input-picker,
+#change-color input.color-preview {
   width: 30px;
-  border: 0px;
   border-radius: 5px;
   padding: 0px;
+  display: inline-block;
+  border: 2px solid black;
+  margin-bottom: -5px;
 }
 #change-color-about-hover {
   width: 230px;
@@ -258,14 +261,7 @@ div#advance-color-options > h4 {
 #change-color label {
   font-size: 18px;
 }
-#change-color label span.color-preview {
-  display: inline-block;
-  width: 30px;
-  height: 20px;
-  border: 2px solid black;
-  margin-bottom: -5px;
-  border-radius: 5px;
-}
+
 #change-color .copy-icon,
 .lock-icon {
   margin-bottom: -5px;

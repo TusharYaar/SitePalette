@@ -193,8 +193,8 @@ function setColorInputValue(colorsArray) {
         currentColorData[index].color = color;
         document.querySelector(`#color${index + 1}`).value = `${color}`;
         document.querySelector(
-          `#color${index + 1}-parent > label> span`
-        ).style.backgroundColor = `${color}`;
+          `#color${index + 1}-parent > label> .color-preview`
+        ).value = `${color}`;
         colors.push(color);
       } else colors.push(currentColorData[index].color);
     }
