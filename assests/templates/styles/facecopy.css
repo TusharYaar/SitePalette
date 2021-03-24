@@ -96,13 +96,13 @@ ul {
   background-image: url("https://picsum.photos/120/200");
   height: 200px;
   width: 120px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #your-update,
 #create-room {
   margin: 20px 0px;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #your-update img,
 #create-room img {
@@ -157,7 +157,7 @@ ul {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 20px 0px;
 }
 .post > .details {

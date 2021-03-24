@@ -1,139 +1,137 @@
-.navbar{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 50px;
-    padding: 5px;
-    /* background-color: rgb(255, 251, 244); */
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  /* background-color: rgb(255, 251, 244); */
 }
 .container {
-    display: flex;
+  display: flex;
 }
 .sidebar {
-    width: 250px;
-    height: 100vh;
+  width: 250px;
+  height: 100vh;
 }
 .sidebar button {
-    width: 80%;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    font-size: 20px;
-    margin: 10px 10%;
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  margin: 10px 10%;
 }
 .sidebar ul {
-    /* background-color: orange; */
-    text-decoration: none;
-    padding: 10px;
-    list-style: none;
+  /* background-color: orange; */
+  text-decoration: none;
+  padding: 10px;
+  list-style: none;
 }
 .sidebar ul li {
-    margin: 20px auto;
-    font-size: 20px;
+  margin: 20px auto;
+  font-size: 20px;
 }
 .sidebar ul li i {
-    margin: auto 10px;
+  margin: auto 10px;
 }
 .sidebar img.sc-card {
-    margin: auto 5% 5px 5%;
-    border: 20px;
-    width: 90%;
+  margin: auto 5% 5px 5%;
+  border: 20px;
+  width: 90%;
 }
-.navbar-brand,.navbar-user {
-   margin: auto 10px;  
+.navbar-brand,
+.navbar-user {
+  margin: auto 10px;
 }
-.main-body{
-    width: 100%;
-    height: 100vh;
+.main-body {
+  width: 100%;
+  height: 100vh;
 }
 .main-navbar img {
-    border-radius: 50%;
-    display: inline;
-    width: 50px;
-    margin-left: 10px;
+  border-radius: 50%;
+  display: inline;
+  width: 50px;
+  margin-left: 10px;
 }
 .navbar-input {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid;
 }
 .cards-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
 }
- .cards-type{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 20px 5px;
+.cards-type {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 20px 5px;
 }
 .card-type1 {
-    width: 225px;
-    padding: 10px;
-    height: 100px;
-    margin: 0px 20px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
+  width: 225px;
+  padding: 10px;
+  height: 100px;
+  margin: 0px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
 }
 .card-type1 h3 {
-    margin:0px;
-    margin-top: 10px
-
+  margin: 0px;
+  margin-top: 10px;
 }
-.card-type1 img{
-    margin: 10px ;
+.card-type1 img {
+  margin: 10px;
 }
-.card-type2{
-    height: 250px;
-    max-width: 800px;
-    width: 100%;
-    margin: 0px 20px;
-    border-radius: 10px;
-
+.card-type2 {
+  height: 250px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0px 20px;
+  border-radius: 5px;
 }
-.card-type3{
-    height: 250px;
-    width: 225px;
-    margin: 0px 20px;
-    border-radius: 10px;
+.card-type3 {
+  height: 250px;
+  width: 225px;
+  margin: 0px 20px;
+  border-radius: 5px;
 }
 .card-type4 {
-    height: 250px;
-    width: 100%;
-    margin: 0px 20px; 
-    max-width: 500px;
-    border-radius: 10px;
-
+  height: 250px;
+  width: 100%;
+  margin: 0px 20px;
+  max-width: 500px;
+  border-radius: 5px;
 }
-#data-list{
-    padding: 5px 10px;
+#data-list {
+  padding: 5px 10px;
 }
 #data-list ul {
-    list-style: none;
-    padding: 0px 20px;
+  list-style: none;
+  padding: 0px 20px;
 }
-#data-list hr{
-    opacity: 0.5;
+#data-list hr {
+  opacity: 0.5;
 }
 #data-list li {
-    font-size: 18px;
-    margin: 10px 0px;
+  font-size: 18px;
+  margin: 10px 0px;
 }
-@media (max-width: 1330px){
-    .card-hidden-l {
-        display: none;
-    }
+@media (max-width: 1330px) {
+  .card-hidden-l {
+    display: none;
+  }
 }
-@media (max-width:1082px) {
-    .card-hidden-m {
-        display: none;
-    }
+@media (max-width: 1082px) {
+  .card-hidden-m {
+    display: none;
+  }
 }
-@media (max-width:770px) {
-    .card-hidden-s {
-        display: none;
-    }
+@media (max-width: 770px) {
+  .card-hidden-s {
+    display: none;
+  }
 }
