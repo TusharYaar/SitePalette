@@ -21,7 +21,7 @@ body {
   max-height: 300px;
   z-index: 200;
   display: none;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #tour-box.active {
   display: flex;
@@ -42,7 +42,7 @@ body {
 .tour-btn {
   padding: 10px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   margin: 10px;
 }
@@ -89,7 +89,7 @@ body {
   transform: translate(-50%, -50%);
   transition: all 0.3s;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 #site-messages.active {
   height: auto;
@@ -222,6 +222,12 @@ div#advance-color-options > h4 {
   font-size: 16px;
   font-weight: 100;
 }
+#change-color input#advance-color-input-picker {
+  width: 30px;
+  border: 0px;
+  border-radius: 5px;
+  padding: 0px;
+}
 #change-color-about-hover {
   width: 230px;
   height: auto;
@@ -246,7 +252,7 @@ div#advance-color-options > h4 {
   border: 1px solid #4d5863;
   margin: 10px 7px;
   padding: 2px 10px;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 16px;
 }
 #change-color label {
@@ -278,9 +284,9 @@ input#checkBox-classHover {
   background-color: #2a9d8f;
 }
 #change-template.active {
-  height: 430px;
+  height: 440px;
   width: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #saved-colors {
@@ -311,7 +317,7 @@ input#checkBox-classHover {
 #saved-color-menu-box.active {
   height: 40px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   transform: translate(0, -30px);
   transition: all 0.3s;
   -ms-transform: translateX(0px) translateY(-30px);
@@ -329,7 +335,7 @@ input#checkBox-classHover {
 .colors-history-item {
   height: 30px;
   width: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 #colors-history {
@@ -350,7 +356,7 @@ input#checkBox-classHover {
   height: 40px;
   padding: 5px;
   width: 90px;
-  border-radius: 10px;
+  border-radius: 5px;
   transform: translate(0, -30px);
   transition: all 0.3s;
   -ms-transform: translateX(0px) translateY(-30px);

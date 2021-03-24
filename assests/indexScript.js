@@ -64,11 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document
     .querySelector("#advance-color-select-input")
-    .addEventListener("change", changeAdvanceComponent);
+    .addEventListener("keyup", changeAdvanceComponent);
 
   document
     .querySelector("#advance-color-input")
-    .addEventListener("change", changeAdvanceComponentColor);
+    .addEventListener("keyup", changeAdvanceComponentColor);
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
@@ -573,10 +573,18 @@ function changeAdvanceComponent() {
   var elements = document.querySelectorAll(`.${element}`);
   document.querySelector("#advance-color-select-number").innerText =
     elements.length;
-  if (elements.length > 0)
+  if (elements.length > 0) {
     document.getElementById("advance-color-input").value = rgbToHex(
       elements[0].style.backgroundColor
     );
+    document.querySelector("#advance-color-input-picker").value = rgbToHex(
+      elements[0].style.backgroundColor
+    );
+    document.querySelector("#advance-color-opacity-slider").value =
+      elements[0].style.opacity;
+    document.querySelector("#advance-color-opacity-slider-value").innerText =
+      element[0].style.opacity + "%";
+  }
 }
 function changeAdvanceComponentColor() {
   var element = document.getElementById("advance-color-select-input").value;
@@ -587,7 +595,20 @@ function changeAdvanceComponentColor() {
   });
   showSiteMessage("Color Applied", true, 2000);
 }
+function changeAdvanceComponentColorPicker() {
+  var element = document.getElementById("advance-color-select-input").value;
+  document.querySelectorAll(`.${element}`).forEach(function (element) {
+    element.style.backgroundColor = document.getElementById(
+      "advance-color-input-picker"
+    ).value;
+  });
+  // showSiteMessage("Color Applied", true, 2000);
+}
 function changeAdvanceOpacity(value) {
   document.querySelector("#advance-color-opacity-slider-value").innerText =
     value + "%";
+  var element = document.getElementById("advance-color-select-input").value;
+  document.querySelectorAll(`.${element}`).forEach(function (element) {
+    element.style.opacity = value + "%";
+  });
 }
