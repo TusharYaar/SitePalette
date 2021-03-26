@@ -223,6 +223,7 @@ div#advance-color-options > h4 {
   font-weight: 100;
 }
 #change-color input#advance-color-input-picker,
+#change-color input#advance-text-color-input-picker,
 #change-color input.color-preview {
   width: 25px;
   height: 25px;

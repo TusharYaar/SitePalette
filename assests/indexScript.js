@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector("#advance-color-input")
     .addEventListener("keyup", changeAdvanceComponentColor);
+  document
+    .querySelector("#advance-text-color-input")
+    .addEventListener("keyup", changeAdvanceComponentTextColor);
 });
 // Function to remove class from all the elements with same selector and the class
 function removeClass(string, clas) {
@@ -580,6 +583,12 @@ function changeAdvanceComponent() {
     document.querySelector("#advance-color-input-picker").value = rgbToHex(
       elements[0].style.backgroundColor
     );
+    document.getElementById("advance-text-color-input").value = rgbToHex(
+      elements[0].style.color
+    );
+    document.querySelector("#advance-text-color-input-picker").value = rgbToHex(
+      elements[0].style.color
+    );
     document.querySelector("#advance-color-opacity-slider").value =
       elements[0].style.opacity;
     document.querySelector("#advance-color-opacity-slider-value").innerText =
@@ -629,3 +638,23 @@ document.querySelectorAll(".color-preview").forEach((element) => {
     });
   });
 });
+function changeAdvanceComponentTextColor() {
+  var element = document.getElementById("advance-color-select-input").value;
+  var color = document.getElementById("advance-text-color-input").value;
+  document.getElementById("advance-text-color-input-picker").value = color;
+
+  document.querySelectorAll(`.${element}`).forEach(function (element) {
+    element.style.color = color;
+  });
+
+  showSiteMessage("Color Applied", true, 2000);
+}
+function changeAdvanceComponentTextColorPicker() {
+  var element = document.getElementById("advance-color-select-input").value;
+  var color = document.getElementById("advance-text-color-input-picker").value;
+  document.getElementById("advance-text-color-input").value = color;
+  document.querySelectorAll(`.${element}`).forEach(function (element) {
+    element.style.color = color;
+  });
+  showSiteMessage("Color Applied", true, 2000);
+}

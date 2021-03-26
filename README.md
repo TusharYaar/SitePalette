@@ -17,6 +17,6 @@ Check The developement here [https://sitepalette.netlify.app/](https://sitepalet
 - [x] More Details Shown on Hover
 - [x] Make Error Template
 - [x] Add A Tour
-# TO DO:
+- [x] All of Advance features
 
-- [ ] All of Advance features
+# TO DO:
