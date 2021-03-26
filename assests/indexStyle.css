@@ -224,11 +224,12 @@ div#advance-color-options > h4 {
 }
 #change-color input#advance-color-input-picker,
 #change-color input.color-preview {
-  width: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 5px;
   padding: 0px;
   display: inline-block;
-  border: 2px solid black;
+  border: 3px solid black;
   margin-bottom: -5px;
 }
 #change-color-about-hover {

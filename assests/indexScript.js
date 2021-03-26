@@ -588,21 +588,23 @@ function changeAdvanceComponent() {
 }
 function changeAdvanceComponentColor() {
   var element = document.getElementById("advance-color-select-input").value;
+  var color = document.getElementById("advance-color-input").value;
+  document.getElementById("advance-color-input-picker").value = color;
+
   document.querySelectorAll(`.${element}`).forEach(function (element) {
-    element.style.backgroundColor = document.getElementById(
-      "advance-color-input"
-    ).value;
+    element.style.backgroundColor = color;
   });
+
   showSiteMessage("Color Applied", true, 2000);
 }
 function changeAdvanceComponentColorPicker() {
   var element = document.getElementById("advance-color-select-input").value;
+  var color = document.getElementById("advance-color-input-picker").value;
+  document.getElementById("advance-color-input").value = color;
   document.querySelectorAll(`.${element}`).forEach(function (element) {
-    element.style.backgroundColor = document.getElementById(
-      "advance-color-input-picker"
-    ).value;
+    element.style.backgroundColor = color;
   });
-  // showSiteMessage("Color Applied", true, 2000);
+  showSiteMessage("Color Applied", true, 2000);
 }
 function changeAdvanceOpacity(value) {
   document.querySelector("#advance-color-opacity-slider-value").innerText =
@@ -612,3 +614,18 @@ function changeAdvanceOpacity(value) {
     element.style.opacity = value + "%";
   });
 }
+document.querySelectorAll(".color-preview").forEach((element) => {
+  element.addEventListener("change", function () {
+    id = element.parentElement.getAttribute("for");
+    document.querySelector(`#${id}`).value = element.value;
+    basicColorMenu.forEach((menu) => {
+      if (menu.id === id) {
+        menu.elements.forEach((childelement) => {
+          document.querySelectorAll(`.${childelement}`).forEach((child) => {
+            child.style[menu.type] = element.value;
+          });
+        });
+      }
+    });
+  });
+});
